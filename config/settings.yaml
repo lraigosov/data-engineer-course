@@ -1,0 +1,81 @@
+# Configuración Global del Curso de Ingeniería de Datos
+# =====================================================
+
+# Configuración de Entorno
+environment:
+  name: "curso_ingenieria_datos"
+  version: "1.0.0"
+  description: "Curso modular para formar Ingenieros de Datos desde nivel Junior hasta Senior"
+  
+# Rutas del Proyecto
+paths:
+  root: "."
+  datasets:
+    raw: "./datasets/raw"
+    processed: "./datasets/processed"
+    external: "./datasets/external"
+  notebooks:
+    junior: "./notebooks/nivel_junior"
+    mid: "./notebooks/nivel_mid"
+    senior: "./notebooks/nivel_senior"
+  scripts:
+    etl: "./scripts/etl"
+    transformaciones: "./scripts/transformaciones"
+    pipelines: "./scripts/pipelines"
+  tests:
+    unit: "./tests/unit"
+    integration: "./tests/integration"
+  docs: "./docs"
+
+# Configuración de Base de Datos (para pruebas locales)
+database:
+  local:
+    host: "localhost"
+    port: 5432
+    name: "curso_data_engineering"
+    user: "estudiante"
+    # password se debe configurar en credentials.yaml
+  
+# Configuración de APIs Públicas (ejemplos para ejercicios)
+apis:
+  ejemplos:
+    jsonplaceholder: "https://jsonplaceholder.typicode.com"
+    openweather: "https://api.openweathermap.org/data/2.5"
+    github: "https://api.github.com"
+    
+# Configuración de Logging
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  handlers:
+    - console
+    - file
+  file_path: "./logs/curso.log"
+
+# Configuración de Notebooks
+notebooks:
+  kernel: "python3"
+  auto_display: true
+  figure_format: "retina"
+  matplotlib_backend: "inline"
+  
+# Configuración de Pruebas
+testing:
+  coverage_threshold: 80
+  pytest_markers:
+    - slow
+    - integration
+    - unit
+    
+# Configuración de Cloud (para niveles Mid y Senior)
+cloud:
+  providers:
+    aws:
+      region: "us-east-1"
+      profile: "default"
+    gcp:
+      project_id: "mi-proyecto-ejemplo"
+      region: "us-central1"
+    azure:
+      subscription_id: "tu-subscription-id"
+      resource_group: "rg-curso-data-engineering"
