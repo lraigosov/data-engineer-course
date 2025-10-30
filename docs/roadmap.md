@@ -1,5 +1,9 @@
 # 🗺️ Roadmap del Curso - Ingeniería de Datos
 
+**Autor**: Luis J. Raigoso V. (LJRV) - [@lraigosov](https://github.com/lraigosov)
+
+---
+
 ## 📊 Visión General
 
 Este roadmap detalla la progresión completa del curso, desde fundamentos hasta nivel Senior, incluyendo habilidades técnicas, proyectos prácticos y certificaciones por nivel.

@@ -1,5 +1,9 @@
 # 📚 Referencias y Recursos - Curso de Ingeniería de Datos
 
+**Autor**: Luis J. Raigoso V. (LJRV) - [@lraigosov](https://github.com/lraigosov)
+
+---
+
 ## 📖 Libros Fundamentales
 
 ### Nivel Junior - Fundamentos

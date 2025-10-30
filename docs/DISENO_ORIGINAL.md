@@ -1,5 +1,12 @@
 # 📘 Guía de Proyecto: Curso Modular para Convertirse en Ingeniero de Datos
 
+> **Nota**: Este documento representa el diseño original y la propuesta inicial del proyecto. El curso ha sido completamente implementado siguiendo estas directrices.
+
+**Autor**: Luis J. Raigoso V. (LJRV) - [@lraigosov](https://github.com/lraigosov)  
+**Estado**: ✅ Implementado completamente (40/40 notebooks)
+
+---
+
 ## 🎯 Objetivo General
 
 Diseñar y desarrollar un proyecto modular que contenga un curso completo y estructurado para formar a estudiantes desde cero hasta alcanzar los niveles **Junior**, **Mid**, y **Senior** en Ingeniería de Datos. El curso debe combinar teoría validada con práctica aplicada mediante **Notebooks interactivos (Jupyter o Colab)**, fomentando el aprendizaje activo a través de talleres, ejercicios guiados y casos de uso reales.

@@ -1,5 +1,9 @@
 # 🛠️ Guía de Instalación - Curso de Ingeniería de Datos
 
+**Autor**: Luis J. Raigoso V. (LJRV) - [@lraigosov](https://github.com/lraigosov)
+
+---
+
 ## Requisitos del Sistema
 
 ### Requisitos Mínimos
@@ -314,12 +318,6 @@ echo "¡Setup completado!"
 - **Documentación oficial:** docs/
 - **Issues de GitHub:** Reportar problemas técnicos
 - **FAQ:** docs/faq.md
-- **Comunidad:** Foro de discusión del proyecto
-
-### Contacto
-- **Email técnico:** soporte@curso-data-engineering.com
-- **GitHub Issues:** Para bugs y mejoras
-- **Discord/Slack:** Canal de la comunidad
 
 ---
 

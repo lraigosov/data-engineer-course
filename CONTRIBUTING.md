@@ -386,10 +386,10 @@ Otras soluciones que consideraste.
 
 ## 📞 Contacto y Soporte
 
-- **GitHub Issues**: Para bugs y feature requests
-- **Discussions**: Para preguntas generales
-- **Email**: [email del mantenedor]
-- **Discord/Slack**: Canal de la comunidad
+- **GitHub Issues**: Para bugs y feature requests ([Crear Issue](https://github.com/lraigosov/data-engineer-course/issues))
+- **GitHub Discussions**: Para preguntas generales ([Ir a Discussions](https://github.com/lraigosov/data-engineer-course/discussions))
+- **Email**: A través de GitHub Issues
+- **Mantenedor**: Luis J. Raigoso V. ([@lraigosov](https://github.com/lraigosov))
 
 ## 🏆 Reconocimiento
 
@@ -398,4 +398,14 @@ Los contribuidores serán reconocidos en:
 - **CHANGELOG.md**: Créditos por versión
 - **Hall of Fame**: Contribuidores destacados
 
+## 👤 Autor y Mantenedor
+
+**Luis J. Raigoso V. (LJRV)**
+- GitHub: [@lraigosov](https://github.com/lraigosov)
+- LinkedIn: [lraigosov](https://www.linkedin.com/in/lraigosov/)
+
+---
+
 ¡Gracias por ayudar a hacer este curso mejor para toda la comunidad! 🙌
+
+© 2024-2025 LJRV - Luis J. Raigoso V.
