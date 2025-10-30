@@ -279,15 +279,29 @@ Consulta `CONTRIBUTING.md` para más detalles.
 
 Este proyecto está bajo la Licencia MIT. Ver `LICENSE` para más detalles.
 
-## 👥 Autores
+## 👥 Autor
 
-- **Tu Nombre** - *Desarrollo inicial* - [Tu GitHub](https://github.com/tu-usuario)
+**Luis J. Raigoso V. (LJRV)** - *Desarrollo y diseño del curso*
+- GitHub: [@lraigosov](https://github.com/lraigosov)
+- LinkedIn: [lraigosov](https://www.linkedin.com/in/lraigosov/)
+
+## 📞 Contacto y Soporte
+
+- **GitHub Issues**: Para bugs y feature requests
+- **GitHub Discussions**: Para preguntas generales y discusiones
+- **Email**: A través de [GitHub Issues](https://github.com/lraigosov/data-engineer-course/issues)
+- **Comunidad**: A través de [GitHub Issues](https://github.com/lraigosov/data-engineer-course/issues)
 
 ## 🙏 Agradecimientos
 
 - Comunidad de Python y Jupyter
 - Contribuidores de bibliotecas open source
 - Estudiantes y beta testers del curso
+- Comunidad de Ingeniería de Datos
+
+## 📝 Copyright
+
+© 2024-2025 LJRV - Luis J. Raigoso V. (lraigosov)
 
 ---
 
