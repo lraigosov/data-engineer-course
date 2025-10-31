@@ -79,11 +79,6 @@ Curso completo y estructurado para formar **Ingenieros de Datos** desde nivel pr
 > 
 > Los notebooks son excelentes para **exploración, prototipado y enseñanza**, pero NO para sistemas en producción que requieren escalabilidad, mantenibilidad y robustez.
 
-Curso completo y estructurado para formar **Ingenieros de Datos** desde nivel principiante hasta avanzado, organizado en cuatro niveles progresivos: **Junior**, **Mid**, **Senior** y **GenAI**. El curso combina teoría sólida con práctica intensiva mediante **Notebooks interactivos**, casos de uso reales y proyectos aplicados.
-
-**Autor Original:** LuisRai (Luis J. Raigoso V.)  
-**Repositorio:** https://github.com/lraigosov/data-engineer-course
-
 ## 🏗️ Estructura del Curso
 
 ### 📊 Nivel Junior - Fundamentos
@@ -233,7 +228,9 @@ jupyter notebook
 #### Nivel Mid (10/10 - ✅ 100% Completo)
 - ✅ `01_apache_airflow_fundamentos.ipynb` - Orquestación con Airflow
 - ✅ `02_streaming_kafka.ipynb` - Streaming con Kafka
-- ✅ `03_cloud_aws.ipynb` - S3, Glue, Athena, Lambda
+- ✅ `03_cloud_aws.ipynb` - AWS: S3, Glue, Athena, Lambda
+- ✅ `03b_cloud_gcp.ipynb` - GCP: Cloud Storage, BigQuery, Dataflow, Cloud Run
+- ✅ `03c_cloud_azure.ipynb` - Azure: ADLS Gen2, Synapse, ADF, Databricks, ACI
 - ✅ `04_bases_datos_postgresql_mongodb.ipynb` - SQL y NoSQL
 - ✅ `05_dataops_cicd.ipynb` - DataOps, tests y CI/CD
 - ✅ `06_conectores_avanzados_rest_graphql_sftp.ipynb` - Conectores robustos
@@ -255,6 +252,7 @@ jupyter notebook
 - ✅ `10_proyecto_integrador_2.ipynb` - Data Mesh con feature store
 
 #### Nivel GenAI (10/10 - ✅ 100% Completo)
+- ✅ `00_comparacion_openai_gemini.ipynb` - Comparación OpenAI vs Google Gemini
 - ✅ `01_fundamentos_llms_prompting.ipynb` - Fundamentos de LLMs y prompting
 - ✅ `02_generacion_sql_nl2sql.ipynb` - Text-to-SQL con seguridad
 - ✅ `03_generacion_codigo_etl.ipynb` - Generación de pipelines ETL

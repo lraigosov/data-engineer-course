@@ -398,14 +398,17 @@ Los contribuidores serán reconocidos en:
 - **CHANGELOG.md**: Créditos por versión
 - **Hall of Fame**: Contribuidores destacados
 
-## 👤 Autor y Mantenedor
+## 👤 Autor y Mantenedor Principal
 
-**Luis J. Raigoso V. (LJRV)**
+**Luis J. Raigoso V. (LuisRai) - LJRV**
 - GitHub: [@lraigosov](https://github.com/lraigosov)
 - LinkedIn: [lraigosov](https://www.linkedin.com/in/lraigosov/)
+- Repositorio: https://github.com/lraigosov/data-engineer-course
+
+**Todos los materiales del curso fueron creados por LuisRai (2024-2025)**
 
 ---
 
 ¡Gracias por ayudar a hacer este curso mejor para toda la comunidad! 🙌
 
-© 2024-2025 LJRV - Luis J. Raigoso V.
+© 2024-2025 Luis J. Raigoso V. (LuisRai) - LJRV

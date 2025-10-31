@@ -145,33 +145,74 @@ y este proyecto adhiere a [Semantic Versioning](https://semver.org/lang/es/).
     * Dataflow con Apache Beam
     * Cloud Composer (Airflow managed)
     * Cloud Functions event-driven
+    * **Cloud Run**: Serverless containers para ETL >9 minutos
   - `notebooks/nivel_mid/03c_cloud_azure.ipynb` (~1,505 líneas)
     * ADLS Gen2 con hierarchical namespaces y ACLs
     * Azure Synapse Analytics (dedicated + serverless)
     * Azure Data Factory con pipelines visuales
     * Azure Databricks con Delta Lake y Photon
     * Azure Functions con triggers múltiples
+    * **Azure Container Instances**: Batch jobs con managed identity
+    * **Azure Web Apps**: PaaS para APIs de datos
   - Tablas comparativas entre AWS/GCP/Azure en ambos notebooks
   - Ejercicios prácticos y certificaciones (GCP Professional Data Engineer, Azure DP-203)
 
 ### Cambiado
 - 📊 Cobertura cloud ampliada de 33% a 100% del mercado
 - 📚 +2,995 líneas de contenido educativo cloud práctico
+- ☁️ Agregado serverless compute (Lambda, Cloud Run, Functions) a cada notebook cloud
+
+## [1.4.0] - 2025-10-31
+
+### Corregido
+- 🐛 **Fix**: Completadas celdas vacías en `notebooks/nivel_junior/10_proyecto_integrador_2.ipynb`
+  - Eliminados 13 celdas vacías después de sección de retry logic
+  - Agregada **Sección 6**: Scheduler Simple con Polling
+    * Función `scan_and_process()` con polling loop
+    * Explicación de polling vs watchdog/Airflow/Kafka
+  - Agregada **Sección 7**: Ejecución y Testing
+    * Generador de archivos de prueba con datos sintéticos
+    * Ejecución del pipeline con scheduler
+    * Consultas SQL para verificación de datos
+    * Estadísticas por producto (revenue, unidades)
+  - Agregada **Sección 8**: Métricas y Auditoría
+    * Revisión de checkpoints con estados
+    * Métricas de procesamiento
+    * Verificación de archivos movidos
+  - Agregada **Sección 9**: Conclusión y Siguientes Pasos
+    * Resumen de componentes construidos
+    * Diagrama de flujo del pipeline
+    * Conceptos aplicados (ETL, data quality, resiliencia)
+    * Mejoras futuras por nivel (Mid: Airflow, Senior: Kafka/Streaming)
+    * Habilidades desarrolladas y recursos adicionales
+  - **+395 líneas** de código funcional y documentación
+
+### Cambiado
+- 📝 **requirements.txt** completamente reorganizado y actualizado:
+  - Versiones actualizadas de todas las dependencias
+  - Organizado por categorías (Core, Database, Cloud, Orchestration, GenAI, etc.)
+  - Documentación inline de cada biblioteca
+  - Notas de instalación específicas por nivel
+  - Dependencias cloud actualizadas (AWS, GCP, Azure)
+  - Stack completo GenAI documentado
+  - Instrucciones especiales para Airflow, Spark, Feast
 
 ---
 
 ## [Próximas Versiones]
 
-### [1.4.0] - Planificado
+### [1.5.0] - Planificado
 - 🐳 Docker compose para entorno completo (Airflow + Kafka + Spark + Postgres)
 - 📊 Dashboards de ejemplo con Streamlit/Gradio
 - 🔄 CI/CD con GitHub Actions completo (lint, test, deploy)
+- 📝 Actualización de documentación técnica en `docs/`
 
-### [1.5.0] - Planificado
+### [2.0.0] - Futuro
 - 🌐 Plataforma web interactiva para navegación de notebooks
 - 🏆 Sistema de evaluación automática y certificados
 - 💬 Ejercicios interactivos con autoevaluación
 - 🎥 Videos complementarios para conceptos complejos
+- 🗣️ Versiones en inglés de todos los materiales
 
 ---
 

@@ -13,7 +13,11 @@ furnished to do so, subject to the following conditions:
 ATTRIBUTION REQUIREMENT:
 Any replication, modification, distribution, or derivative work of this Software
 MUST include prominent attribution to the original author "LuisRai" (Luis J. Raigoso V.)
-in all documentation, source code headers, and user-facing materials.
+in all documentation, source code headers, user-facing materials, and any derived works.
+
+The attribution must be clearly visible and include:
+- Author name: Luis J. Raigoso V. (LuisRai)
+- Original repository: https://github.com/lraigosov/data-engineer-course
 
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.

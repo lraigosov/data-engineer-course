@@ -1,129 +1,215 @@
+# =============================================================================
 # Dependencias del Curso de Ingeniería de Datos
-# =============================================
+# =============================================================================
+# Autor: Luis J. Raigoso V. (LJRV) - lraigosov
+# Proyecto: https://github.com/lraigosov/data-engineer-course
+# 
+# Este archivo contiene todas las dependencias necesarias para ejecutar
+# los notebooks del curso completo (Junior, Mid, Senior, GenAI)
+# =============================================================================
 
-# Core Data Processing
-pandas>=1.5.0
-numpy>=1.23.0
-scipy>=1.9.0
+# =============================================================================
+# CORE - Data Processing
+# =============================================================================
+pandas>=2.0.0              # Manipulación de datos tabulares
+numpy>=1.24.0              # Computación numérica
+scipy>=1.10.0              # Algoritmos científicos
 
-# Database Connectivity
-sqlalchemy>=1.4.0
-psycopg2-binary>=2.9.0
-pymongo>=4.2.0
-redis>=4.3.0
+# =============================================================================
+# DATABASE - Conectividad
+# =============================================================================
+sqlalchemy>=2.0.0          # ORM y SQL toolkit
+psycopg2-binary>=2.9.0     # PostgreSQL driver
+pymongo>=4.3.0             # MongoDB driver
+redis>=4.5.0               # Redis client
+duckdb>=0.9.0              # Analytical in-process database
 
-# Data Formats and Serialization
-pyarrow>=9.0.0        # Parquet support
-fastparquet>=0.8.0    # Alternative parquet engine
-openpyxl>=3.0.0       # Excel files
-xlrd>=2.0.0           # Excel files (legacy)
-lxml>=4.9.0           # XML parsing
-beautifulsoup4>=4.11.0 # Web scraping
+# =============================================================================
+# DATA FORMATS - Serialización y Formatos
+# =============================================================================
+pyarrow>=13.0.0            # Apache Arrow (parquet, columnar data)
+fastparquet>=2023.0.0      # Alternative parquet engine
+openpyxl>=3.1.0            # Excel (.xlsx) files
+lxml>=4.9.0                # XML parsing
+beautifulsoup4>=4.12.0     # HTML/XML parsing (web scraping)
 
-# HTTP and API
-requests>=2.28.0
-httpx>=0.23.0         # Modern async HTTP client
-aiohttp>=3.8.0        # Async HTTP
+# =============================================================================
+# HTTP & APIs
+# =============================================================================
+requests>=2.31.0           # HTTP library
+httpx>=0.24.0              # Modern async HTTP
+aiohttp>=3.8.0             # Async HTTP framework
 
-# Data Validation and Quality
-great-expectations>=0.15.0
-pandera>=0.12.0       # DataFrame validation
-cerberus>=1.3.0       # Schema validation
+# =============================================================================
+# DATA QUALITY - Validación y Calidad
+# =============================================================================
+great-expectations>=0.18.0 # Data validation framework
+pandera>=0.17.0            # DataFrame schema validation
+pydantic>=2.0.0            # Data validation with type hints
 
-# Visualization
-matplotlib>=3.5.0
-seaborn>=0.11.0
-plotly>=5.10.0
-bokeh>=2.4.0
+# =============================================================================
+# VISUALIZATION - Gráficos
+# =============================================================================
+matplotlib>=3.7.0          # Base plotting library
+seaborn>=0.12.0            # Statistical visualizations
+plotly>=5.15.0             # Interactive plots
 
-# Jupyter Environment
+# =============================================================================
+# JUPYTER - Entorno de Desarrollo
+# =============================================================================
 jupyter>=1.0.0
-jupyterlab>=3.4.0
-ipython>=8.4.0
-notebook>=6.4.0
+jupyterlab>=4.0.0
+ipython>=8.12.0
+notebook>=7.0.0
+ipykernel>=6.25.0
 
-# Development Tools
-pytest>=7.1.0
-pytest-cov>=3.0.0    # Coverage reporting
-black>=22.6.0         # Code formatting
-flake8>=5.0.0         # Linting
-mypy>=0.971           # Type checking
-pre-commit>=2.20.0    # Git hooks
+# =============================================================================
+# DEVELOPMENT TOOLS - Testing y Calidad de Código
+# =============================================================================
+pytest>=7.4.0
+pytest-cov>=4.1.0          # Coverage reporting
+black>=23.7.0              # Code formatter
+flake8>=6.0.0              # Linter
+mypy>=1.4.0                # Static type checker
+pre-commit>=3.3.0          # Git pre-commit hooks
 
-# Configuration Management
+# =============================================================================
+# CONFIGURATION - Gestión de Configuración
+# =============================================================================
 pyyaml>=6.0
-python-dotenv>=0.20.0 # Environment variables
-configparser>=5.3.0
+python-dotenv>=1.0.0       # Environment variables
+configparser>=6.0.0
 
-# Logging and Monitoring
-loguru>=0.6.0         # Better logging
-structlog>=22.1.0     # Structured logging
+# =============================================================================
+# LOGGING & MONITORING
+# =============================================================================
+loguru>=0.7.0              # Advanced logging
+structlog>=23.1.0          # Structured logging
 
-# Cloud SDK (Optional - install based on provider)
-# Uncomment the ones you need:
-
-# AWS
-# boto3>=1.24.0
-# awscli>=1.25.0
-
-# Google Cloud
-# google-cloud-storage>=2.5.0
-# google-cloud-bigquery>=3.3.0
-
-# Azure
-# azure-storage-blob>=12.13.0
-# azure-identity>=1.10.0
-
-# Workflow Orchestration
-# apache-airflow>=2.4.0  # Install separately with constraints
-# prefect>=2.3.0         # Modern alternative
-
-# Streaming (Advanced - for Mid/Senior levels)
-# kafka-python>=2.0.0
-# confluent-kafka>=1.9.0
-
-# Big Data Processing (Advanced)
-# pyspark>=3.3.0        # Apache Spark
-
-# Machine Learning Integration (Senior level)
-# scikit-learn>=1.1.0
-# mlflow>=1.28.0
-
-# ===== GENERATIVE AI (GenAI Level) =====
-openai>=1.3.0                  # OpenAI API (GPT-4, Embeddings)
-anthropic>=0.7.0               # Claude API
-google-generativeai>=0.3.0     # Google Gemini
-langchain>=0.1.0               # LLM framework
-langgraph>=0.0.20              # Stateful agents
-langchain-openai>=0.0.5        # LangChain OpenAI integration
-chromadb>=0.4.18               # Vector database
-faiss-cpu>=1.7.4               # Facebook similarity search
-sentence-transformers>=2.2.0   # Local embeddings
-tiktoken>=0.5.0                # Token counting
-pyautogen>=0.2.0               # Multi-agent framework
-
-# Additional utilities
-tqdm>=4.64.0          # Progress bars
-click>=8.1.0          # CLI creation
+# =============================================================================
+# UTILITIES - Herramientas Generales
+# =============================================================================
+tqdm>=4.65.0               # Progress bars
+click>=8.1.0               # CLI creation
 python-dateutil>=2.8.0
-pytz>=2022.2          # Timezone handling
-cachetools>=5.2.0     # Caching utilities
+pytz>=2023.3               # Timezone handling
+cachetools>=5.3.0          # Caching utilities
 
-# Optional: For advanced text processing
-# nltk>=3.7
-# spacy>=3.4.0
+# =============================================================================
+# CLOUD SDKs (Nivel Mid/Senior)
+# =============================================================================
+# AWS
+boto3>=1.28.0              # AWS SDK for Python
+# awscli>=1.29.0           # AWS Command Line Interface
 
-# Optional: For image processing
-# pillow>=9.2.0
+# Google Cloud Platform (GCP)
+google-cloud-storage>=2.10.0     # GCS Python client
+google-cloud-bigquery>=3.11.0    # BigQuery Python client
+# google-cloud-dataflow>=0.8.0   # Dataflow SDK
 
-# Optional: For geospatial data
-# geopandas>=0.11.0
-# folium>=0.12.0
+# Microsoft Azure
+azure-storage-blob>=12.17.0          # Azure Blob Storage
+azure-storage-filedatalake>=12.12.0  # Azure Data Lake Gen2
+azure-identity>=1.13.0               # Azure authentication
+# azure-mgmt-datafactory>=4.0.0      # Data Factory management
 
-# Testing with databases
-# pytest-postgresql>=4.1.0
-# pytest-mongodb>=2.2.0
+# =============================================================================
+# ORCHESTRATION - Orquestación de Workflows (Nivel Mid)
+# =============================================================================
+# NOTA: Airflow debe instalarse por separado con constraints
+# apache-airflow==2.7.0    # Ver: https://airflow.apache.org/docs/apache-airflow/stable/installation/
+# prefect>=2.11.0          # Modern workflow orchestration
+# dagster>=1.4.0           # Data orchestrator
 
-# Documentation
-# sphinx>=5.1.0
-# mkdocs>=1.4.0
+# =============================================================================
+# STREAMING - Procesamiento de Datos en Tiempo Real (Nivel Mid/Senior)
+# =============================================================================
+kafka-python>=2.0.0        # Apache Kafka Python client
+# confluent-kafka>=2.2.0   # Confluent Kafka client (C-based, más rápido)
+
+# =============================================================================
+# BIG DATA - Procesamiento Distribuido (Nivel Senior)
+# =============================================================================
+# pyspark>=3.5.0           # Apache Spark Python API
+# delta-spark>=3.0.0       # Delta Lake for Spark
+# pyflink>=1.18.0          # Apache Flink Python API
+
+# =============================================================================
+# MACHINE LEARNING - Integración ML/AI (Nivel Senior)
+# =============================================================================
+scikit-learn>=1.3.0        # Machine learning library
+# mlflow>=2.5.0            # ML experiment tracking
+# feast>=0.34.0            # Feature store for ML
+
+# =============================================================================
+# GENERATIVE AI - IA Generativa (Nivel GenAI)
+# =============================================================================
+openai>=1.3.0                   # OpenAI API (GPT-4, GPT-4-turbo, embeddings)
+# anthropic>=0.7.0              # Claude API
+google-generativeai>=0.3.0      # Google Gemini API
+langchain>=0.1.0                # LLM application framework
+langchain-community>=0.0.10     # Community integrations
+langchain-openai>=0.0.5         # OpenAI integration
+langgraph>=0.0.20               # Stateful agent graphs
+chromadb>=0.4.18                # Vector database
+faiss-cpu>=1.7.4                # Facebook similarity search (CPU)
+sentence-transformers>=2.2.0    # Local embedding models
+tiktoken>=0.5.0                 # OpenAI token counting
+# pyautogen>=0.2.0              # Multi-agent framework
+
+# =============================================================================
+# WEB FRAMEWORKS - APIs y Servicios (Nivel Mid/Senior)
+# =============================================================================
+fastapi>=0.103.0           # Modern async web framework
+uvicorn>=0.23.0            # ASGI server
+pydantic>=2.0.0            # Data validation (requerido por FastAPI)
+# streamlit>=1.26.0        # Dashboard framework
+
+# =============================================================================
+# OPTIONAL DEPENDENCIES - Dependencias Opcionales
+# =============================================================================
+# Instalar solo si se necesitan:
+
+# Text Processing Avanzado
+# nltk>=3.8
+# spacy>=3.6.0
+
+# Image Processing
+# pillow>=10.0.0
+
+# Geospatial Data
+# geopandas>=0.13.0
+# folium>=0.14.0
+
+# Alternative DataFrame Libraries
+# polars>=0.19.0         # Fast DataFrame library (alternativa a pandas)
+# dask>=2023.7.0         # Parallel computing with pandas-like API
+
+# Observability & Monitoring
+# opentelemetry-api>=1.20.0
+# opentelemetry-sdk>=1.20.0
+# opentelemetry-instrumentation-sqlalchemy>=0.41b0
+
+# =============================================================================
+# NOTAS DE INSTALACIÓN
+# =============================================================================
+# 
+# 1. INSTALACIÓN BÁSICA (Junior):
+#    pip install -r requirements.txt
+#
+# 2. AIRFLOW (Mid):
+#    AIRFLOW_VERSION=2.7.0
+#    PYTHON_VERSION="$(python --version | cut -d " " -f 2 | cut -d "." -f 1-2)"
+#    CONSTRAINT_URL="https://raw.githubusercontent.com/apache/airflow/constraints-${AIRFLOW_VERSION}/constraints-${PYTHON_VERSION}.txt"
+#    pip install "apache-airflow==${AIRFLOW_VERSION}" --constraint "${CONSTRAINT_URL}"
+#
+# 3. PYSPARK (Senior):
+#    pip install pyspark==3.5.0 delta-spark==3.0.0
+#
+# 4. FEAST (Senior - Feature Store):
+#    pip install 'feast[aws,redis]'
+#
+# 5. GENAI COMPLETO:
+#    pip install openai langchain langchain-openai chromadb sentence-transformers
+#
+# =============================================================================
