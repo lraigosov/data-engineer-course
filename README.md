@@ -5,6 +5,65 @@
 ![License](https://img.shields.io/badge/License-MIT-green)
 ![Status](https://img.shields.io/badge/Status-Complete-brightgreen)
 
+## 📑 Tabla de Contenidos
+
+- [📘 Curso Modular de Ingeniería de Datos](#-curso-modular-de-ingeniería-de-datos)
+  - [📑 Tabla de Contenidos](#-tabla-de-contenidos)
+  - [🎯 Descripción](#-descripción)
+  - [⚠️ Importante - Sobre el Uso de Notebooks](#️-importante---sobre-el-uso-de-notebooks)
+  - [🏗️ Estructura del Curso](#️-estructura-del-curso)
+    - [📊 Nivel Junior - Fundamentos](#-nivel-junior---fundamentos)
+    - [🔧 Nivel Mid - Pipelines y Automatización](#-nivel-mid---pipelines-y-automatización)
+    - [🚀 Nivel Senior - Arquitectura y Gobernanza](#-nivel-senior---arquitectura-y-gobernanza)
+    - [🤖 Nivel GenAI - IA Generativa para Ingeniería de Datos](#-nivel-genai---ia-generativa-para-ingeniería-de-datos)
+  - [📁 Estructura del Proyecto](#-estructura-del-proyecto)
+  - [🚀 Inicio Rápido](#-inicio-rápido)
+    - [Prerrequisitos](#prerrequisitos)
+    - [Instalación](#instalación)
+  - [🧭 Guía de Uso](#-guía-de-uso)
+    - [Para Estudiantes](#para-estudiantes)
+    - [Para Instructores](#para-instructores)
+  - [📊 Estado del Proyecto](#-estado-del-proyecto)
+    - [📝 Notebooks Creados](#-notebooks-creados)
+      - [Nivel Junior (10/10 - ✅ 100% Completo)](#nivel-junior-1010----100-completo)
+      - [Nivel Mid (10/10 - ✅ 100% Completo)](#nivel-mid-1010----100-completo)
+      - [Nivel Senior (10/10 - ✅ 100% Completo)](#nivel-senior-1010----100-completo)
+      - [Nivel GenAI (10/10 - ✅ 100% Completo)](#nivel-genai-1010----100-completo)
+    - [📦 Datasets Disponibles](#-datasets-disponibles)
+    - [🔧 Scripts Implementados](#-scripts-implementados)
+    - [🧪 Tests Disponibles](#-tests-disponibles)
+    - [📚 Documentación](#-documentación)
+  - [📊 Progreso por Nivel](#-progreso-por-nivel)
+  - [🔧 Tecnologías y Librerías Incluidas](#-tecnologías-y-librerías-incluidas)
+    - [🐍 Core Python Libraries](#-core-python-libraries)
+    - [🗄️ Bases de Datos y Conectividad](#️-bases-de-datos-y-conectividad)
+    - [🔄 Orquestación y Workflows](#-orquestación-y-workflows)
+    - [☁️ Cloud y Almacenamiento](#️-cloud-y-almacenamiento)
+    - [🚀 Procesamiento Distribuido](#-procesamiento-distribuido)
+    - [📊 Calidad y Validación](#-calidad-y-validación)
+    - [🌐 APIs y Web](#-apis-y-web)
+    - [🤖 IA Generativa y ML](#-ia-generativa-y-ml)
+    - [📈 Visualización](#-visualización)
+    - [🧪 Testing y Calidad](#-testing-y-calidad)
+  - [🤝 Contribuciones](#-contribuciones)
+  - [📚 Recursos Adicionales](#-recursos-adicionales)
+  - [📄 Licencia](#-licencia)
+  - [👥 Autor Original](#-autor-original)
+  - [📞 Contacto y Soporte](#-contacto-y-soporte)
+  - [🙏 Agradecimientos](#-agradecimientos)
+  - [📝 Copyright y Reconocimiento](#-copyright-y-reconocimiento)
+
+---
+
+## 🎯 Descripción
+
+Curso completo y estructurado para formar **Ingenieros de Datos** desde nivel principiante hasta avanzado, organizado en cuatro niveles progresivos: **Junior**, **Mid**, **Senior** y **GenAI**. El curso combina teoría sólida con práctica intensiva mediante **Notebooks interactivos**, casos de uso reales y proyectos aplicados.
+
+**Autor Original:** LuisRai (Luis J. Raigoso V.)  
+**Repositorio:** https://github.com/lraigosov/data-engineer-course
+
+## ⚠️ Importante - Sobre el Uso de Notebooks
+
 > **⚠️ IMPORTANTE - SOBRE EL USO DE NOTEBOOKS:**
 > 
 > Este curso utiliza **Jupyter Notebooks con fines exclusivamente educativos** para facilitar el aprendizaje interactivo y la comprensión de cada concepto.
@@ -19,8 +78,6 @@
 > - ✅ Contenedores (Docker) y despliegues automatizados
 > 
 > Los notebooks son excelentes para **exploración, prototipado y enseñanza**, pero NO para sistemas en producción que requieren escalabilidad, mantenibilidad y robustez.
-
-## 🎯 Descripción
 
 Curso completo y estructurado para formar **Ingenieros de Datos** desde nivel principiante hasta avanzado, organizado en cuatro niveles progresivos: **Junior**, **Mid**, **Senior** y **GenAI**. El curso combina teoría sólida con práctica intensiva mediante **Notebooks interactivos**, casos de uso reales y proyectos aplicados.
 
