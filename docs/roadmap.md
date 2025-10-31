@@ -6,427 +6,435 @@
 
 ## 📊 Visión General
 
-Este roadmap detalla la progresión completa del curso, desde fundamentos hasta nivel Senior, incluyendo habilidades técnicas, proyectos prácticos y certificaciones por nivel.
+Este roadmap detalla la progresión completa del curso, desde fundamentos hasta nivel Senior + GenAI. El curso consta de **40 notebooks completados (100%)**, organizados en 4 niveles de especialización.
 
 ---
 
-## 🎯 Nivel Junior - Fundamentos (6-8 semanas)
+## 🎯 Estructura del Curso
 
-### **Semana 1-2: Introducción y Setup**
-#### Objetivos de Aprendizaje
-- [ ] Comprender qué es la Ingeniería de Datos
-- [ ] Configurar entorno de desarrollo
-- [ ] Dominar Jupyter Notebooks
-- [ ] Fundamentos de Git y GitHub
+| Nivel | Notebooks | Estado | Duración Estimada |
+|-------|-----------|--------|-------------------|
+| **Junior** | 10 | ✅ 100% | 8-10 semanas |
+| **Mid** | 10 | ✅ 100% | 10-12 semanas |
+| **Senior** | 10 | ✅ 100% | 10-12 semanas |
+| **GenAI** | 10 | ✅ 100% | 6-8 semanas |
+| **TOTAL** | **40** | **✅ 100%** | **34-42 semanas** |
 
-#### Notebooks y Contenido
-1. **01_introduccion_ingenieria_datos.ipynb**
+---
+
+## 📘 Nivel Junior - Fundamentos (8-10 semanas)
+
+### Notebooks Completados (10/10)
+### Notebooks Completados (10/10)
+
+1. **01_introduccion_ingenieria_datos.ipynb** ✅
    - Rol del Data Engineer vs Data Scientist vs Data Analyst
-   - Pipeline de datos conceptual
-   - Casos de uso reales
+   - Ecosistema de herramientas y tecnologías
+   - Primer pipeline conceptual
    
-2. **02_setup_entorno_desarrollo.ipynb**
-   - Configuración de Python y bibliotecas
-   - Virtual environments
-   - Jupyter Lab y extensiones
+2. **02_python_manipulacion_datos.ipynb** ✅
+   - Estructuras de datos en Python (listas, diccionarios, sets)
+   - Manejo de archivos CSV, JSON, XML
+   - Comprensiones y generadores
+   - Manejo de errores y excepciones
 
-3. **03_git_version_control.ipynb**
-   - Git básico para proyectos de datos
-   - Buenas prácticas de commits
-   - Colaboración en equipo
+3. **03_pandas_fundamentos.ipynb** ✅
+   - DataFrames y Series
+   - Lectura y escritura de múltiples formatos
+   - Indexación y selección de datos
+   - Operaciones básicas de manipulación
 
-#### Proyecto Práctico
-- **Setup Personal:** Configurar entorno completo de desarrollo
+4. **04_sql_basico.ipynb** ✅
+   - SELECT, WHERE, JOIN, GROUP BY
+   - Subconsultas y CTEs
+   - SQLite y conexión desde Python
+   - Modelado básico de datos
 
----
+5. **05_limpieza_datos.ipynb** ✅
+   - Detección y manejo de valores nulos
+   - Identificación de duplicados
+   - Conversión de tipos de datos
+   - Normalización y estandarización
 
-### **Semana 3-4: Python para Datos**
-#### Objetivos de Aprendizaje
-- [ ] Dominar estructuras de datos en Python
-- [ ] Manipulación de archivos y formatos
-- [ ] Manejo de errores y logging
-- [ ] Funciones y programación funcional
+6. **06_visualizacion_datos.ipynb** ✅
+   - Matplotlib para gráficos básicos
+   - Seaborn para visualizaciones estadísticas
+   - Tipos de gráficos apropiados por caso de uso
+   - Storytelling con datos
 
-#### Notebooks y Contenido
-4. **04_python_estructuras_datos.ipynb**
-   - Listas, diccionarios, sets, tuplas
-   - Comprehensions y generadores
-   - Manejo de memoria eficiente
+7. **07_git_control_versiones.ipynb** ✅
+   - Git básico: init, add, commit, push, pull
+   - Branches y merge workflows
+   - .gitignore para proyectos de datos
+   - Colaboración en equipo con GitHub
 
-5. **05_archivos_formatos_datos.ipynb**
-   - CSV, JSON, XML, Parquet
-   - Lectura/escritura optimizada
-   - Encoding y caracteres especiales
+8. **08_apis_web_scraping.ipynb** ✅
+   - Consumo de APIs REST con requests
+   - Autenticación y rate limiting
+   - Web scraping ético con BeautifulSoup
+   - Manejo de datos JSON y XML
 
-6. **06_funciones_modularidad.ipynb**
-   - Funciones puras y side effects
-   - Decoradores para logging
-   - Módulos y paquetes
+9. **09_proyecto_integrador_1.ipynb** ✅
+   - ETL completo: Extraer desde API
+   - Transformar con Pandas
+   - Cargar a SQLite
 
-#### Proyecto Práctico
-- **ETL Básico:** Extraer datos de CSV/JSON, transformar y guardar
+10. **10_proyecto_integrador_2.ipynb** ✅
+    - Pipeline end-to-end con múltiples fuentes
+    - Limpieza, validación y almacenamiento
+    - Visualizaciones y reporting
 
----
-
-### **Semana 5-6: Pandas y NumPy**
-#### Objetivos de Aprendizaje
-- [ ] Dominar DataFrames y Series
-- [ ] Operaciones de limpieza de datos
-- [ ] Agregaciones y transformaciones
-- [ ] Visualización básica
-
-#### Notebooks y Contenido
-7. **07_pandas_fundamentos.ipynb**
-   - DataFrames, Series, Index
-   - Lectura de múltiples fuentes
-   - Inspección y exploración
-
-8. **08_limpieza_transformacion_datos.ipynb**
-   - Valores nulos y duplicados
-   - Tipos de datos y conversiones
-   - Texto y expresiones regulares
-
-9. **09_agregaciones_visualizacion.ipynb**
-   - GroupBy y pivot tables
-   - Matplotlib y Seaborn básico
-   - Estadísticas descriptivas
-
-#### Proyecto Práctico
-- **Análisis Exploratorio:** Dataset real con limpieza completa
+### Objetivos de Aprendizaje Junior
+- ✅ Comprender el rol y ecosistema del Data Engineer
+- ✅ Dominar Python para manipulación de datos
+- ✅ Trabajar eficientemente con Pandas y NumPy
+- ✅ Fundamentos de SQL y bases de datos relacionales
+- ✅ Control de versiones con Git y GitHub
+- ✅ Construir pipelines ETL básicos
+- ✅ Visualización de datos para insights
 
 ---
 
-### **Semana 7-8: SQL y Bases de Datos**
-#### Objetivos de Aprendizaje
-- [ ] SQL básico e intermedio
-- [ ] Conexiones desde Python
-- [ ] Normalización de datos
-- [ ] Optimización básica
+## � Nivel Mid - Pipelines y Cloud (10-12 semanas)
 
-#### Notebooks y Contenido
-10. **10_sql_fundamentos.ipynb**
-    - SELECT, WHERE, JOIN, GROUP BY
-    - Subconsultas y CTEs
-    - Funciones de ventana básicas
+### Notebooks Completados (10/10)
 
-#### Proyecto Final Junior
-- **Mini Data Warehouse:** Diseñar esquema y poblar con datos reales
-- **Dashboard Básico:** Visualizaciones desde base de datos
+### Notebooks Completados (10/10)
 
----
+1. **01_apache_airflow_fundamentos.ipynb** ✅
+   - Conceptos de DAGs, Tasks, Operators
+   - Instalación y configuración local
+   - Primer DAG simple con dependencies
+   - Web UI y monitoreo
 
-## 🔧 Nivel Mid - Pipelines y Automatización (8-10 semanas)
+2. **02_streaming_kafka.ipynb** ✅
+   - Fundamentos de Kafka (topics, partitions, brokers)
+   - Productores y consumidores con Python
+   - Esquemas y serialización (Avro/JSON)
+   - Patrones de consumo y reintentos
 
-### **Semana 9-10: Arquitecturas de Datos**
-#### Objetivos de Aprendizaje
-- [ ] Patrones de arquitectura (Batch, Streaming, Lambda)
-- [ ] Data Lakes vs Data Warehouses
-- [ ] Principios de diseño escalable
-- [ ] Introducción a microservicios
+3. **03_cloud_aws.ipynb** ✅
+   - S3 como data lake
+   - AWS Glue (PySpark) para transformaciones
+   - Athena para consultas SQL sobre S3
+   - Lambda y EventBridge para triggers
 
-#### Notebooks y Contenido
-11. **11_arquitecturas_datos_modernas.ipynb**
-    - Batch vs Streaming processing
-    - Data Lake architecture
-    - CAP theorem aplicado
+3b. **03b_cloud_gcp.ipynb** ✅ 🆕
+   - Cloud Storage con lifecycle management
+   - BigQuery (serverless + optimización)
+   - Dataflow con Apache Beam
+   - Cloud Composer (Airflow managed)
+   - Cloud Functions event-driven
 
-12. **12_patrones_diseno_escalabilidad.ipynb**
-    - Horizontal vs vertical scaling
-    - Particionado y sharding
-    - Caching strategies
+3c. **03c_cloud_azure.ipynb** ✅ 🆕
+   - ADLS Gen2 (hierarchical namespaces + ACLs POSIX)
+   - Azure Synapse Analytics (dedicated + serverless SQL + Spark)
+   - Azure Data Factory (ETL/ELT orchestration)
+   - Azure Databricks (Delta Lake + Photon engine)
+   - Azure Functions (múltiples triggers)
 
-#### Proyecto Práctico
-- **Diseño de Arquitectura:** Propuesta para caso real de empresa
+4. **04_bases_datos_postgresql_mongodb.ipynb** ✅
+   - Conexión con SQLAlchemy (PostgreSQL) y PyMongo
+   - Modelado relacional vs documental
+   - Índices y optimización de queries
+   - Estrategias de carga (batch, upsert, idempotencia)
 
----
+5. **05_dataops_cicd.ipynb** ✅
+   - Pruebas de datos con Great Expectations y Pandera
+   - Pre-commit hooks (black, isort, flake8, pytest)
+   - GitHub Actions para CI/CD
+   - Data quality en pipelines
 
-### **Semana 11-12: APIs y Conectores**
-#### Objetivos de Aprendizaje
-- [ ] APIs REST y GraphQL
-- [ ] Autenticación y rate limiting
-- [ ] Webhooks y eventos
-- [ ] Protocolos de transferencia (SFTP, S3, etc.)
+6. **06_conectores_avanzados_rest_graphql_sftp.ipynb** ✅
+   - REST API con paginación, backoff y validación
+   - GraphQL para consultas flexibles
+   - SFTP con Paramiko (opcional)
+   - Patrones de retry y error handling
 
-#### Notebooks y Contenido
-13. **13_apis_rest_graphql.ipynb**
-    - Requests y autenticación
-    - Paginación y rate limiting
-    - Error handling y retries
+7. **07_optimizacion_sql_particionado.ipynb** ✅
+   - EXPLAIN/ANALYZE para análisis de queries
+   - Índices y selectividad
+   - Particionado (PostgreSQL y data lakes)
+   - Pruning y almacenamiento columnar
 
-14. **14_conectores_protocolos.ipynb**
-    - SFTP, FTP, S3 transfers
-    - Message queues (RabbitMQ, Kafka basics)
-    - Schedulers y cron jobs
+8. **08_fastapi_servicios_datos.ipynb** ✅
+   - FastAPI + Pydantic para CRUD de datos
+   - Endpoints RESTful para ventas
+   - Caché con Redis (opcional)
+   - Testing con requests
 
-#### Proyecto Práctico
-- **API Integration:** Pipeline desde múltiples APIs públicas
+9. **09_proyecto_integrador_1.ipynb** ✅
+   - Pipeline: API → validación → DB → Parquet
+   - Orquestación con Airflow (DAG completo)
+   - Alertas y monitoreo básico
 
----
+10. **10_proyecto_integrador_2.ipynb** ✅
+    - Pipeline streaming: Kafka → validación → enriquecimiento → Parquet
+    - Idempotencia con checkpoints
+    - Métricas y consumidor/productor con simulación
 
-### **Semana 13-14: Orquestación con Airflow**
-#### Objetivos de Aprendizaje
-- [ ] Conceptos de DAGs y tareas
-- [ ] Operators y sensores
-- [ ] Templating y variables
-- [ ] Monitoring y alertas
-
-#### Notebooks y Contenido
-15. **15_apache_airflow_fundamentos.ipynb**
-    - Instalación y configuración
-    - Primer DAG simple
-    - Web UI y CLI
-
-16. **16_airflow_operadores_sensores.ipynb**
-    - PythonOperator, BashOperator
-    - SqlOperator, EmailOperator
-    - Custom operators
-
-17. **17_airflow_templating_variables.ipynb**
-    - Jinja templating
-    - Variables y connections
-    - XCom para comunicación
-
-#### Proyecto Práctico
-- **Pipeline Automatizado:** ETL completo orquestado con Airflow
-
----
-
-### **Semana 15-16: Bases de Datos NoSQL**
-#### Objetivos de Aprendizaje
-- [ ] MongoDB, Cassandra, Redis
-- [ ] Modelado de datos NoSQL
-- [ ] Casos de uso específicos
-- [ ] Integración con pipelines
-
-#### Notebooks y Contenido
-18. **18_mongodb_documentos.ipynb**
-    - PyMongo y operaciones CRUD
-    - Agregación pipeline
-    - Índices y performance
-
-19. **19_redis_cache_sesiones.ipynb**
-    - Redis como cache
-    - Pub/Sub patterns
-    - Integración con aplicaciones
-
-#### Proyecto Práctico
-- **Sistema Híbrido:** Pipeline con SQL + NoSQL + Cache
-
----
-
-### **Semana 17-18: Cloud Computing Basics**
-#### Objetivos de Aprendizaje
-- [ ] AWS/GCP/Azure fundamentos
-- [ ] Storage services (S3, GCS, Blob)
-- [ ] Compute services básicos
-- [ ] Networking y security
-
-#### Notebooks y Contenido
-20. **20_aws_fundamentos_data_engineering.ipynb**
-    - S3, EC2, RDS basics
-    - IAM y security groups
-    - boto3 y automatización
-
-#### Proyecto Final Mid
-- **Pipeline Cloud:** Migrar proyecto local a cloud provider
-- **Monitoreo:** Implementar alertas y dashboards
+### Objetivos de Aprendizaje Mid
+- ✅ Orquestación de pipelines con Apache Airflow
+- ✅ Procesamiento de streaming con Kafka
+- ✅ **Cloud multi-proveedor (AWS, GCP, Azure) con notebooks prácticos**
+- ✅ Bases de datos relacionales (PostgreSQL) y NoSQL (MongoDB)
+- ✅ DataOps: testing, CI/CD, calidad de datos
+- ✅ Conectores avanzados (REST, GraphQL, SFTP)
+- ✅ Optimización de SQL y particionado
+- ✅ Servicios de datos con FastAPI
+- ✅ Proyectos integradores end-to-end
 
 ---
 
 ## 🚀 Nivel Senior - Arquitectura y Gobernanza (10-12 semanas)
 
-### **Semana 19-20: Data Lakehouse y Arquitecturas Modernas**
-#### Objetivos de Aprendizaje
-- [ ] Delta Lake, Apache Iceberg
-- [ ] Data Mesh concepts
-- [ ] Event-driven architectures
-- [ ] Real-time analytics
+### Notebooks Completados (10/10)
 
-#### Notebooks y Contenido
-21. **21_delta_lake_lakehouse.ipynb**
-    - ACID transactions en data lakes
-    - Time travel y versioning
-    - Schema evolution
+1. **01_data_governance_calidad.ipynb** ✅
+   - Framework DAMA-DMBOK
+   - Dimensiones de calidad de datos (exactitud, completitud, etc.)
+   - Data Lineage y trazabilidad
+   - Implementación de validaciones automáticas
 
-22. **22_data_mesh_descentralizado.ipynb**
-    - Domain-driven data architecture
-    - Data products
-    - Self-serve data infrastructure
+2. **02_lakehouse_delta_iceberg.ipynb** ✅
+   - Principios de Data Lakehouse
+   - Catálogos de datos (Hive, Glue, Unity)
+   - Práctica con Parquet particionado
+   - Referencia a Delta Lake e Iceberg
 
-#### Proyecto Práctico
-- **Modern Architecture:** Implementar lakehouse con governance
+3. **03_spark_streaming.ipynb** ✅
+   - Structured Streaming con PySpark
+   - Ventanas temporales y watermarks
+   - Estado y agregaciones incrementales
+   - Integración con catálogos
 
----
+4. **04_arquitecturas_modernas.ipynb** ✅
+   - Arquitectura Lambda (batch + stream)
+   - Arquitectura Kappa (solo stream)
+   - Arquitectura Delta (lakehouse)
+   - Data Mesh: paradigma organizacional
+   - Comparación y casos de uso
 
-### **Semana 21-22: Stream Processing**
-#### Objetivos de Aprendizaje
-- [ ] Apache Kafka deep dive
-- [ ] Stream processing con Apache Spark
-- [ ] Real-time analytics
-- [ ] Event sourcing patterns
+5. **05_ml_pipelines_feature_stores.ipynb** ✅
+   - Pipelines de datos para ML (ETL → features → training)
+   - Feature stores (Feast, Tecton)
+   - MLOps: versionado, reentrenamiento, monitoreo
+   - Integración con Airflow y Spark
 
-#### Notebooks y Contenido
-23. **23_apache_kafka_streaming.ipynb**
-    - Kafka producers y consumers
-    - Topics, partitions, replicas
-    - Kafka Connect y Stream
+6. **06_cost_optimization_finops.ipynb** ✅
+   - FinOps: visibilidad, accountability, optimización
+   - Estrategias de optimización (compute, storage, networking)
+   - Métricas clave (USD/TB, utilización)
+   - Alertas de presupuesto
 
-24. **24_spark_streaming_analytics.ipynb**
-    - Structured streaming
-    - Window operations
-    - Watermarks y late data
+7. **07_seguridad_compliance.ipynb** ✅
+   - IAM y principio de mínimo privilegio
+   - Cifrado at-rest e in-transit
+   - Compliance (GDPR, HIPAA, SOC2)
+   - Auditoría y logging de seguridad
 
-#### Proyecto Práctico
-- **Real-time Pipeline:** Sistema de streaming end-to-end
+8. **08_observabilidad_linaje.ipynb** ✅
+   - Logs estructurados y centralización
+   - Métricas (Prometheus, CloudWatch)
+   - Trazas distribuidas
+   - Linaje de datos (OpenLineage, DataHub)
+   - SLOs y dashboards
 
----
+9. **09_proyecto_integrador_1.ipynb** ✅
+   - Plataforma completa: governance + lakehouse + orquestación
+   - Streaming + batch con observabilidad
+   - Compliance y seguridad integrados
+   - Checklist de 18 componentes
 
-### **Semana 23-24: Data Governance y Calidad**
-#### Objetivos de Aprendizaje
-- [ ] DAMA-DMBOK framework
-- [ ] Data lineage y cataloging
-- [ ] Data quality frameworks
-- [ ] Compliance (GDPR, CCPA)
+10. **10_proyecto_integrador_2.ipynb** ✅
+    - Data Mesh multi-dominio con feature store
+    - Gobernanza federada y data products
+    - ML training con features cross-domain
+    - Arquitectura descentralizada
 
-#### Notebooks y Contenido
-25. **25_data_governance_catalogo.ipynb**
-    - Apache Atlas o equivalente
-    - Metadata management
-    - Data lineage tracking
-
-26. **26_calidad_validacion_datos.ipynb**
-    - Great Expectations
-    - Data profiling
-    - Automated testing
-
-#### Proyecto Práctico
-- **Governance Implementation:** Sistema completo de gobernanza
-
----
-
-### **Semana 25-26: Machine Learning Pipelines**
-#### Objetivos de Aprendizaje
-- [ ] MLOps fundamentals
-- [ ] Feature stores
-- [ ] Model serving
-- [ ] A/B testing for ML
-
-#### Notebooks y Contenido
-27. **27_mlops_feature_stores.ipynb**
-    - Feature engineering pipelines
-    - Model training automation
-    - Model deployment
-
-28. **28_ab_testing_ml_systems.ipynb**
-    - Experimental design
-    - Statistical significance
-    - Monitoring model performance
-
-#### Proyecto Práctico
-- **ML Pipeline:** End-to-end ML system con monitoreo
+### Objetivos de Aprendizaje Senior
+- ✅ Arquitecturas modernas (Lambda, Kappa, Delta, Data Mesh)
+- ✅ Data Governance completo (DAMA-DMBOK)
+- ✅ Data Lakehouse con Delta Lake e Iceberg
+- ✅ Stream processing avanzado con Spark Streaming
+- ✅ ML Pipelines y Feature Stores (MLOps)
+- ✅ Cost Optimization y FinOps en cloud
+- ✅ Seguridad y compliance (GDPR, HIPAA, SOC2)
+- ✅ Observabilidad y linaje de datos
+- ✅ Liderazgo técnico y diseño de plataformas enterprise
 
 ---
 
-### **Semana 27-28: Cost Optimization y FinOps**
-#### Objetivos de Aprendizaje
-- [ ] Cloud cost optimization
-- [ ] Resource rightsizing
-- [ ] Reserved instances vs spot
-- [ ] Cost allocation y chargeback
+## 🤖 Nivel GenAI - IA Generativa para Datos (6-8 semanas)
 
-#### Notebooks y Contenido
-29. **29_cloud_cost_optimization.ipynb**
-    - Cost monitoring tools
-    - Resource optimization
-    - Automated scaling
+### Notebooks Completados (10/10)
 
-30. **30_finops_data_engineering.ipynb**
-    - Cost allocation models
-    - ROI measurement
-    - Budget alerts y governance
+0. **00_comparacion_openai_gemini.ipynb** ✅
+   - Comparación detallada OpenAI vs Google Gemini
+   - Pricing, capacidades, límites
+   - Casos de uso específicos para datos
+   - Setup y configuración de ambas APIs
 
-#### Proyecto Final Senior
-- **Enterprise Architecture:** Diseño completo de plataforma de datos
-- **Business Case:** Justificación económica y técnica
+1. **01_fundamentos_llms_prompting.ipynb** ✅
+   - Fundamentos de Large Language Models
+   - Prompt engineering para tareas de datos
+   - Few-shot learning y chain-of-thought
+   - Best practices y limitaciones
 
----
+2. **02_generacion_sql_nl2sql.ipynb** ✅
+   - Text-to-SQL con LLMs
+   - Validación y sanitización de queries
+   - Manejo de esquemas complejos
+   - Errores comunes y correcciones
 
-## 📋 Evaluación y Certificación
+3. **03_generacion_codigo_etl.ipynb** ✅
+   - Generación automática de código ETL
+   - Templates y patrones reutilizables
+   - Validación de código generado
+   - De descripción en lenguaje natural a pipeline ejecutable
 
-### Nivel Junior
-- **Examen Teórico:** 40 preguntas (70% mínimo)
-- **Proyecto Práctico:** ETL pipeline documentado
-- **Presentación:** 10 minutos explicando solución
+4. **04_rag_documentacion_datos.ipynb** ✅
+   - Retrieval-Augmented Generation (RAG)
+   - Chatbot sobre documentación técnica
+   - Vector stores (ChromaDB, FAISS)
+   - Búsqueda semántica en catálogos de datos
 
-### Nivel Mid
-- **Examen Teórico:** 50 preguntas (75% mínimo)
-- **Proyecto Práctico:** Pipeline orquestado en cloud
-- **Code Review:** Revisión de código por pares
+5. **05_embeddings_similitud_datos.ipynb** ✅
+   - Embeddings para representación de datos
+   - Búsqueda por similitud semántica
+   - Deduplicación inteligente de registros
+   - Clustering y clasificación con embeddings
 
-### Nivel Senior
-- **Caso de Estudio:** Propuesta de arquitectura completa
-- **Presentación Ejecutiva:** 20 minutos ante panel
-- **Mentoría:** Guiar a estudiante Junior
+6. **06_agentes_automatizacion.ipynb** ✅
+   - LangGraph para agentes autónomos
+   - Agentes para automatización de tareas de datos
+   - Herramientas (tools) personalizadas
+   - Loops de decisión y memoria
 
----
+7. **07_calidad_validacion_llm.ipynb** ✅
+   - Validación de calidad de datos con LLMs
+   - Detección de anomalías semánticas
+   - Sugerencias de limpieza automática
+   - Integración con Great Expectations
 
-## 🎓 Habilidades por Nivel
+8. **08_sintesis_aumento_datos.ipynb** ✅
+   - Generación de datos sintéticos con LLMs
+   - Data augmentation para ML
+   - Preservación de distribuciones estadísticas
+   - Anonimización inteligente
 
-### Junior (6-8 meses experiencia)
-- Python intermedio
-- SQL básico-intermedio
-- Pandas, NumPy proficiency
-- Git/GitHub workflows
-- Jupyter notebooks
-- ETL concepts
-- Basic cloud awareness
+9. **09_proyecto_integrador_1.ipynb** ✅
+   - Chatbot empresarial sobre datos
+   - RAG + Text-to-SQL integrados
+   - Dashboard conversacional
+   - Interface con Gradio/Streamlit
 
-### Mid (1-3 años experiencia)
-- Pipeline orchestration
-- API integrations
-- NoSQL databases
-- Cloud services (AWS/GCP/Azure)
-- Performance optimization
-- DataOps practices
-- Monitoring y alerting
+10. **10_proyecto_integrador_2.ipynb** ✅
+    - Plataforma self-service con GenAI
+    - Generación automática de pipelines
+    - Documentación auto-generada
+    - Agentes de mantenimiento y alertas inteligentes
 
-### Senior (3+ años experiencia)
-- Architecture design
-- Data governance
-- Cost optimization
-- Team leadership
-- Strategic planning
-- Vendor evaluation
-- Cross-functional collaboration
-
----
-
-## 🛠️ Herramientas por Nivel
-
-### Nivel Junior
-- Python, Pandas, NumPy
-- Jupyter, VS Code
-- Git, GitHub
-- PostgreSQL
-- Basic Linux
-
-### Nivel Mid
-- Apache Airflow
-- Docker básico
-- AWS/GCP services
-- MongoDB, Redis
-- API development
-- CI/CD basics
-
-### Nivel Senior
-- Kubernetes
-- Terraform
-- Apache Spark
-- Kafka, streaming
-- Data governance tools
-- Business intelligence
-- Enterprise architecture
+### Objetivos de Aprendizaje GenAI
+- ✅ Fundamentos de LLMs y prompt engineering
+- ✅ Text-to-SQL para consultas en lenguaje natural
+- ✅ Generación automática de código ETL
+- ✅ RAG para chatbots sobre documentación
+- ✅ Embeddings para búsqueda semántica
+- ✅ Agentes autónomos con LangGraph
+- ✅ Validación de calidad con LLMs
+- ✅ Generación de datos sintéticos
+- ✅ Integración LLMs en pipelines de producción
+- ✅ Costos y optimización de APIs de IA
 
 ---
 
-Este roadmap es una guía flexible. Los tiempos pueden variar según experiencia previa y dedicación del estudiante. ¡El objetivo es formar Data Engineers completos y preparados para el mercado actual! 🚀
+## 📊 Resumen Ejecutivo del Curso
+
+### Estadísticas Generales
+- **Total notebooks**: 40 ✅ (100% completados)
+- **Líneas de código**: ~15,000+ (estimado)
+- **Tecnologías cubiertas**: 50+ herramientas y frameworks
+- **Proyectos integradores**: 8 (2 por nivel)
+- **Duración total**: 34-42 semanas (8-10 meses a tiempo parcial)
+
+### Cobertura Tecnológica
+
+**Lenguajes y Core:**
+- Python (avanzado), SQL (intermedio-avanzado), Bash
+
+**Data Processing:**
+- pandas, numpy, polars, dask, PySpark
+
+**Bases de Datos:**
+- PostgreSQL, SQLite, MongoDB, Redis, DuckDB
+
+**Orquestación:**
+- Apache Airflow, Prefect, Dagster
+
+**Streaming:**
+- Apache Kafka, Spark Streaming
+
+**Cloud (Multi-Cloud):**
+- **AWS**: S3, Glue, Athena, Lambda, EMR, Redshift
+- **GCP**: Cloud Storage, BigQuery, Dataflow, Composer, Cloud Functions
+- **Azure**: ADLS Gen2, Synapse, Data Factory, Databricks, Azure Functions
+
+**Data Quality:**
+- Great Expectations, Pandera, Pydantic
+
+**GenAI:**
+- OpenAI GPT-4/3.5, Google Gemini Pro/Flash
+- LangChain, LangGraph, ChromaDB
+- RAG, embeddings, agentes autónomos
+
+**MLOps:**
+- Feast, Tecton (feature stores), MLflow
+
+**Observability:**
+- Prometheus, OpenLineage, DataHub
+
+---
+
+## 🎓 Certificaciones Recomendadas Post-Curso
+
+### Cloud Certifications
+- **AWS**: AWS Certified Data Analytics - Specialty
+- **GCP**: Google Cloud Professional Data Engineer
+- **Azure**: Microsoft Certified: Azure Data Engineer Associate (DP-203)
+
+### Vendor-Specific
+- **Databricks**: Databricks Certified Data Engineer Associate/Professional
+- **Snowflake**: SnowPro Core Certification
+- **Apache**: Airflow Fundamentals (Astronomer)
+
+### General
+- **DAMA**: CDMP (Certified Data Management Professional)
+
+---
+
+## 🚀 Siguientes Pasos Después del Curso
+
+1. **Construir Portfolio**:
+   - Subir proyectos a GitHub con documentación
+   - Blog posts explicando soluciones técnicas
+   - Contribuir a proyectos open source
+
+2. **Networking**:
+   - Participar en meetups de data engineering
+   - Conferencias: Data Council, Kafka Summit, Spark Summit
+   - LinkedIn: conectar con profesionales del área
+
+3. **Especialización**:
+   - Elegir un nicho (streaming, ML, cloud, governance)
+   - Certificaciones específicas
+   - Profundizar en tecnologías clave
+
+4. **Buscar Empleo**:
+   - Actualizar CV con proyectos del curso
+   - Preparar para entrevistas técnicas
+   - Target empresas con stack similar al aprendido
+
+---
+
+Este roadmap refleja el estado **100% completo** del curso de Ingeniería de Datos. ¡Felicitaciones por embarcarte en este viaje! 🎉

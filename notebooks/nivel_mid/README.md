@@ -24,6 +24,20 @@ Este directorio contiene los notebooks del nivel Mid (Intermedio) del curso de I
    - Athena para consultas SQL sobre S3
    - Disparadores con Lambda/EventBridge
 
+3b. **03b_cloud_gcp.ipynb** 🆕
+   - Cloud Storage con lifecycle management
+   - BigQuery (serverless + optimización)
+   - Dataflow con Apache Beam
+   - Cloud Composer (Airflow managed)
+   - Cloud Functions event-driven
+
+3c. **03c_cloud_azure.ipynb** 🆕
+   - ADLS Gen2 (hierarchical namespaces + ACLs)
+   - Azure Synapse Analytics (dedicated + serverless)
+   - Azure Data Factory (ETL/ELT orchestration)
+   - Azure Databricks (Delta Lake + Photon)
+   - Azure Functions (triggers múltiples)
+
 4. **04_bases_datos_postgresql_mongodb.ipynb**
    - Conexión con SQLAlchemy (PostgreSQL) y PyMongo
    - Modelado, índices y agregaciones
@@ -63,11 +77,12 @@ Este directorio contiene los notebooks del nivel Mid (Intermedio) del curso de I
 
 - Arquitecturas de datos (Batch/Streaming)
 - Orquestación con Airflow
-- Bases de datos NoSQL
-- APIs y conectores avanzados
-- Cloud computing (AWS/GCP/Azure)
+- Bases de datos NoSQL (MongoDB, Redis)
+- APIs y conectores avanzados (REST, GraphQL, SFTP)
+- **Cloud computing multi-cloud (AWS, GCP, Azure)**
 - DataOps y CI/CD
-- Optimización de queries
+- Optimización de queries y particionado
+- Servicios de datos con FastAPI
 
 ## 📋 Prerrequisitos
 
@@ -97,9 +112,11 @@ Algunos notebooks pueden requerir Docker para ejercicios prácticos.
 
 ## 📝 Notas
 
-- Notebooks más complejos y extensos
+- Notebooks más complejos y extensos que nivel Junior
 - Tiempo estimado: 90-120 minutos por notebook
-- Algunos ejercicios requieren servicios externos
+- Algunos ejercicios requieren servicios externos (cuentas cloud opcionales)
+- **Cobertura completa multi-cloud**: AWS (práctico), GCP (práctico), Azure (práctico)
+- Los notebooks cloud incluyen tablas comparativas entre proveedores
 
 ---
 

@@ -108,21 +108,70 @@ y este proyecto adhiere a [Semantic Versioning](https://semver.org/lang/es/).
   - 04_sql_basico.ipynb (13 explicaciones)
   - 05_limpieza_datos.ipynb (1 explicación)
 
+## [1.2.0] - 2025-10-31
+
+### Añadido
+- 🔒 **Protección de autoría**: Requisito obligatorio de atribución a LuisRai en LICENSE
+- 📚 **Guía educativa**: Nuevo archivo `notebooks/⚠️_IMPORTANTE_LEER_PRIMERO.md` (300+ líneas)
+  - Cuándo usar notebooks vs código de producción
+  - Workflow de migración: exploración → prototipo → producción
+  - Ejemplos prácticos de conversión notebook → script → DAG
+- ⚠️ **Advertencias de producción**: Celdas de advertencia en notebooks de entrada:
+  - nivel_junior/01_introduccion_ingenieria_datos.ipynb
+  - nivel_mid/01_apache_airflow_fundamentos.ipynb
+  - nivel_senior/01_data_governance_calidad.ipynb
+  - nivel_genai/01_fundamentos_llms_prompting.ipynb
+- 📦 **Documentación de tecnologías**: Sección expandida en README.md (~40 librerías Python)
+  - Core: pandas, numpy, polars, dask
+  - Databases: sqlalchemy, psycopg2, pymongo, duckdb
+  - Orchestration: apache-airflow, prefect, dagster
+  - Distributed: pyspark, delta-spark, kafka-python
+  - GenAI: openai, langchain, langgraph, chromadb
+
+### Cambiado
+- 📝 README.md actualizado con advertencias prominentes y stack tecnológico completo
+- 📝 LICENSE con cláusula de atribución obligatoria al autor
+
+### Corregido
+- 🐛 Formato de markdown en nivel_mid/05_dataops_cicd.ipynb (espaciado en tablas y código)
+
+## [1.3.0] - 2025-10-31
+
+### Añadido
+- ☁️ **Cobertura multi-cloud completa**:
+  - `notebooks/nivel_mid/03b_cloud_gcp.ipynb` (~1,490 líneas)
+    * Cloud Storage con lifecycle policies
+    * BigQuery (serverless + optimización)
+    * Dataflow con Apache Beam
+    * Cloud Composer (Airflow managed)
+    * Cloud Functions event-driven
+  - `notebooks/nivel_mid/03c_cloud_azure.ipynb` (~1,505 líneas)
+    * ADLS Gen2 con hierarchical namespaces y ACLs
+    * Azure Synapse Analytics (dedicated + serverless)
+    * Azure Data Factory con pipelines visuales
+    * Azure Databricks con Delta Lake y Photon
+    * Azure Functions con triggers múltiples
+  - Tablas comparativas entre AWS/GCP/Azure en ambos notebooks
+  - Ejercicios prácticos y certificaciones (GCP Professional Data Engineer, Azure DP-203)
+
+### Cambiado
+- 📊 Cobertura cloud ampliada de 33% a 100% del mercado
+- 📚 +2,995 líneas de contenido educativo cloud práctico
+
 ---
 
 ## [Próximas Versiones]
 
-### [1.2.0] - En Progreso
-- 📚 Agregar celdas explicativas a notebooks restantes (enfoque híbrido)
-- 📚 Completar explicaciones en notebooks 06-10 nivel Junior
-- 🎥 Videos explicativos complementarios
-- 🐳 Docker compose para entorno completo
+### [1.4.0] - Planificado
+- 🐳 Docker compose para entorno completo (Airflow + Kafka + Spark + Postgres)
+- 📊 Dashboards de ejemplo con Streamlit/Gradio
+- 🔄 CI/CD con GitHub Actions completo (lint, test, deploy)
 
-### [1.3.0] - Planificado
-- 🌐 Plataforma web interactiva
-- 🏆 Sistema de evaluación y certificados
-- 💬 Foro de comunidad integrado
-- 🔄 CI/CD con GitHub Actions completo
+### [1.5.0] - Planificado
+- 🌐 Plataforma web interactiva para navegación de notebooks
+- 🏆 Sistema de evaluación automática y certificados
+- 💬 Ejercicios interactivos con autoevaluación
+- 🎥 Videos complementarios para conceptos complejos
 
 ---
 
