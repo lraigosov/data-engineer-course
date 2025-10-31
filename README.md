@@ -3,11 +3,29 @@
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
 ![Jupyter](https://img.shields.io/badge/Jupyter-Notebooks-orange)
 ![License](https://img.shields.io/badge/License-MIT-green)
-![Status](https://img.shields.io/badge/Status-En%20Desarrollo-yellow)
+![Status](https://img.shields.io/badge/Status-Complete-brightgreen)
+
+> **⚠️ IMPORTANTE - SOBRE EL USO DE NOTEBOOKS:**
+> 
+> Este curso utiliza **Jupyter Notebooks con fines exclusivamente educativos** para facilitar el aprendizaje interactivo y la comprensión de cada concepto.
+> 
+> **🚨 EN PRODUCCIÓN, EL USO DE NOTEBOOKS NO ES UNA PRÁCTICA RECOMENDABLE** 
+> 
+> En entornos de producción se deben utilizar:
+> - ✅ Scripts Python modulares (`.py`)
+> - ✅ Paquetes estructurados con proper testing
+> - ✅ CI/CD pipelines
+> - ✅ Orquestadores (Airflow, Prefect, Dagster)
+> - ✅ Contenedores (Docker) y despliegues automatizados
+> 
+> Los notebooks son excelentes para **exploración, prototipado y enseñanza**, pero NO para sistemas en producción que requieren escalabilidad, mantenibilidad y robustez.
 
 ## 🎯 Descripción
 
-Curso completo y estructurado para formar **Ingenieros de Datos** desde nivel principiante hasta avanzado, organizado en tres niveles progresivos: **Junior**, **Mid** y **Senior**. El curso combina teoría sólida con práctica intensiva mediante **Notebooks interactivos**, casos de uso reales y proyectos aplicados.
+Curso completo y estructurado para formar **Ingenieros de Datos** desde nivel principiante hasta avanzado, organizado en cuatro niveles progresivos: **Junior**, **Mid**, **Senior** y **GenAI**. El curso combina teoría sólida con práctica intensiva mediante **Notebooks interactivos**, casos de uso reales y proyectos aplicados.
+
+**Autor Original:** LuisRai (Luis J. Raigoso V.)  
+**Repositorio:** https://github.com/lraigosov/data-engineer-course
 
 ## 🏗️ Estructura del Curso
 
@@ -225,36 +243,73 @@ jupyter notebook
 | Senior   | 10-12 sem| 10        | 10 ✅       | 2 ✅      | ✅ Completo   |
 | GenAI    | 4-6 sem  | 10        | 10 ✅       | 2 ✅      | ✅ Completo   |
 
-## 🔧 Tecnologías Incluidas
+## 🔧 Tecnologías y Librerías Incluidas
 
-### Lenguajes y Frameworks
-- **Python** (Pandas, NumPy, SQLAlchemy)
-- **SQL** (PostgreSQL, BigQuery)
-- **YAML/JSON** para configuraciones
+### 🐍 Core Python Libraries
+- **pandas** - Manipulación y análisis de datos tabulares
+- **numpy** - Computación numérica y álgebra lineal
+- **polars** - DataFrame library de alto rendimiento (alternativa a Pandas)
+- **dask** - Procesamiento paralelo y distribuido de datos
 
-### Herramientas de Orquestación
-- **Apache Airflow**
-- **Prefect**
-- **Dagster** (nivel Senior)
+### 🗄️ Bases de Datos y Conectividad
+- **sqlalchemy** - ORM y toolkit SQL para Python
+- **psycopg2** - Driver PostgreSQL
+- **pymongo** - Driver MongoDB
+- **duckdb** - Base de datos analítica in-process
+- **pyarrow** - Interface Python para Apache Arrow (datos columnares)
 
-### Plataformas Cloud
-- **AWS** (S3, Redshift, Lambda, Glue)
-- **Google Cloud** (BigQuery, Cloud Functions, Dataflow)
-- **Azure** (Synapse, Data Factory, Functions)
+### 🔄 Orquestación y Workflows
+- **apache-airflow** - Plataforma de orquestación de workflows
+- **prefect** - Framework moderno de orquestación
+- **dagster** - Data orchestrator para ML, analytics, y ETL
 
-### IA Generativa
-- **OpenAI** (GPT-4, GPT-3.5, Embeddings)
-- **Anthropic Claude**
-- **Google Gemini**
-- **LangChain / LangGraph**
-- **ChromaDB / FAISS**
-- **AutoGen** (multi-agentes)
+### ☁️ Cloud y Almacenamiento
+- **boto3** - SDK de AWS para Python
+- **google-cloud-storage** - SDK de Google Cloud Storage
+- **azure-storage-blob** - SDK de Azure Blob Storage
+- **s3fs** - Interface filesystem para S3
 
-### Almacenamiento
-- **PostgreSQL, MySQL**
-- **MongoDB, Cassandra**
-- **Redis** (caché)
-- **Parquet, Delta Lake**
+### 🚀 Procesamiento Distribuido
+- **pyspark** - Interface Python para Apache Spark
+- **delta-spark** - Delta Lake para Spark
+- **kafka-python** - Cliente Kafka para Python
+
+### 📊 Calidad y Validación
+- **great-expectations** - Framework de validación de datos
+- **pandera** - Validación de DataFrames
+- **pydantic** - Validación de datos con type hints
+
+### 🌐 APIs y Web
+- **requests** - HTTP library
+- **fastapi** - Framework web moderno y rápido
+- **uvicorn** - ASGI server
+- **beautifulsoup4** - Web scraping
+- **httpx** - Cliente HTTP async
+
+### 🤖 IA Generativa y ML
+- **openai** - API de OpenAI (GPT-4, embeddings)
+- **langchain** - Framework para aplicaciones LLM
+- **langgraph** - Construcción de agentes con grafos
+- **chromadb** - Vector database
+- **sentence-transformers** - Modelos de embeddings
+
+### 📈 Visualización
+- **matplotlib** - Biblioteca de visualización base
+- **seaborn** - Visualizaciones estadísticas
+- **plotly** - Gráficos interactivos
+- **streamlit** - Framework para dashboards
+
+### 🧪 Testing y Calidad
+- **pytest** - Framework de testing
+- **pytest-cov** - Coverage para pytest
+- **black** - Code formatter
+- **flake8** - Linter
+- **mypy** - Type checker
+
+Para instalar todas las dependencias:
+```bash
+pip install -r requirements.txt
+```
 
 ## 🤝 Contribuciones
 
@@ -277,13 +332,33 @@ Consulta `CONTRIBUTING.md` para más detalles.
 
 ## 📄 Licencia
 
-Este proyecto está bajo la Licencia MIT. Ver `LICENSE` para más detalles.
+Este proyecto está bajo la Licencia MIT con requisito de atribución.
 
-## 👥 Autor
+**⚠️ RECONOCIMIENTO OBLIGATORIO DE CRÉDITOS:**
 
-**Luis J. Raigoso V. (LJRV)** - *Desarrollo y diseño del curso*
+Cualquier replicación, modificación, distribución o trabajo derivado de este material **DEBE** incluir atribución prominente al autor original:
+
+**"LuisRai" (Luis J. Raigoso V.)**
+
+La atribución debe aparecer en:
+- Documentación del proyecto
+- Headers de archivos de código
+- Interfaces de usuario
+- Materiales de presentación
+- Cualquier publicación derivada
+
+Ver archivo `LICENSE` para detalles completos.
+
+## 👥 Autor Original
+
+**LuisRai - Luis J. Raigoso V. (LJRV)**  
+*Creador y desarrollador del curso completo*
+
 - GitHub: [@lraigosov](https://github.com/lraigosov)
 - LinkedIn: [lraigosov](https://www.linkedin.com/in/lraigosov/)
+- Repositorio: https://github.com/lraigosov/data-engineer-course
+
+**Todos los notebooks, scripts y materiales fueron creados por LuisRai (2024-2025)**
 
 ## 📞 Contacto y Soporte
 
@@ -299,10 +374,16 @@ Este proyecto está bajo la Licencia MIT. Ver `LICENSE` para más detalles.
 - Estudiantes y beta testers del curso
 - Comunidad de Ingeniería de Datos
 
-## 📝 Copyright
+## 📝 Copyright y Reconocimiento
 
-© 2024-2025 LJRV - Luis J. Raigoso V. (lraigosov)
+© 2024-2025 **LuisRai** - Luis J. Raigoso V. (lraigosov)
+
+**Este material educativo fue creado íntegramente por LuisRai.**
+
+Cualquier uso, modificación o redistribución debe mantener visible el reconocimiento al autor original.
 
 ---
 
 ⭐ **¡Dale una estrella si este proyecto te ayuda!** ⭐
+
+**Si utilizas este material, por favor reconoce a LuisRai como autor original.**
