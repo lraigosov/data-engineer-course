@@ -16,6 +16,7 @@
     - [🔧 Nivel Mid - Pipelines y Automatización](#-nivel-mid---pipelines-y-automatización)
     - [🚀 Nivel Senior - Arquitectura y Gobernanza](#-nivel-senior---arquitectura-y-gobernanza)
     - [🤖 Nivel GenAI - IA Generativa para Ingeniería de Datos](#-nivel-genai---ia-generativa-para-ingeniería-de-datos)
+    - [📈 Negocio LATAM - Estrategia y Sectores](#-negocio-latam---estrategia-y-sectores)
   - [📁 Estructura del Proyecto](#-estructura-del-proyecto)
   - [🚀 Inicio Rápido](#-inicio-rápido)
     - [Prerrequisitos](#prerrequisitos)
@@ -118,6 +119,15 @@ Curso completo y estructurado para formar **Ingenieros de Datos** desde nivel pr
 - Validación y calidad de datos con LLMs
 - Generación de datos sintéticos
 
+### 📈 Negocio LATAM - Estrategia y Sectores
+**Módulo final del curso:** Aplicación práctica de la Ingeniería de Datos como habilitador estratégico del negocio en contexto latinoamericano.
+
+- **Marco conceptual:** Rol de la ingeniería de datos en la estrategia corporativa (confiabilidad, escalabilidad, gobernanza, velocidad de decisión)
+- **Casos de uso por sector:** Retail, Finanzas/Banca, Salud/Farmacéutico, Energía/Recursos, Telecomunicaciones, Manufactura, Logística, Agro/Alimentos, Sector Público
+- **Puente estrategia ↔ datos:** OKR de negocio → KPI técnico → Capacidades de ingeniería → Decisión → Impacto económico
+- **Ejercicios prácticos:** Pipelines de calidad, feature engineering, validación, interoperabilidad y optimización con métricas de negocio
+- **Contratos de datos:** SLOs, propietarios, datasets, decisiones y ROI medible por sector
+
 ## 📁 Estructura del Proyecto
 
 ```
@@ -131,7 +141,8 @@ curso_ingenieria_datos/
 │   ├── nivel_junior/         # 10 notebooks fundamentales
 │   ├── nivel_mid/           # 10 notebooks intermedios
 │   ├── nivel_senior/        # 10 notebooks avanzados
-│   └── nivel_genai/         # 10 notebooks de IA Generativa
+│   ├── nivel_genai/         # 10 notebooks de IA Generativa
+│   └── negocios_latam/      # 11 notebooks: estrategia + 10 sectores
 │
 ├── datasets/                 # Datos para ejercicios
 │   ├── raw/                 # Datos sin procesar
@@ -141,7 +152,7 @@ curso_ingenieria_datos/
 ├── scripts/                  # Scripts auxiliares
 │   ├── etl/                 # Scripts ETL
 │   ├── transformaciones/    # Transformaciones de datos
-│   └── pipelines/           # Pipelines completos
+│   └── pipelines/           # Pipelines completos (retail, manufactura)
 │
 ├── tests/                    # Pruebas automatizadas
 │   ├── unit/                # Pruebas unitarias
