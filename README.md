@@ -275,6 +275,19 @@ jupyter notebook
 - ✅ `09_proyecto_integrador_1.ipynb` - Chatbot de consulta con RAG
 - ✅ `10_proyecto_integrador_2.ipynb` - Plataforma self-service con GenAI
 
+#### Negocio LATAM (11/11 - ✅ 100% Completo)
+- ✅ `01_estrategia_datos_latam.ipynb` - Marco conceptual estratégico
+- ✅ `02_retail_consumo_masivo.ipynb` - OSA, calidad datos, $1.8M ahorro
+- ✅ `03_finanzas_banca.ipynb` - Fraude streaming, $3.2M ahorro
+- ✅ `04_salud_farmaceutico.ipynb` - Interoperabilidad HL7/FHIR, $800k ahorro
+- ✅ `05_energia_recursos_naturales.ipynb` - IoT predictivo, OEE, $4.5M ahorro
+- ✅ `06_telecomunicaciones.ipynb` - Churn reduction, $6.8M LTV salvado
+- ✅ `07_industria_manufactura.ipynb` - SPC + visión, $6.2M ahorro
+- ✅ `08_logistica_transporte.ipynb` - Routing optimization, $3.2M ahorro
+- ✅ `09_agro_alimentos.ipynb` - Agricultura precisión, yield +12.5%
+- ✅ `10_sector_publico_gobierno.ipynb` - Interoperabilidad gobierno, -65% tiempo
+- ✅ `README.md` - Documentación del módulo
+
 ### 📦 Datasets Disponibles
 - ✅ `productos.csv` - 30 productos con categorías y precios
 - ✅ `clientes.csv` - 30 registros de clientes
@@ -286,10 +299,15 @@ jupyter notebook
 - ✅ `scripts/transformaciones/data_transformations.py` - Utilidades de transformación
 - ✅ `scripts/pipelines/data_ingestion_pipeline.py` - Pipeline de ingesta multi-fuente
 - ✅ `scripts/pipelines/batch_processing.py` - Procesamiento en lotes con paralelización
+- ✅ `scripts/pipelines/retail/pipeline_retail.py` - Pipeline KPIs retail (OSA) con CLI
+- ✅ `scripts/pipelines/manufactura/pipeline_manufactura.py` - Pipeline OEE manufactura con CLI
 
 ### 🧪 Tests Disponibles
 - ✅ `tests/unit/test_transformations.py` - 16 pruebas unitarias
+- ✅ `tests/unit/test_pipeline_retail.py` - Tests pipeline retail
+- ✅ `tests/unit/test_pipeline_manufactura.py` - Tests pipeline manufactura
 - ✅ `tests/integration/test_pipelines.py` - 15+ pruebas de integración
+- ✅ **Suite completa: 18 tests passing**
 
 ### 📚 Documentación
 - ✅ Guía de instalación completa
@@ -298,16 +316,17 @@ jupyter notebook
 - ✅ Guía de contribución
 - ✅ Changelog
 
-**Progreso General: ✅ 100% completo** (40/40 notebooks + infraestructura completa)
+**Progreso General: ✅ 100% completo** (51/51 notebooks + infraestructura completa)
 
 ## 📊 Progreso por Nivel
 
-| Nivel    | Duración | Notebooks | Completados | Proyectos | Estado        |
-|----------|----------|-----------|-------------|-----------|---------------|
-| Junior   | 6-8 sem  | 10        | 10 ✅       | 2 ✅      | ✅ Completo   |
-| Mid      | 8-10 sem | 10        | 10 ✅       | 2 ✅      | ✅ Completo   |
-| Senior   | 10-12 sem| 10        | 10 ✅       | 2 ✅      | ✅ Completo   |
-| GenAI    | 4-6 sem  | 10        | 10 ✅       | 2 ✅      | ✅ Completo   |
+| Nivel         | Duración  | Notebooks | Completados | Proyectos | Estado      |
+|---------------|-----------|-----------|-------------|-----------|-------------|
+| Junior        | 6-8 sem   | 10        | 10 ✅       | 2 ✅      | ✅ Completo |
+| Mid           | 8-10 sem  | 10        | 10 ✅       | 2 ✅      | ✅ Completo |
+| Senior        | 10-12 sem | 10        | 10 ✅       | 2 ✅      | ✅ Completo |
+| GenAI         | 4-6 sem   | 10        | 10 ✅       | 2 ✅      | ✅ Completo |
+| Negocio LATAM | 4-6 sem   | 11        | 11 ✅       | 0         | ✅ Completo |
 
 ## 🔧 Tecnologías y Librerías Incluidas
 

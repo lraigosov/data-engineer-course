@@ -12,13 +12,14 @@ Este roadmap detalla la progresión completa del curso, desde fundamentos hasta 
 
 ## 🎯 Estructura del Curso
 
-| Nivel | Notebooks | Estado | Duración Estimada |
-|-------|-----------|--------|-------------------|
-| **Junior** | 10 | ✅ 100% | 8-10 semanas |
-| **Mid** | 10 | ✅ 100% | 10-12 semanas |
-| **Senior** | 10 | ✅ 100% | 10-12 semanas |
-| **GenAI** | 10 | ✅ 100% | 6-8 semanas |
-| **TOTAL** | **40** | **✅ 100%** | **34-42 semanas** |
+| Nivel         | Notebooks | Estado | Duración Estimada |
+|---------------|-----------|--------|-------------------|
+| **Junior**    | 10        | ✅ 100% | 8-10 semanas      |
+| **Mid**       | 10        | ✅ 100% | 10-12 semanas     |
+| **Senior**    | 10        | ✅ 100% | 10-12 semanas     |
+| **GenAI**     | 10        | ✅ 100% | 6-8 semanas       |
+| **Negocio LATAM** | 11    | ✅ 100% | 4-6 semanas       |
+| **TOTAL**     | **51**    | **✅ 100%** | **42-52 semanas** |
 
 ---
 
@@ -347,16 +348,102 @@ Este roadmap detalla la progresión completa del curso, desde fundamentos hasta 
 - ✅ Integración LLMs en pipelines de producción
 - ✅ Costos y optimización de APIs de IA
 
+
+---
+
+## 📈 Nivel Negocio LATAM - Estrategia y Sectores (4-6 semanas)
+
+### Notebooks Completados (11/11)
+
+1. **01_estrategia_datos_latam.ipynb** ✅
+   - Marco conceptual: Rol de ingeniería de datos en estrategia corporativa
+   - Características estructurales (confiabilidad, escalabilidad, gobernanza)
+   - Ventajas estratégicas (velocidad decisión, calidad, reducción riesgo)
+   - Resultados medibles (ciclos reporte, detección temprana, auditorías)
+   - Diagnóstico de madurez con visualización
+
+2. **02_retail_consumo_masivo.ipynb** ✅
+   - Caso de uso: Pipeline OSA (On-Shelf Availability)
+   - Impacto: 92%→96% OSA, detección 48h→2h, ahorro $1.8M/año
+   - Ejercicio: Validación calidad datos (nulls, negativos, cobertura)
+   - Visualización Plotly: Top 5 SKUs
+
+3. **03_finanzas_banca.ipynb** ✅
+   - Caso de uso: Detección fraude streaming (Kafka + feature store)
+   - Impacto: 24h→<200ms latencia, 65%→89% detección, ahorro $3.2M/año
+   - Ejercicio: Feature engineering para riesgo (horas nocturnas, montos altos)
+   - Visualización: Distribución ECL (Expected Credit Loss)
+
+4. **04_salud_farmaceutico.ipynb** ✅
+   - Caso de uso: Interoperabilidad HL7/FHIR en emergencias
+   - Impacto: 45→28 min espera, ahorro $800k/año
+   - Ejercicio: Pseudonymización con SHA256 para PII
+   - Visualización: Box plot tiempos espera
+
+5. **05_energia_recursos_naturales.ipynb** ✅
+   - Caso de uso: Mantenimiento predictivo IoT/SCADA
+   - Impacto: OEE 0.82→0.91, stops 12→2/año, ahorro $4.5M/año
+   - Ejercicio: Detección anomalías con rolling mean + 3-sigma
+   - Visualización: Time-series con umbral temperatura
+
+6. **06_telecomunicaciones.ipynb** ✅
+   - Caso de uso: Churn reduction con CDR streaming
+   - Impacto: Churn 2.5%→1.4%, reacción 24h→15min, LTV salvado $6.8M
+   - Ejercicio: Pipeline features churn (uso bajo, quejas altas)
+   - Visualización: Probabilidad churn por segmento
+
+7. **07_industria_manufactura.ipynb** ✅
+   - Caso de uso: SPC (Statistical Process Control) + visión computacional
+   - Impacto: Scrap 8%→2.8%, OEE 0.78→0.88, ahorro $6.2M/año
+   - Ejercicio: Cálculo límites control 3-sigma, detección out-of-control
+   - Visualización: OEE por turno
+
+8. **08_logistica_transporte.ipynb** ✅
+   - Caso de uso: Routing optimization con telemetría GPS
+   - Impacto: OTIF 88%→96.5%, costo $45→$38/entrega, ahorro $3.2M/año
+   - Ejercicio: Cálculo OTIF y costos logísticos
+   - Visualización: Histograma ETA vs real
+
+9. **09_agro_alimentos.ipynb** ✅
+   - Caso de uso: Agricultura precisión con satélite Sentinel-2
+   - Impacto: Yield 3.2→3.6 ton/ha (+12.5%), pérdidas 15%→7%, revenue +$1.8M
+   - Ejercicio: Análisis variabilidad intra-lote con NDVI
+   - Visualización: Scatter NDVI vs yield con OLS
+
+10. **10_sector_publico_gobierno.ipynb** ✅
+    - Caso de uso: Interoperabilidad entre sistemas gubernamentales
+    - Impacto: Trámites 12→4.2 días, satisfacción 38%→74%, fraude +120% detección
+    - Ejercicio: Simulación interoperabilidad padron/impuestos
+    - Visualización: Box plot tiempos procedimientos
+
+### Componentes Técnicos
+- ✅ **Pipelines de producción**:
+  - `scripts/pipelines/retail/pipeline_retail.py` (CLI con Click)
+  - `scripts/pipelines/manufactura/pipeline_manufactura.py` (CLI con Click)
+- ✅ **Tests unitarios**: 18 passing (`test_pipeline_retail.py`, `test_pipeline_manufactura.py`)
+- ✅ **Visualizaciones**: 10 gráficos interactivos Plotly
+- ✅ **Contratos de datos**: SLOs, ownership, ROI por sector
+
+### Objetivos de Aprendizaje Negocio LATAM
+- ✅ Comprender rol estratégico de ingeniería de datos en corporaciones
+- ✅ Mapear OKRs de negocio a capacidades técnicas de datos
+- ✅ Cuantificar impacto económico de decisiones de ingeniería
+- ✅ Diseñar pipelines con métricas de negocio (OSA, OEE, OTIF, churn)
+- ✅ Implementar validación y calidad alineada a SLOs
+- ✅ Aplicar patrones sectoriales (retail, finanzas, salud, energía, telco, manufactura, logística, agro, gobierno)
+- ✅ Construir contratos de datos con propietarios y responsabilidades
+- ✅ Traducir requerimientos de negocio a arquitecturas de datos
+
 ---
 
 ## 📊 Resumen Ejecutivo del Curso
 
 ### Estadísticas Generales
-- **Total notebooks**: 40 ✅ (100% completados)
-- **Líneas de código**: ~15,000+ (estimado)
+- **Total notebooks**: 51 ✅ (100% completados)
+- **Líneas de código**: ~20,000+ (estimado)
 - **Tecnologías cubiertas**: 50+ herramientas y frameworks
-- **Proyectos integradores**: 8 (2 por nivel)
-- **Duración total**: 34-42 semanas (8-10 meses a tiempo parcial)
+- **Proyectos integradores**: 8 (2 por nivel técnico)
+- **Duración total**: 42-52 semanas (10-13 meses a tiempo parcial)
 
 ### Cobertura Tecnológica
 

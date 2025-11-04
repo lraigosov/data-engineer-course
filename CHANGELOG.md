@@ -199,9 +199,44 @@ y este proyecto adhiere a [Semantic Versioning](https://semver.org/lang/es/).
 
 ---
 
+## [1.5.0] - 2025-11-04
+
+### Añadido
+- 📈 **Módulo Negocio LATAM** (11 notebooks completos):
+  - `01_estrategia_datos_latam.ipynb` - Marco conceptual: rol de ingeniería de datos en estrategia corporativa
+  - `02_retail_consumo_masivo.ipynb` - Caso OSA, validación calidad, impacto $1.8M
+  - `03_finanzas_banca.ipynb` - Detección fraude streaming, feature engineering, ahorro $3.2M
+  - `04_salud_farmaceutico.ipynb` - Interoperabilidad HL7/FHIR, pseudonymización, $800k ahorro
+  - `05_energia_recursos_naturales.ipynb` - IoT/SCADA predictivo, OEE 0.82→0.91, $4.5M ahorro
+  - `06_telecomunicaciones.ipynb` - Churn reduction, CDR/GIS, feature store, $6.8M LTV salvado
+  - `07_industria_manufactura.ipynb` - SPC + visión, scrap 8%→2.8%, $6.2M ahorro
+  - `08_logistica_transporte.ipynb` - Routing optimization, OTIF 88%→96.5%, $3.2M ahorro
+  - `09_agro_alimentos.ipynb` - Agricultura precisión, NDVI, yield +12.5%, $1.8M revenue
+  - `10_sector_publico_gobierno.ipynb` - Interoperabilidad, tramites 12→4.2 días, satisfaction 38%→74%
+  
+- 🔧 **Pipelines de producción**:
+  - `scripts/pipelines/retail/pipeline_retail.py` - KPIs OSA con CLI (Click)
+  - `scripts/pipelines/manufactura/pipeline_manufactura.py` - OEE por turno con CLI (Click)
+  
+- ✅ **Tests unitarios**:
+  - `tests/unit/test_pipeline_retail.py` (funciones puras, sin IO)
+  - `tests/unit/test_pipeline_manufactura.py` (funciones puras, sin IO)
+  - 18 tests passing en suite completa
+  
+- 📊 **Contenido educativo**:
+  - 10 visualizaciones interactivas Plotly
+  - 9 casos de uso sectoriales con impacto cuantificado ($1.8M-$6.8M)
+  - 9 ejercicios prácticos: validación calidad, feature engineering, pseudonymización, anomalías (3-sigma), SPC, OTIF, NDVI, interoperabilidad
+  - Secciones "Puente Estrategia ↔ Ingeniería de Datos" con mapeo OKR→KPI→Capacidades→Decisión→Impacto
+  - Contratos de datos con SLOs, ownership y ROI por sector
+
+### Cambiado
+- 📝 README.md actualizado con módulo Negocio LATAM como sección final del curso
+- 📝 Estructura del proyecto actualizada con `negocios_latam/` y pipelines nuevos
+
 ## [Próximas Versiones]
 
-### [1.5.0] - Planificado
+### [1.6.0] - Planificado
 - 🐳 Docker compose para entorno completo (Airflow + Kafka + Spark + Postgres)
 - 📊 Dashboards de ejemplo con Streamlit/Gradio
 - 🔄 CI/CD con GitHub Actions completo (lint, test, deploy)
