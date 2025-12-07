@@ -30,6 +30,7 @@
       - [Nivel Mid (10/10 - ✅ 100% Completo)](#nivel-mid-1010----100-completo)
       - [Nivel Senior (10/10 - ✅ 100% Completo)](#nivel-senior-1010----100-completo)
       - [Nivel GenAI (10/10 - ✅ 100% Completo)](#nivel-genai-1010----100-completo)
+      - [Negocio LATAM (11/11 - ✅ 100% Completo)](#negocio-latam-1111----100-completo)
     - [📦 Datasets Disponibles](#-datasets-disponibles)
     - [🔧 Scripts Implementados](#-scripts-implementados)
     - [🧪 Tests Disponibles](#-tests-disponibles)
@@ -83,50 +84,69 @@ Curso completo y estructurado para formar **Ingenieros de Datos** desde nivel pr
 ## 🏗️ Estructura del Curso
 
 ### 📊 Nivel Junior - Fundamentos
-- Introducción a la Ingeniería de Datos
-- Programación en Python para datos
-- Manipulación de datos (Pandas, NumPy)
-- SQL básico y intermedio
-- Formatos de datos (CSV, JSON, Parquet)
-- ETL básico con Python
-- Control de versiones con Git
+- [Introducción a la Ingeniería de Datos](notebooks/nivel_junior/01_introduccion_ingenieria_datos.ipynb)
+- [Programación en Python para datos](notebooks/nivel_junior/02_python_manipulacion_datos.ipynb)
+- [Manipulación de datos (Pandas, NumPy)](notebooks/nivel_junior/03_pandas_fundamentos.ipynb)
+- [SQL básico e intermedio](notebooks/nivel_junior/04_sql_basico.ipynb)
+- [Limpieza y preparación de datos](notebooks/nivel_junior/05_limpieza_datos.ipynb)
+- [Visualización de datos](notebooks/nivel_junior/06_visualizacion_datos.ipynb)
+- [Control de versiones con Git](notebooks/nivel_junior/07_git_control_versiones.ipynb)
+- [APIs y Web Scraping](notebooks/nivel_junior/08_apis_web_scraping.ipynb)
+- [Proyecto Integrador 1](notebooks/nivel_junior/09_proyecto_integrador_1.ipynb)
+- [Proyecto Integrador 2](notebooks/nivel_junior/10_proyecto_integrador_2.ipynb)
 
 ### 🔧 Nivel Mid - Pipelines y Automatización
-- Arquitecturas de datos (Batch/Streaming)
-- Orquestación con Airflow/Prefect
-- Bases de datos relacionales y NoSQL
-- APIs y conectores de datos
-- DataOps y CI/CD para datos
-- Introducción a Cloud Computing
-- Optimización de consultas
+- [Apache Airflow: Fundamentos](notebooks/nivel_mid/01_apache_airflow_fundamentos.ipynb)
+- [Streaming con Kafka](notebooks/nivel_mid/02_streaming_kafka.ipynb)
+- [Cloud AWS: S3, Glue, Athena, Lambda](notebooks/nivel_mid/03_cloud_aws.ipynb)
+- [Cloud GCP: BigQuery, Dataflow, Cloud Run](notebooks/nivel_mid/03b_cloud_gcp.ipynb)
+- [Cloud Azure: ADLS, Synapse, ADF, Databricks](notebooks/nivel_mid/03c_cloud_azure.ipynb)
+- [Bases de datos: PostgreSQL y MongoDB](notebooks/nivel_mid/04_bases_datos_postgresql_mongodb.ipynb)
+- [DataOps y CI/CD](notebooks/nivel_mid/05_dataops_cicd.ipynb)
+- [Conectores avanzados: REST, GraphQL, SFTP](notebooks/nivel_mid/06_conectores_avanzados_rest_graphql_sftp.ipynb)
+- [Optimización SQL y particionado](notebooks/nivel_mid/07_optimizacion_sql_particionado.ipynb)
+- [FastAPI y servicios de datos](notebooks/nivel_mid/08_fastapi_servicios_datos.ipynb)
+- [Proyecto Integrador 1](notebooks/nivel_mid/09_proyecto_integrador_1.ipynb)
+- [Proyecto Integrador 2](notebooks/nivel_mid/10_proyecto_integrador_2.ipynb)
 
 ### 🚀 Nivel Senior - Arquitectura y Gobernanza
-- Arquitecturas modernas (Data Lakehouse, Data Mesh)
-- Gobernanza y calidad de datos
-- Optimización de costos (FinOps)
-- ML Pipelines y Feature Stores
-- Seguridad y cumplimiento
-- Observabilidad y monitoreo
-- Liderazgo técnico
+- [Gobernanza y calidad de datos](notebooks/nivel_senior/01_data_governance_calidad.ipynb)
+- [Data Lakehouse: Delta y Iceberg](notebooks/nivel_senior/02_lakehouse_delta_iceberg.ipynb)
+- [Spark Streaming avanzado](notebooks/nivel_senior/03_spark_streaming.ipynb)
+- [Arquitecturas modernas: Lambda, Kappa, Data Mesh](notebooks/nivel_senior/04_arquitecturas_modernas.ipynb)
+- [ML Pipelines y Feature Stores](notebooks/nivel_senior/05_ml_pipelines_feature_stores.ipynb)
+- [FinOps y optimización de costos cloud](notebooks/nivel_senior/06_cost_optimization_finops.ipynb)
+- [Seguridad y Compliance](notebooks/nivel_senior/07_seguridad_compliance.ipynb)
+- [Observabilidad y linaje de datos](notebooks/nivel_senior/08_observabilidad_linaje.ipynb)
+- [Proyecto Integrador 1](notebooks/nivel_senior/09_proyecto_integrador_1.ipynb)
+- [Proyecto Integrador 2](notebooks/nivel_senior/10_proyecto_integrador_2.ipynb)
 
 ### 🤖 Nivel GenAI - IA Generativa para Ingeniería de Datos
-- LLMs y prompting para ingeniería de datos
-- NL2SQL y consultas en lenguaje natural
-- Generación automática de código ETL
-- RAG para documentación técnica
-- Embeddings y búsqueda semántica
-- Agentes autónomos para automatización
-- Validación y calidad de datos con LLMs
-- Generación de datos sintéticos
+- [Comparación OpenAI vs Google Gemini](notebooks/nivel_genai/00_comparacion_openai_gemini.ipynb)
+- [Fundamentos de LLMs y prompting](notebooks/nivel_genai/01_fundamentos_llms_prompting.ipynb)
+- [Generación SQL: NL2SQL](notebooks/nivel_genai/02_generacion_sql_nl2sql.ipynb)
+- [Generación automática de código ETL](notebooks/nivel_genai/03_generacion_codigo_etl.ipynb)
+- [RAG: Documentación de datos](notebooks/nivel_genai/04_rag_documentacion_datos.ipynb)
+- [Embeddings y similitud de datos](notebooks/nivel_genai/05_embeddings_similitud_datos.ipynb)
+- [Agentes y automatización](notebooks/nivel_genai/06_agentes_automatizacion.ipynb)
+- [Validación y calidad con LLMs](notebooks/nivel_genai/07_calidad_validacion_llm.ipynb)
+- [Síntesis y aumento de datos](notebooks/nivel_genai/08_sintesis_aumento_datos.ipynb)
+- [Proyecto Integrador 1: Chatbot con RAG](notebooks/nivel_genai/09_proyecto_integrador_1.ipynb)
+- [Proyecto Integrador 2: Plataforma self-service con GenAI](notebooks/nivel_genai/10_proyecto_integrador_2.ipynb)
 
 ### 📈 Negocio LATAM - Estrategia y Sectores
 **Módulo final del curso:** Aplicación práctica de la Ingeniería de Datos como habilitador estratégico del negocio en contexto latinoamericano.
 
-- **Marco conceptual:** Rol de la ingeniería de datos en la estrategia corporativa (confiabilidad, escalabilidad, gobernanza, velocidad de decisión)
-- **Casos de uso por sector:** Retail, Finanzas/Banca, Salud/Farmacéutico, Energía/Recursos, Telecomunicaciones, Manufactura, Logística, Agro/Alimentos, Sector Público
-- **Puente estrategia ↔ datos:** OKR de negocio → KPI técnico → Capacidades de ingeniería → Decisión → Impacto económico
-- **Ejercicios prácticos:** Pipelines de calidad, feature engineering, validación, interoperabilidad y optimización con métricas de negocio
-- **Contratos de datos:** SLOs, propietarios, datasets, decisiones y ROI medible por sector
+- [Estrategia de datos LATAM: Marco conceptual](notebooks/negocios_latam/01_estrategia_datos_latam.ipynb)
+- [Retail y consumo masivo](notebooks/negocios_latam/02_retail_consumo_masivo.ipynb)
+- [Finanzas y banca](notebooks/negocios_latam/03_finanzas_banca.ipynb)
+- [Salud y farmacéutico](notebooks/negocios_latam/04_salud_farmaceutico.ipynb)
+- [Energía y recursos naturales](notebooks/negocios_latam/05_energia_recursos_naturales.ipynb)
+- [Telecomunicaciones](notebooks/negocios_latam/06_telecomunicaciones.ipynb)
+- [Industria y manufactura](notebooks/negocios_latam/07_industria_manufactura.ipynb)
+- [Logística y transporte](notebooks/negocios_latam/08_logistica_transporte.ipynb)
+- [Agro y alimentos](notebooks/negocios_latam/09_agro_alimentos.ipynb)
+- [Sector público y gobierno](notebooks/negocios_latam/10_sector_publico_gobierno.ipynb)
 
 ## 📁 Estructura del Proyecto
 

@@ -1,0 +1,33 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nombre": "Ana García",
+      "email": "ana@example.com",
+      "edad": 28,
+      "skills": [
+        "Python",
+        "SQL",
+        "Pandas"
+      ],
+      "activo": true
+    },
+    {
+      "id": 2,
+      "nombre": "Carlos López",
+      "email": "carlos@example.com",
+      "edad": 32,
+      "skills": [
+        "Java",
+        "SQL",
+        "Spark"
+      ],
+      "activo": false
+    }
+  ],
+  "metadata": {
+    "fecha_creacion": "2025-12-07T16:54:25.071466",
+    "version": "1.0",
+    "total_usuarios": 2
+  }
+}

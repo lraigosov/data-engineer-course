@@ -1,0 +1,4 @@
+
+total 100
+validos 100
+invalidos 0

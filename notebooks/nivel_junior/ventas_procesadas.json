@@ -1,0 +1,46 @@
+[
+  {
+    "fecha":1705276800000,
+    "producto":"Laptop",
+    "cantidad":2,
+    "precio_unitario":1200.0,
+    "cliente":"Juan Pérez",
+    "total":2400.0,
+    "mes":1,
+    "dia_semana":0,
+    "categoria":"Electrónica Mayor"
+  },
+  {
+    "fecha":1705363200000,
+    "producto":"Mouse",
+    "cantidad":5,
+    "precio_unitario":25.0,
+    "cliente":"María García",
+    "total":125.0,
+    "mes":1,
+    "dia_semana":1,
+    "categoria":"Accesorios"
+  },
+  {
+    "fecha":1705363200000,
+    "producto":"Teclado",
+    "cantidad":3,
+    "precio_unitario":80.0,
+    "cliente":"Carlos López",
+    "total":240.0,
+    "mes":1,
+    "dia_semana":1,
+    "categoria":"Accesorios"
+  },
+  {
+    "fecha":1705449600000,
+    "producto":"Monitor",
+    "cantidad":1,
+    "precio_unitario":350.0,
+    "cliente":"Ana Martínez",
+    "total":350.0,
+    "mes":1,
+    "dia_semana":2,
+    "categoria":"Electrónica Mayor"
+  }
+]

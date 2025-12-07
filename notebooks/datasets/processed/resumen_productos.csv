@@ -1,0 +1,4 @@
+producto,cantidad_total,monto_total,num_transacciones,precio_promedio
+Laptop,3,3000,2,1000.0
+Mouse,10,250,1,25.0
+Monitor,3,900,1,300.0
