@@ -1,0 +1,46 @@
+{
+  "transacciones": [
+    {
+      "id": 1,
+      "fecha": "2024-01-01",
+      "producto": "Laptop",
+      "cantidad": 2,
+      "precio": 1000
+    },
+    {
+      "id": 2,
+      "fecha": "2024-01-02",
+      "producto": "Mouse",
+      "cantidad": 10,
+      "precio": 25
+    },
+    {
+      "id": 3,
+      "fecha": "2024-01-03",
+      "producto": "Laptop",
+      "cantidad": 1,
+      "precio": 1000
+    },
+    {
+      "id": 4,
+      "fecha": "2024-01-04",
+      "producto": "Teclado",
+      "cantidad": -1,
+      "precio": 75
+    },
+    {
+      "id": 5,
+      "fecha": "2024-01-05",
+      "producto": "Monitor",
+      "cantidad": 3,
+      "precio": 300
+    },
+    {
+      "id": 6,
+      "fecha": "invalida",
+      "producto": "Mouse",
+      "cantidad": 5,
+      "precio": 25
+    }
+  ]
+}
