@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "valor": 386,
+    "fecha": "2025-12-07",
+    "valor_duplicado": 772,
+    "categoria": "Bajo"
+  },
+  {
+    "id": 2,
+    "valor": 195,
+    "fecha": "2025-12-07",
+    "valor_duplicado": 390,
+    "categoria": "Bajo"
+  },
+  {
+    "id": 3,
+    "valor": 436,
+    "fecha": "2025-12-07",
+    "valor_duplicado": 872,
+    "categoria": "Bajo"
+  },
+  {
+    "id": 4,
+    "valor": 918,
+    "fecha": "2025-12-07",
+    "valor_duplicado": 1836,
+    "categoria": "Alto"
+  },
+  {
+    "id": 5,
+    "valor": 980,
+    "fecha": "2025-12-07",
+    "valor_duplicado": 1960,
+    "categoria": "Alto"
+  },
+  {
+    "id": 6,
+    "valor": 455,
+    "fecha": "2025-12-07",
+    "valor_duplicado": 910,
+    "categoria": "Bajo"
+  },
+  {
+    "id": 7,
+    "valor": 356,
+    "fecha": "2025-12-07",
+    "valor_duplicado": 712,
+    "categoria": "Bajo"
+  },
+  {
+    "id": 8,
+    "valor": 117,
+    "fecha": "2025-12-07",
+    "valor_duplicado": 234,
+    "categoria": "Bajo"
+  },
+  {
+    "id": 9,
+    "valor": 635,
+    "fecha": "2025-12-07",
+    "valor_duplicado": 1270,
+    "categoria": "Alto"
+  },
+  {
+    "id": 10,
+    "valor": 186,
+    "fecha": "2025-12-07",
+    "valor_duplicado": 372,
+    "categoria": "Bajo"
+  }
+]
