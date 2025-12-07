@@ -1,5 +1,6 @@
 # Python
 __pycache__/
+**/__pycache__/
 *.py[cod]
 *$py.class
 *.so
@@ -29,6 +30,7 @@ env/
 ENV/
 env.bak/
 venv.bak/
+.venv/
 
 # Jupyter Notebook
 .ipynb_checkpoints
@@ -71,6 +73,15 @@ datasets/external/*.json
 !datasets/raw/.gitkeep
 !datasets/processed/.gitkeep
 !datasets/external/.gitkeep
+
+# Artefactos de pipelines (ingesta, salidas, checkpoints)
+ingest/incoming/
+ingest/processed/
+ingest/checkpoints/
+outputs/
+outputs/**
+parquet/
+logs/proyecto_integrador_2.log
 
 # Databases
 *.db
