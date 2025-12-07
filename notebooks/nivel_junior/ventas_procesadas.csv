@@ -1,0 +1,5 @@
+fecha,producto,cantidad,precio_unitario,cliente,total,mes,dia_semana,categoria
+2024-01-15,Laptop,2,1200.0,Juan Pérez,2400.0,1,0,Electrónica Mayor
+2024-01-16,Mouse,5,25.0,María García,125.0,1,1,Accesorios
+2024-01-16,Teclado,3,80.0,Carlos López,240.0,1,1,Accesorios
+2024-01-17,Monitor,1,350.0,Ana Martínez,350.0,1,2,Electrónica Mayor
