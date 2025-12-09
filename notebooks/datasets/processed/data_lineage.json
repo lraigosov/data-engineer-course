@@ -1,0 +1,77 @@
+{
+  "eventos": [
+    {
+      "timestamp": "2025-12-09T12:43:37.343285",
+      "origen": "raw_ventas_csv",
+      "destino": "stage_ventas",
+      "transformacion": "extraccion",
+      "metadata": {
+        "filas": 1000,
+        "columnas": 9
+      },
+      "id": "caa7d6b3"
+    },
+    {
+      "timestamp": "2025-12-09T12:43:37.348799",
+      "origen": "stage_ventas",
+      "destino": "clean_ventas",
+      "transformacion": "limpieza",
+      "metadata": {
+        "nulos_removidos": 50,
+        "duplicados_removidos": 10
+      },
+      "id": "dd9b6c04"
+    },
+    {
+      "timestamp": "2025-12-09T12:43:37.348799",
+      "origen": "clean_ventas",
+      "destino": "agg_ventas_diarias",
+      "transformacion": "agregacion",
+      "metadata": {
+        "grupo_por": "fecha",
+        "metricas": [
+          "sum",
+          "count",
+          "avg"
+        ]
+      },
+      "id": "45c0688b"
+    },
+    {
+      "timestamp": "2025-12-09T12:43:37.348799",
+      "origen": "clean_ventas",
+      "destino": "ventas_por_producto",
+      "transformacion": "agregacion",
+      "metadata": {
+        "grupo_por": "producto"
+      },
+      "id": "d7092d23"
+    },
+    {
+      "timestamp": "2025-12-09T12:43:37.348799",
+      "origen": "agg_ventas_diarias",
+      "destino": "dashboard_ventas",
+      "transformacion": "visualizacion",
+      "metadata": {
+        "tipo": "time_series"
+      },
+      "id": "c91a194e"
+    }
+  ],
+  "grafo": {
+    "raw_ventas_csv": [
+      "stage_ventas"
+    ],
+    "stage_ventas": [
+      "clean_ventas"
+    ],
+    "clean_ventas": [
+      "agg_ventas_diarias",
+      "ventas_por_producto"
+    ],
+    "agg_ventas_diarias": [
+      "dashboard_ventas"
+    ]
+  },
+  "generado": "2025-12-09T12:43:37.350796"
+}
