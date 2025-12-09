@@ -1,0 +1,71 @@
+{
+  "dataset": "ventas_ecommerce",
+  "fecha_evaluacion": "2025-12-09T12:43:28.436167",
+  "total_registros": 1010,
+  "total_columnas": 9,
+  "dimensiones": {
+    "completitud": {
+      "score": 94.33,
+      "valores_nulos": 515,
+      "por_columna": {
+        "venta_id": 100.0,
+        "cliente_id": 100.0,
+        "producto": 79.31,
+        "cantidad": 100.0,
+        "precio_unitario": 95.05,
+        "descuento_pct": 100.0,
+        "total": 100.0,
+        "fecha_venta": 100.0,
+        "estado": 74.65
+      },
+      "aprobado": false
+    },
+    "unicidad": {
+      "score": 99.01,
+      "duplicados": 10,
+      "columnas_evaluadas": [
+        "venta_id"
+      ],
+      "aprobado": false
+    },
+    "validez": {
+      "score": 89.01,
+      "violaciones": {
+        "cantidad_positiva": 111,
+        "descuento_valido": 0,
+        "total_positivo": 0
+      },
+      "reglas_evaluadas": [
+        "cantidad_positiva",
+        "descuento_valido",
+        "total_positivo"
+      ],
+      "aprobado": false
+    },
+    "consistencia": {
+      "score": 31.98,
+      "inconsistencias": {
+        "total_coherente": 687
+      },
+      "aprobado": false
+    },
+    "exactitud": {
+      "score": 100.0,
+      "fuera_de_rango": 0,
+      "columna_evaluada": "precio_unitario",
+      "rango_esperado": [
+        5,
+        3000
+      ],
+      "aprobado": true
+    },
+    "actualidad": {
+      "score": 0.0,
+      "registros_antiguos": 1010,
+      "dias_maximos": 365,
+      "aprobado": false
+    }
+  },
+  "score_general": 69.06,
+  "nivel_calidad": "❌ CRÍTICO"
+}
