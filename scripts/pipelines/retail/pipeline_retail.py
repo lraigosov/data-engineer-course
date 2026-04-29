@@ -17,7 +17,7 @@ def compute_kpis(ventas: pd.DataFrame, productos: pd.DataFrame) -> dict[str, pd.
     df['ingreso'] = df.get('precio', 0) * qty
 
     mensual = (
-        df.groupby(pd.Grouper(key='fecha', freq='M'))['ingreso'].sum().reset_index()
+        df.groupby(pd.Grouper(key='fecha', freq='ME'))['ingreso'].sum().reset_index()
         if 'fecha' in df.columns else pd.DataFrame({'fecha': [], 'ingreso': []})
     )
     if 'producto_id' in df.columns:

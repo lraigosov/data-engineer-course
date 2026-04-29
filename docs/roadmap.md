@@ -6,7 +6,7 @@
 
 ## 📊 Visión General
 
-Este roadmap detalla la progresión completa del curso, desde fundamentos hasta nivel Senior + GenAI. El curso consta de **40 notebooks completados (100%)**, organizados en 4 niveles de especialización.
+Este roadmap detalla la progresión completa del curso, desde fundamentos hasta nivel Senior, GenAI y aplicación sectorial en LATAM. El curso consta de **53 notebooks completados (100%)**, organizados en 5 módulos de especialización.
 
 ---
 
@@ -15,17 +15,16 @@ Este roadmap detalla la progresión completa del curso, desde fundamentos hasta 
 | Nivel         | Notebooks | Estado | Duración Estimada |
 |---------------|-----------|--------|-------------------|
 | **Junior**    | 10        | ✅ 100% | 8-10 semanas      |
-| **Mid**       | 10        | ✅ 100% | 10-12 semanas     |
+| **Mid**       | 12        | ✅ 100% | 10-12 semanas     |
 | **Senior**    | 10        | ✅ 100% | 10-12 semanas     |
-| **GenAI**     | 10        | ✅ 100% | 6-8 semanas       |
-| **Negocio LATAM** | 11    | ✅ 100% | 4-6 semanas       |
-| **TOTAL**     | **51**    | **✅ 100%** | **42-52 semanas** |
+| **GenAI**     | 11        | ✅ 100% | 6-8 semanas       |
+| **Negocio LATAM** | 10    | ✅ 100% | 4-6 semanas       |
+| **TOTAL**     | **53**    | **✅ 100%** | **42-52 semanas** |
 
 ---
 
 ## 📘 Nivel Junior - Fundamentos (8-10 semanas)
 
-### Notebooks Completados (10/10)
 ### Notebooks Completados (10/10)
 
 1. **01_introduccion_ingenieria_datos.ipynb** ✅
@@ -96,11 +95,9 @@ Este roadmap detalla la progresión completa del curso, desde fundamentos hasta 
 
 ---
 
-## � Nivel Mid - Pipelines y Cloud (10-12 semanas)
+## 🔧 Nivel Mid - Pipelines y Cloud (10-12 semanas)
 
-### Notebooks Completados (10/10)
-
-### Notebooks Completados (10/10)
+### Notebooks Completados (12/12)
 
 1. **01_apache_airflow_fundamentos.ipynb** ✅
    - Conceptos de DAGs, Tasks, Operators
@@ -268,7 +265,7 @@ Este roadmap detalla la progresión completa del curso, desde fundamentos hasta 
 
 ## 🤖 Nivel GenAI - IA Generativa para Datos (6-8 semanas)
 
-### Notebooks Completados (10/10)
+### Notebooks Completados (11/11)
 
 0. **00_comparacion_openai_gemini.ipynb** ✅
    - Comparación detallada OpenAI vs Google Gemini
@@ -353,7 +350,7 @@ Este roadmap detalla la progresión completa del curso, desde fundamentos hasta 
 
 ## 📈 Nivel Negocio LATAM - Estrategia y Sectores (4-6 semanas)
 
-### Notebooks Completados (11/11)
+### Notebooks Completados (10/10)
 
 1. **01_estrategia_datos_latam.ipynb** ✅
    - Marco conceptual: Rol de ingeniería de datos en estrategia corporativa
@@ -439,7 +436,7 @@ Este roadmap detalla la progresión completa del curso, desde fundamentos hasta 
 ## 📊 Resumen Ejecutivo del Curso
 
 ### Estadísticas Generales
-- **Total notebooks**: 51 ✅ (100% completados)
+- **Total notebooks**: 53 ✅ (100% completados)
 - **Líneas de código**: ~20,000+ (estimado)
 - **Tecnologías cubiertas**: 50+ herramientas y frameworks
 - **Proyectos integradores**: 8 (2 por nivel técnico)
@@ -471,7 +468,7 @@ Este roadmap detalla la progresión completa del curso, desde fundamentos hasta 
 - Great Expectations, Pandera, Pydantic
 
 **GenAI:**
-- OpenAI GPT-4/3.5, Google Gemini Pro/Flash
+- OpenAI, Google Gemini, Anthropic Claude y modelos locales
 - LangChain, LangGraph, ChromaDB
 - RAG, embeddings, agentes autónomos
 

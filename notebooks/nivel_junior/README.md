@@ -17,7 +17,35 @@ Este directorio contiene los notebooks del nivel Junior del curso de Ingeniería
    - Comprensiones y generadores
    - Manejo de errores
 
-*Más notebooks en desarrollo...*
+3. **03_pandas_fundamentos.ipynb**
+   - Series, DataFrames, filtros y agregaciones
+   - Manejo de nulos, duplicados y joins
+
+4. **04_sql_basico.ipynb**
+   - SQL con SQLite
+   - Consultas, filtros, agregaciones y joins
+
+5. **05_limpieza_datos.ipynb**
+   - Perfilado, calidad y preparación de datos
+   - Estrategias para nulos, outliers y formatos
+
+6. **06_visualizacion_datos.ipynb**
+   - Visualización exploratoria y ejecutiva
+   - Matplotlib, Seaborn y Plotly
+
+7. **07_git_control_versiones.ipynb**
+   - Flujo Git local, ramas y commits
+   - Buenas prácticas para proyectos de datos
+
+8. **08_apis_web_scraping.ipynb**
+   - Consumo de APIs REST
+   - Paginación, retries y scraping básico
+
+9. **09_proyecto_integrador_1.ipynb**
+   - Pipeline ETL completo con validaciones
+
+10. **10_proyecto_integrador_2.ipynb**
+    - Pipeline near real-time con scheduling y alertas
 
 ## 🎯 Objetivos del Nivel Junior
 

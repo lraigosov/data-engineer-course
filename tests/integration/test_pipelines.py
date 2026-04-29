@@ -169,10 +169,10 @@ class TestDataIngestionPipeline:
         })
         
         # Imputar valores numéricos con media
-        df['value'].fillna(df['value'].mean(), inplace=True)
+        df['value'] = df['value'].fillna(df['value'].mean())
         
         # Imputar valores categóricos con 'Unknown'
-        df['category'].fillna('Unknown', inplace=True)
+        df['category'] = df['category'].fillna('Unknown')
         
         # Validar
         assert not df['value'].isnull().any()
@@ -349,7 +349,7 @@ class TestETLPipelineIntegration:
         df_clean = df_with_issues.copy()
         df_clean = df_clean[df_clean['id'].notna()]
         df_clean = df_clean[df_clean['value'] >= 0]
-        df_clean['category'].fillna('Unknown', inplace=True)
+        df_clean['category'] = df_clean['category'].fillna('Unknown')
         
         # Validar limpieza
         assert not df_clean['id'].isnull().any()

@@ -3,7 +3,7 @@
 > **Nota**: Este documento representa el diseño original y la propuesta inicial del proyecto. El curso ha sido completamente implementado siguiendo estas directrices.
 
 **Autor**: Luis J. Raigoso V. (LJRV) - [@lraigosov](https://github.com/lraigosov)  
-**Estado**: ✅ Implementado completamente (40/40 notebooks)
+**Estado**: ✅ Implementado completamente y ampliado (53/53 notebooks)
 
 ---
 

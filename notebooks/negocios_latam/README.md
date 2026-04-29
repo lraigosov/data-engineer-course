@@ -6,6 +6,8 @@
 
 Esta sección conecta la ingeniería de datos con la estrategia de negocio en sectores clave de Latinoamérica. Cada notebook demuestra cómo las decisiones técnicas de ingeniería de datos impactan directamente en resultados de negocio cuantificables.
 
+> Nota de rigor: las cifras de ahorro, mejora porcentual y ROI incluidas en los casos sectoriales son escenarios didácticos para practicar priorización y diseño de capacidades de datos. En una propuesta real deben reemplazarse por métricas internas, supuestos documentados y fuentes verificables.
+
 ## 🎯 Objetivos de Aprendizaje
 
 - **Alinear estrategia de datos con OKRs corporativos** en contexto LATAM
@@ -15,7 +17,7 @@ Esta sección conecta la ingeniería de datos con la estrategia de negocio en se
 - **Implementar contratos de datos** con SLOs, ownership y responsabilidades
 - **Aplicar patrones sectoriales** con restricciones reales (regulación, costos, latencia)
 
-## 📚 Notebooks Completados (11/11)
+## 📚 Notebooks Completados (10/10)
 
 ### 01. Marco Estratégico
 **`01_estrategia_datos_latam.ipynb`** ✅
@@ -31,7 +33,7 @@ Esta sección conecta la ingeniería de datos con la estrategia de negocio en se
 ### 02. Retail y Consumo Masivo
 **`02_retail_consumo_masivo.ipynb`** ✅
 - **Caso de uso:** Pipeline OSA (On-Shelf Availability) con POS/ERP/WMS
-- **Impacto cuantificado:** OSA 92%→96%, detección 48h→2h, ahorro **$1.8M/año**
+- **Escenario de impacto:** OSA 92%→96%, detección 48h→2h, ahorro **$1.8M/año**
 - **Ejercicio práctico:** Validación calidad datos (nulls, negativos, cobertura)
 - **Visualización:** Top 5 SKUs con mayor revenue
 - **Tecnologías:** Pandas, SQL, data quality validation
@@ -39,7 +41,7 @@ Esta sección conecta la ingeniería de datos con la estrategia de negocio en se
 ### 03. Finanzas y Banca
 **`03_finanzas_banca.ipynb`** ✅
 - **Caso de uso:** Detección fraude streaming con Kafka + feature store
-- **Impacto cuantificado:** Latencia 24h→<200ms, detección 65%→89%, ahorro **$3.2M/año**
+- **Escenario de impacto:** Latencia 24h→<200ms, detección 65%→89%, ahorro **$3.2M/año**
 - **Ejercicio práctico:** Feature engineering para riesgo (horas nocturnas, montos altos, dispositivos nuevos)
 - **Visualización:** Distribución ECL (Expected Credit Loss)
 - **Tecnologías:** Kafka, feature stores, PD/LGD/EAD modeling
@@ -47,7 +49,7 @@ Esta sección conecta la ingeniería de datos con la estrategia de negocio en se
 ### 04. Salud y Farmacéutico
 **`04_salud_farmaceutico.ipynb`** ✅
 - **Caso de uso:** Interoperabilidad HL7/FHIR en emergencias
-- **Impacto cuantificado:** Tiempo espera 45→28 min, ahorro **$800k/año**
+- **Escenario de impacto:** Tiempo espera 45→28 min, ahorro **$800k/año**
 - **Ejercicio práctico:** Pseudonymización con SHA256 para protección PII
 - **Visualización:** Box plot comparativo tiempos de espera
 - **Tecnologías:** HL7/FHIR, privacy-differential analytics, data lineage
@@ -55,7 +57,7 @@ Esta sección conecta la ingeniería de datos con la estrategia de negocio en se
 ### 05. Energía y Recursos Naturales
 **`05_energia_recursos_naturales.ipynb`** ✅
 - **Caso de uso:** Mantenimiento predictivo IoT/SCADA
-- **Impacto cuantificado:** OEE 0.82→0.91, paradas 12→2/año, ahorro **$4.5M/año**
+- **Escenario de impacto:** OEE 0.82→0.91, paradas 12→2/año, ahorro **$4.5M/año**
 - **Ejercicio práctico:** Detección anomalías con rolling mean + 3-sigma
 - **Visualización:** Time-series temperatura con umbral dinámico
 - **Tecnologías:** IoT, SCADA, TSDB (InfluxDB/TimescaleDB), alertas <10s
@@ -63,7 +65,7 @@ Esta sección conecta la ingeniería de datos con la estrategia de negocio en se
 ### 06. Telecomunicaciones
 **`06_telecomunicaciones.ipynb`** ✅
 - **Caso de uso:** Reducción churn con CDR streaming + feature store
-- **Impacto cuantificado:** Churn 2.5%→1.4%, reacción 24h→15min, LTV salvado **$6.8M**
+- **Escenario de impacto:** Churn 2.5%→1.4%, reacción 24h→15min, LTV salvado **$6.8M**
 - **Ejercicio práctico:** Pipeline features churn (uso bajo, quejas altas, tenure)
 - **Visualización:** Probabilidad churn por segmento cliente
 - **Tecnologías:** CDR processing, GIS enrichment, feature engineering
@@ -71,7 +73,7 @@ Esta sección conecta la ingeniería de datos con la estrategia de negocio en se
 ### 07. Industria y Manufactura
 **`07_industria_manufactura.ipynb`** ✅
 - **Caso de uso:** SPC (Statistical Process Control) + visión computacional
-- **Impacto cuantificado:** Scrap 8%→2.8%, OEE 0.78→0.88, ahorro **$6.2M/año**
+- **Escenario de impacto:** Scrap 8%→2.8%, OEE 0.78→0.88, ahorro **$6.2M/año**
 - **Ejercicio práctico:** Cálculo límites control 3-sigma, detección out-of-control
 - **Visualización:** OEE por turno (disponibilidad × rendimiento × calidad)
 - **Tecnologías:** PLC/SCADA integration, computer vision, SPC charts
@@ -79,7 +81,7 @@ Esta sección conecta la ingeniería de datos con la estrategia de negocio en se
 ### 08. Logística y Transporte
 **`08_logistica_transporte.ipynb`** ✅
 - **Caso de uso:** Routing optimization con telemetría GPS
-- **Impacto cuantificado:** OTIF 88%→96.5%, costo $45→$38/entrega, ahorro **$3.2M/año**
+- **Escenario de impacto:** OTIF 88%→96.5%, costo $45→$38/entrega, ahorro **$3.2M/año**
 - **Ejercicio práctico:** Cálculo OTIF (On-Time In-Full) y costos logísticos
 - **Visualización:** Histograma ETA vs tiempo real
 - **Tecnologías:** GPS telemetry, VRP algorithms, geo-enrichment
@@ -87,7 +89,7 @@ Esta sección conecta la ingeniería de datos con la estrategia de negocio en se
 ### 09. Agro y Alimentos
 **`09_agro_alimentos.ipynb`** ✅
 - **Caso de uso:** Agricultura de precisión con satélite Sentinel-2
-- **Impacto cuantificado:** Yield 3.2→3.6 ton/ha (+12.5%), pérdidas 15%→7%, revenue adicional **$1.8M**
+- **Escenario de impacto:** Yield 3.2→3.6 ton/ha (+12.5%), pérdidas 15%→7%, revenue adicional **$1.8M**
 - **Ejercicio práctico:** Análisis variabilidad intra-lote con NDVI
 - **Visualización:** Scatter NDVI vs yield con línea tendencia OLS
 - **Tecnologías:** Satellite imagery, geospatial features, precision agriculture zones
@@ -95,7 +97,7 @@ Esta sección conecta la ingeniería de datos con la estrategia de negocio en se
 ### 10. Sector Público y Gobierno
 **`10_sector_publico_gobierno.ipynb`** ✅
 - **Caso de uso:** Interoperabilidad entre sistemas gubernamentales
-- **Impacto cuantificado:** Trámites 12→4.2 días, satisfacción 38%→74%, fraude +120% detección, ahorro 35% costos operativos
+- **Escenario de impacto:** Trámites 12→4.2 días, satisfacción 38%→74%, fraude +120% detección, ahorro 35% costos operativos
 - **Ejercicio práctico:** Simulación interoperabilidad padrón electoral/registro impuestos
 - **Visualización:** Box plot tiempos de procedimientos (antes/después)
 - **Tecnologías:** API interoperability, lakehouse by domains, RPA integration
@@ -257,6 +259,6 @@ Al completar este módulo, podrás:
 
 ---
 
-**Progreso del Módulo: ✅ 100% completo (11/11 notebooks)**
+**Progreso del Módulo: ✅ 100% completo (10/10 notebooks)**
 
 © 2024-2025 Luis J. Raigoso V. (LuisRai) - LJRV
