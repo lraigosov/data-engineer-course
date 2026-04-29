@@ -27,10 +27,10 @@
   - [📊 Estado del Proyecto](#-estado-del-proyecto)
     - [📝 Notebooks Creados](#-notebooks-creados)
       - [Nivel Junior (10/10 - ✅ 100% Completo)](#nivel-junior-1010----100-completo)
-      - [Nivel Mid (10/10 - ✅ 100% Completo)](#nivel-mid-1010----100-completo)
+      - [Nivel Mid (12/12 - ✅ 100% Completo)](#nivel-mid-1212----100-completo)
       - [Nivel Senior (10/10 - ✅ 100% Completo)](#nivel-senior-1010----100-completo)
-      - [Nivel GenAI (10/10 - ✅ 100% Completo)](#nivel-genai-1010----100-completo)
-      - [Negocio LATAM (11/11 - ✅ 100% Completo)](#negocio-latam-1111----100-completo)
+      - [Nivel GenAI (11/11 - ✅ 100% Completo)](#nivel-genai-1111----100-completo)
+      - [Negocio LATAM (10/10 - ✅ 100% Completo)](#negocio-latam-1010----100-completo)
     - [📦 Datasets Disponibles](#-datasets-disponibles)
     - [🔧 Scripts Implementados](#-scripts-implementados)
     - [🧪 Tests Disponibles](#-tests-disponibles)
@@ -256,7 +256,7 @@ jupyter notebook
 - ✅ `09_proyecto_integrador_1.ipynb` - ETL completo con validaciones
 - ✅ `10_proyecto_integrador_2.ipynb` - Pipeline near real-time con scheduler
 
-#### Nivel Mid (10/10 - ✅ 100% Completo)
+#### Nivel Mid (12/12 - ✅ 100% Completo)
 - ✅ `01_apache_airflow_fundamentos.ipynb` - Orquestación con Airflow
 - ✅ `02_streaming_kafka.ipynb` - Streaming con Kafka
 - ✅ `03_cloud_aws.ipynb` - AWS: S3, Glue, Athena, Lambda
@@ -282,7 +282,7 @@ jupyter notebook
 - ✅ `09_proyecto_integrador_1.ipynb` - Plataforma de datos completa
 - ✅ `10_proyecto_integrador_2.ipynb` - Data Mesh con feature store
 
-#### Nivel GenAI (10/10 - ✅ 100% Completo)
+#### Nivel GenAI (11/11 - ✅ 100% Completo)
 - ✅ `00_comparacion_openai_gemini.ipynb` - Comparación OpenAI vs Google Gemini
 - ✅ `01_fundamentos_llms_prompting.ipynb` - Fundamentos de LLMs y prompting
 - ✅ `02_generacion_sql_nl2sql.ipynb` - Text-to-SQL con seguridad
@@ -295,7 +295,7 @@ jupyter notebook
 - ✅ `09_proyecto_integrador_1.ipynb` - Chatbot de consulta con RAG
 - ✅ `10_proyecto_integrador_2.ipynb` - Plataforma self-service con GenAI
 
-#### Negocio LATAM (11/11 - ✅ 100% Completo)
+#### Negocio LATAM (10/10 - ✅ 100% Completo)
 - ✅ `01_estrategia_datos_latam.ipynb` - Marco conceptual estratégico
 - ✅ `02_retail_consumo_masivo.ipynb` - OSA, calidad datos, $1.8M ahorro
 - ✅ `03_finanzas_banca.ipynb` - Fraude streaming, $3.2M ahorro
@@ -306,7 +306,6 @@ jupyter notebook
 - ✅ `08_logistica_transporte.ipynb` - Routing optimization, $3.2M ahorro
 - ✅ `09_agro_alimentos.ipynb` - Agricultura precisión, yield +12.5%
 - ✅ `10_sector_publico_gobierno.ipynb` - Interoperabilidad gobierno, -65% tiempo
-- ✅ `README.md` - Documentación del módulo
 
 ### 📦 Datasets Disponibles
 - ✅ `productos.csv` - 30 productos con categorías y precios
@@ -336,17 +335,17 @@ jupyter notebook
 - ✅ Guía de contribución
 - ✅ Changelog
 
-**Progreso General: ✅ 100% completo** (51/51 notebooks + infraestructura completa)
+**Progreso General: ✅ 100% completo** (53/53 notebooks + infraestructura completa)
 
 ## 📊 Progreso por Nivel
 
 | Nivel         | Duración  | Notebooks | Completados | Proyectos | Estado      |
 |---------------|-----------|-----------|-------------|-----------|-------------|
 | Junior        | 6-8 sem   | 10        | 10 ✅       | 2 ✅      | ✅ Completo |
-| Mid           | 8-10 sem  | 10        | 10 ✅       | 2 ✅      | ✅ Completo |
+| Mid           | 8-10 sem  | 12        | 12 ✅       | 2 ✅      | ✅ Completo |
 | Senior        | 10-12 sem | 10        | 10 ✅       | 2 ✅      | ✅ Completo |
-| GenAI         | 4-6 sem   | 10        | 10 ✅       | 2 ✅      | ✅ Completo |
-| Negocio LATAM | 4-6 sem   | 11        | 11 ✅       | 0         | ✅ Completo |
+| GenAI         | 4-6 sem   | 11        | 11 ✅       | 2 ✅      | ✅ Completo |
+| Negocio LATAM | 4-6 sem   | 10        | 10 ✅       | 0         | ✅ Completo |
 
 ## 🔧 Tecnologías y Librerías Incluidas
 

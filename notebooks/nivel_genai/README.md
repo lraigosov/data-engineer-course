@@ -17,7 +17,38 @@ Este nivel especializado enseña a:
 
 ### Notebooks Disponibles
 
-*Notebooks en desarrollo...*
+1. **00_comparacion_openai_gemini.ipynb**
+   - Comparación práctica de proveedores, costos y patrones de uso
+
+2. **01_fundamentos_llms_prompting.ipynb**
+   - Fundamentos de LLMs, prompting y evaluación básica
+
+3. **02_generacion_sql_nl2sql.ipynb**
+   - Text-to-SQL con validación y controles de seguridad
+
+4. **03_generacion_codigo_etl.ipynb**
+   - Generación asistida de código ETL con revisión y pruebas
+
+5. **04_rag_documentacion_datos.ipynb**
+   - RAG sobre documentación técnica y catálogos de datos
+
+6. **05_embeddings_similitud_datos.ipynb**
+   - Embeddings, similitud, deduplicación y búsqueda semántica
+
+7. **06_agentes_automatizacion.ipynb**
+   - Agentes para automatización de tareas de ingeniería de datos
+
+8. **07_calidad_validacion_llm.ipynb**
+   - Validación de calidad asistida por LLMs
+
+9. **08_sintesis_aumento_datos.ipynb**
+   - Datos sintéticos, anonimización y evaluación de utilidad
+
+10. **09_proyecto_integrador_1.ipynb**
+    - Chatbot de consulta de datos con RAG
+
+11. **10_proyecto_integrador_2.ipynb**
+    - Plataforma self-service con GenAI
 
 ## 🔑 Prerrequisitos
 
@@ -28,15 +59,15 @@ Este nivel especializado enseña a:
   - Conceptos de ML básicos (opcional)
 
 - **Acceso a APIs**:
-  - OpenAI API key (GPT-4, GPT-3.5, embeddings)
-  - Google Gemini API key (Gemini Pro, Gemini Ultra)
+  - OpenAI API key para modelos de texto y embeddings
+  - Google Gemini API key para modelos de texto y embeddings
   - Anthropic Claude API key (opcional)
   - Azure OpenAI (opcional)
   - Modelos locales: Ollama, LM Studio (opcional)
 
 ## 💡 Tecnologías Principales
 
-- **LLMs**: OpenAI GPT-4/3.5, Google Gemini Pro/Ultra, Anthropic Claude
+- **LLMs**: OpenAI, Google Gemini, Anthropic Claude y modelos locales
 - **Frameworks**: LangChain, LlamaIndex, LangGraph
 - **Embeddings**: OpenAI Ada-002, Google Embeddings, Sentence Transformers
 - **Vector DBs**: ChromaDB, Pinecone, Qdrant, FAISS
@@ -87,15 +118,14 @@ pip install ragas langsmith
 
 ### 3. Costos y Límites
 
-**Comparación de precios (Oct 2025)**:
-- **Google Gemini 1.5 Flash**: Muy económico (~$0.075/1M tokens input)
-- **GPT-3.5 Turbo**: Económico (~$0.50/1M tokens input)
-- **Gemini 1.5 Pro**: Medio (~$1.25/1M tokens input)
-- **GPT-4**: Premium (~$10/1M tokens input)
+Los precios, ventanas de contexto y límites de rate limit cambian con frecuencia. Antes de ejecutar ejercicios con APIs pagas, revisa la página oficial de precios y cuotas del proveedor que uses:
+- OpenAI: https://openai.com/api/pricing/
+- Google Gemini: https://ai.google.dev/pricing
+- Anthropic Claude: https://www.anthropic.com/pricing
 
 **Recomendaciones**:
-- Usa **Gemini Flash** o **GPT-3.5** para pruebas y desarrollo
-- Usa **Gemini Pro** o **GPT-4** para producción crítica
+- Usa modelos económicos para pruebas y desarrollo
+- Reserva modelos de mayor capacidad para tareas críticas o evaluaciones finales
 - Implementa caché para reducir llamadas repetidas
 - Establece límites de tokens por request (max_tokens)
 - Monitorea costos con LangSmith o dashboards custom
@@ -158,7 +188,7 @@ Cada notebook incluye:
 - **Duración estimada**: 90-120 min por notebook
 - **Nivel de dificultad**: Medio/Alto
 - **Costos estimados**: $5-20 en APIs durante el curso completo
-- **Actualización**: contenido revisado Oct 2025
+- **Actualización**: revisar precios y nombres de modelos antes de ejecutar laboratorios con APIs externas
 
 ## 🔗 Referencias
 

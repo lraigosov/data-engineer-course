@@ -202,7 +202,7 @@ def get_navigation_cell(nivel: str, notebook_name: str, indice: int) -> Dict:
     return {
         "cell_type": "markdown",
         "metadata": {},
-        "source": navigation_text.split('\n'),
+        "source": navigation_text.splitlines(keepends=True),
     }
 
 

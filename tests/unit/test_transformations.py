@@ -190,7 +190,7 @@ class TestImputacion:
         })
         
         media = df['valor'].mean()
-        df['valor'].fillna(media, inplace=True)
+        df['valor'] = df['valor'].fillna(media)
         
         assert not df['valor'].isnull().any()
         assert df['valor'].iloc[2] == 3.0  # (1+2+4+5)/4 = 3
@@ -262,7 +262,7 @@ class TestPipelineCompleto:
         df['nombre'] = df['nombre'].str.strip().str.title()
         
         # Imputar edad faltante con la media
-        df['edad'].fillna(df['edad'].mean(), inplace=True)
+        df['edad'] = df['edad'].fillna(df['edad'].mean())
         
         # 3. Validate
         assert len(df) == 4  # Debe haber 4 registros después de eliminar duplicados
