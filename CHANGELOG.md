@@ -43,10 +43,16 @@ y este proyecto adhiere a [Semantic Versioning](https://semver.org/lang/es/).
 - 🧪 Pruebas unitarias para garantizar detección de sintaxis real, ausencia de falsos positivos y generación reproducible de IDs de celda.
 - ⚠️ README.md: añadidas notas de alcance (DE vs. Arquitectura en Nivel Senior) y de rigor (cifras de impacto en Negocio LATAM son escenarios didácticos, no datos auditados).
 
-### Pendiente (fuera de este ciclo, requiere acción manual/on GitHub)
+### Gobernanza (aplicado directamente en GitHub, no vía commit)
 
-- Protección de la rama `main` — se aplicará después de verificar que CI corre en verde en GitHub.
-- Tags/releases de GitHub — `release.yml` los generará automáticamente en el primer merge verde a `main` una vez esto se publique; hasta entonces no hay tags `git` correspondientes a las versiones documentadas en este archivo.
+- 🔒 Rama `main` protegida: status checks obligatorios (`lint`, `test (3.11/3.12/3.13)`, `notebook-structure`, `notebook-execute`), PR obligatorio, sin force-push ni borrado — misma dinámica que `data-architecture-course`, adaptada a los nombres de job de este repo.
+- 📊 Dependency graph / vulnerability alerts habilitados — desbloquea `dependency-review.yml`, que antes fallaba en cada PR.
+- 🏷️ Primer release automático publicado: `v1.0.0`.
+
+### Pendiente
+
+- 23 diagnósticos `BLE001` (blind `except Exception`) en `scripts/etl/` y `scripts/pipelines/` — patrón intencional de boundary de error en pipelines, pendiente de decidir si se acota por sitio o se ignora vía config de `ruff` para `scripts/`.
+- Un enlace a la ruta de aprendizaje "DP-203" de Microsoft Learn en `notebooks/nivel_mid/03c_cloud_azure.ipynb` (no es el nombre de la certificación, que ya se actualizó) sigue sin reemplazar.
 
 ---
 
