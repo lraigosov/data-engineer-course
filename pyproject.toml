@@ -76,7 +76,7 @@ spark = ["delta-spark>=4,<5", "pyspark>=4,<5"]
 genai = [
   "chromadb>=1,<2",
   "faiss-cpu>=1.9,<2",
-  "google-genai>=1,<2",
+  "google-genai>=1,<3",
   "langchain>=1,<2",
   "langchain-community>=0.4,<1",
   "langchain-openai>=1,<2",
