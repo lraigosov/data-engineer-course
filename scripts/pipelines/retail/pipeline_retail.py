@@ -4,9 +4,11 @@ Pipeline Retail (toy): lee ventas y productos, calcula KPIs simples y exporta a 
 - CLI con click para correr desde terminal.
 """
 from __future__ import annotations
+
 from pathlib import Path
-import pandas as pd
+
 import click
+import pandas as pd
 
 
 def compute_kpis(ventas: pd.DataFrame, productos: pd.DataFrame) -> dict[str, pd.DataFrame]:

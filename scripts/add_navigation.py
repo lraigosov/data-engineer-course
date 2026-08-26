@@ -5,9 +5,7 @@ Estructura: Agrega una celda de markdown al final de cada notebook con links de 
 """
 
 import json
-import os
 from pathlib import Path
-from typing import Dict, List, Tuple
 
 # Estructura del curso
 NIVELES = {
@@ -128,7 +126,7 @@ NOMBRES_LEGIBLES = {
 }
 
 
-def get_navigation_cell(nivel: str, notebook_name: str, indice: int) -> Dict:
+def get_navigation_cell(nivel: str, notebook_name: str, indice: int) -> dict:
     """Genera la celda de navegación para un notebook."""
     
     notebooks = NIVELES[nivel]

@@ -3,9 +3,9 @@
 Script para mostrar solo los errores de sintaxis reales en los notebooks.
 """
 
+import ast
 import json
 from pathlib import Path
-import ast
 
 notebooks_dir = Path('notebooks')
 levels = ['nivel_junior', 'nivel_mid', 'nivel_senior', 'nivel_genai', 'negocios_latam']
@@ -25,7 +25,8 @@ for level in levels:
         try:
             with open(nb_file, 'r', encoding='utf-8') as f:
                 nb = json.load(f)
-        except:
+        except (json.JSONDecodeError, UnicodeDecodeError) as e:
+            print(f"⚠️  No se pudo leer {nb_file.name}: {e}")
             continue
         
         for cell_idx, cell in enumerate(nb.get('cells', []), 1):

@@ -15,15 +15,14 @@ El pipeline incluye:
 5. Logging y monitoreo
 """
 
-import pandas as pd
-import json
 import logging
-import requests
-from datetime import datetime
-from pathlib import Path
-from typing import Dict, List, Any, Optional
 import sqlite3
+from datetime import UTC, datetime
+from pathlib import Path
+from typing import Any
 
+import pandas as pd
+import requests
 
 # Configuración de logging
 logging.basicConfig(
@@ -36,7 +35,7 @@ logger = logging.getLogger(__name__)
 class DataIngestionPipeline:
     """Pipeline de ingestión de datos desde múltiples fuentes"""
     
-    def __init__(self, config: Dict[str, Any]):
+    def __init__(self, config: dict[str, Any]):
         """
         Inicializar pipeline con configuración
         
@@ -50,7 +49,7 @@ class DataIngestionPipeline:
         
         logger.info(f"Pipeline inicializado. Output: {self.output_path}")
     
-    def extract_from_api(self, api_config: Dict[str, Any]) -> Optional[pd.DataFrame]:
+    def extract_from_api(self, api_config: dict[str, Any]) -> pd.DataFrame | None:
         """
         Extraer datos desde una API REST
         
@@ -76,13 +75,13 @@ class DataIngestionPipeline:
             return df
             
         except requests.exceptions.RequestException as e:
-            logger.error(f"Error al extraer de API: {str(e)}")
+            logger.error(f"Error al extraer de API: {e!s}")
             return None
         except Exception as e:
-            logger.error(f"Error inesperado: {str(e)}")
+            logger.error(f"Error inesperado: {e!s}")
             return None
     
-    def extract_from_csv(self, file_path: str) -> Optional[pd.DataFrame]:
+    def extract_from_csv(self, file_path: str) -> pd.DataFrame | None:
         """
         Extraer datos desde archivo CSV
         
@@ -102,10 +101,10 @@ class DataIngestionPipeline:
             logger.error(f"Archivo no encontrado: {file_path}")
             return None
         except Exception as e:
-            logger.error(f"Error al leer CSV: {str(e)}")
+            logger.error(f"Error al leer CSV: {e!s}")
             return None
     
-    def extract_from_json(self, file_path: str) -> Optional[pd.DataFrame]:
+    def extract_from_json(self, file_path: str) -> pd.DataFrame | None:
         """
         Extraer datos desde archivo JSON
         
@@ -125,10 +124,10 @@ class DataIngestionPipeline:
             logger.error(f"Archivo no encontrado: {file_path}")
             return None
         except Exception as e:
-            logger.error(f"Error al leer JSON: {str(e)}")
+            logger.error(f"Error al leer JSON: {e!s}")
             return None
     
-    def extract_from_database(self, db_config: Dict[str, Any]) -> Optional[pd.DataFrame]:
+    def extract_from_database(self, db_config: dict[str, Any]) -> pd.DataFrame | None:
         """
         Extraer datos desde base de datos SQL
         
@@ -152,10 +151,10 @@ class DataIngestionPipeline:
             return df
             
         except Exception as e:
-            logger.error(f"Error al extraer de base de datos: {str(e)}")
+            logger.error(f"Error al extraer de base de datos: {e!s}")
             return None
     
-    def validate_data(self, df: pd.DataFrame, rules: Dict[str, Any]) -> bool:
+    def validate_data(self, df: pd.DataFrame, rules: dict[str, Any]) -> bool:
         """
         Validar datos según reglas definidas
         
@@ -185,9 +184,8 @@ class DataIngestionPipeline:
             # Validar tipos de datos
             expected_types = rules.get('expected_types', {})
             for col, expected_type in expected_types.items():
-                if col in df.columns:
-                    if not df[col].dtype == expected_type:
-                        logger.warning(f"Tipo incorrecto en {col}: {df[col].dtype} != {expected_type}")
+                if col in df.columns and df[col].dtype != expected_type:
+                    logger.warning(f"Tipo incorrecto en {col}: {df[col].dtype} != {expected_type}")
             
             # Validar rangos numéricos
             numeric_ranges = rules.get('numeric_ranges', {})
@@ -201,10 +199,10 @@ class DataIngestionPipeline:
             return True
             
         except Exception as e:
-            logger.error(f"Error en validación: {str(e)}")
+            logger.error(f"Error en validación: {e!s}")
             return False
     
-    def transform_data(self, df: pd.DataFrame, transformations: Dict[str, Any]) -> pd.DataFrame:
+    def transform_data(self, df: pd.DataFrame, transformations: dict[str, Any]) -> pd.DataFrame:
         """
         Aplicar transformaciones a los datos
         
@@ -244,13 +242,13 @@ class DataIngestionPipeline:
             
             # Agregar columna de timestamp
             if transformations.get('add_timestamp', False):
-                df_transformed['ingestion_timestamp'] = datetime.now()
+                df_transformed['ingestion_timestamp'] = datetime.now(UTC)
             
             logger.info("Transformaciones aplicadas")
             return df_transformed
             
         except Exception as e:
-            logger.error(f"Error en transformación: {str(e)}")
+            logger.error(f"Error en transformación: {e!s}")
             return df
     
     def load_to_csv(self, df: pd.DataFrame, filename: str) -> bool:
@@ -272,7 +270,7 @@ class DataIngestionPipeline:
             return True
             
         except Exception as e:
-            logger.error(f"Error al guardar CSV: {str(e)}")
+            logger.error(f"Error al guardar CSV: {e!s}")
             return False
     
     def load_to_json(self, df: pd.DataFrame, filename: str) -> bool:
@@ -294,10 +292,10 @@ class DataIngestionPipeline:
             return True
             
         except Exception as e:
-            logger.error(f"Error al guardar JSON: {str(e)}")
+            logger.error(f"Error al guardar JSON: {e!s}")
             return False
     
-    def load_to_database(self, df: pd.DataFrame, db_config: Dict[str, Any]) -> bool:
+    def load_to_database(self, df: pd.DataFrame, db_config: dict[str, Any]) -> bool:
         """
         Cargar datos a base de datos
         
@@ -323,10 +321,10 @@ class DataIngestionPipeline:
             return True
             
         except Exception as e:
-            logger.error(f"Error al cargar a base de datos: {str(e)}")
+            logger.error(f"Error al cargar a base de datos: {e!s}")
             return False
     
-    def run(self) -> Dict[str, Any]:
+    def run(self) -> dict[str, Any]:
         """
         Ejecutar pipeline completo
         
@@ -334,7 +332,7 @@ class DataIngestionPipeline:
             Diccionario con resultados de la ejecución
         """
         results = {
-            'start_time': datetime.now(),
+            'start_time': datetime.now(UTC),
             'sources_processed': 0,
             'total_records': 0,
             'errors': []
@@ -395,7 +393,7 @@ class DataIngestionPipeline:
                 results['sources_processed'] += 1
                 results['total_records'] += len(df)
             
-            results['end_time'] = datetime.now()
+            results['end_time'] = datetime.now(UTC)
             results['duration'] = (results['end_time'] - results['start_time']).total_seconds()
             results['status'] = 'success' if not results['errors'] else 'completed_with_errors'
             
@@ -410,7 +408,7 @@ class DataIngestionPipeline:
             return results
             
         except Exception as e:
-            logger.error(f"Error crítico en pipeline: {str(e)}")
+            logger.error(f"Error crítico en pipeline: {e!s}")
             results['status'] = 'failed'
             results['errors'].append(str(e))
             return results
@@ -472,7 +470,7 @@ def main():
     print(f"Duración: {results.get('duration', 0):.2f} segundos")
     
     if results['errors']:
-        print(f"\nErrores encontrados:")
+        print("\nErrores encontrados:")
         for error in results['errors']:
             print(f"  - {error}")
 

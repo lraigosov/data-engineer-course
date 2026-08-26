@@ -29,7 +29,7 @@ def add_missing_cell_ids(notebook: dict[str, Any], relative_path: str) -> int:
         )
         attempt = 0
         while True:
-            value = hashlib.sha256(f"{seed}\0{attempt}".encode("utf-8")).hexdigest()[:8]
+            value = hashlib.sha256(f"{seed}\0{attempt}".encode()).hexdigest()[:8]
             if value not in used_ids:
                 break
             attempt += 1
