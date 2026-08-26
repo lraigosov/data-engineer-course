@@ -25,6 +25,8 @@ y este proyecto adhiere a [Semantic Versioning](https://semver.org/lang/es/).
 - 🧹 README de niveles, instalación, FAQ, roadmap y referencias alineados con
   los archivos de configuración y con fuentes oficiales vigentes.
 - 🧪 `scripts/execute_notebooks.py` — ejecución real de notebooks vía nbclient (complementa a `scripts/validate_notebook_code.py`, que solo valida sintaxis).
+- 🚀 `.github/workflows/release.yml` — auto-tag + GitHub Release (SemVer vía Conventional Commits) en cada merge verde a `main` (mismo patrón que `data-architecture-course`).
+- 💖 `.github/FUNDING.yml` — botón de sponsor de GitHub apuntando a `lraigosov` (mismo patrón que `data-architecture-course`).
 
 ### Cambiado
 
@@ -44,7 +46,7 @@ y este proyecto adhiere a [Semantic Versioning](https://semver.org/lang/es/).
 ### Pendiente (fuera de este ciclo, requiere acción manual/on GitHub)
 
 - Protección de la rama `main` — se aplicará después de verificar que CI corre en verde en GitHub.
-- Tags/releases de GitHub — el CHANGELOG documenta versiones pero no hay tags `git` correspondientes.
+- Tags/releases de GitHub — `release.yml` los generará automáticamente en el primer merge verde a `main` una vez esto se publique; hasta entonces no hay tags `git` correspondientes a las versiones documentadas en este archivo.
 
 ---
 
