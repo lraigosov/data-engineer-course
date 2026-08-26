@@ -1,0 +1,10 @@
+services:
+  jupyter:
+    build: .
+    image: curso-data-engineering
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/workspace
+    environment:
+      - CURSO_ENV=development

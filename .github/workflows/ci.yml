@@ -1,0 +1,64 @@
+name: CI
+
+on:
+  push:
+    branches: [main, dev]
+  pull_request:
+    branches: [main, dev]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: locks/py3.11.txt
+      - run: pip install -r locks/py3.11.txt
+      - run: python -m compileall -q scripts tests
+      - run: ruff check scripts tests --select E9,F63,F7,F82
+
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+          cache-dependency-path: locks/py${{ matrix.python-version }}.txt
+      - run: pip install -r locks/py${{ matrix.python-version }}.txt
+      - run: pytest tests/unit -v --cov=scripts --cov-report=term-missing
+      - run: pytest tests/integration -v
+
+  notebook-structure:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: locks/py3.11.txt
+      - run: pip install -r locks/py3.11.txt
+      - run: python scripts/validate_notebook_code.py
+      - run: python scripts/normalize_notebook_metadata.py --check
+
+  notebook-execute:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: locks/py3.11.txt
+      - run: pip install -r locks/py3.11.txt
+      - run: python -m ipykernel install --user --name python3
+      # Allowlist explícita: no consume APIs, cloud ni servicios externos.
+      - run: python scripts/execute_notebooks.py

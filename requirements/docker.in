@@ -1,0 +1,3 @@
+-r dev.in
+
+jupyterlab>=4.3,<5

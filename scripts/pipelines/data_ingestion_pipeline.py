@@ -229,7 +229,7 @@ class DataIngestionPipeline:
             fill_nulls = transformations.get('fill_nulls', {})
             for col, value in fill_nulls.items():
                 if col in df_transformed.columns:
-                    df_transformed[col].fillna(value, inplace=True)
+                    df_transformed[col] = df_transformed[col].fillna(value)
             
             # Renombrar columnas
             rename_cols = transformations.get('rename_columns', {})

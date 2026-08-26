@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 """
-Script para validar que los bloques de código en los notebooks sean ejecutables.
-Detecta errores de sintaxis, imports faltantes, y otros problemas comunes.
+Script para validar que los bloques de código en los notebooks sean
+sintácticamente válidos mediante ``ast.parse``.
+
+Esto NO ejecuta las celdas ni verifica imports/dependencias reales — para
+ejecución real de notebooks, ver scripts/execute_notebooks.py.
 """
 
 import json
@@ -34,7 +37,10 @@ class CodeValidator:
             return True, []
         
         try:
-            # Intentar compilar el código
+            # ast.parse también detecta imports __future__ mal ubicados. El uso
+            # de variables no se evalúa aquí: en un notebook el estado puede
+            # consumirse en celdas posteriores y una heurística por texto
+            # produce falsos positivos con comparaciones, SQL y diccionarios.
             ast.parse(code)
         except SyntaxError as e:
             issues.append(f"❌ SINTAXIS ERROR: Línea {e.lineno}: {e.msg}")
@@ -42,26 +48,6 @@ class CodeValidator:
         except Exception as e:
             issues.append(f"❌ ERROR: {type(e).__name__}: {str(e)}")
             return False, issues
-        
-        # Validaciones adicionales
-        lines = code.split('\n')
-        
-        # Verificar imports sin módulos instalados (solo sintaxis)
-        for i, line in enumerate(lines, 1):
-            line = line.strip()
-            
-            # Advertencia: imports futuros no en la primera línea
-            if 'from __future__' in line and i > 2:
-                issues.append(f"⚠️  ADVERTENCIA: __future__ import en línea {i} (debería estar al inicio)")
-            
-            # Advertencia: variables no utilizadas (heurística simple)
-            if '= ' in line and not line.startswith('#'):
-                var_name = line.split('=')[0].strip()
-                # Verificar si la variable aparece después
-                rest_of_code = '\n'.join(lines[i:])
-                if var_name and not any(var_name in l for l in lines[i:]):
-                    if not var_name.startswith('_'):
-                        issues.append(f"⚠️  ADVERTENCIA: Variable '{var_name}' en línea {i} podría no ser utilizada")
         
         return len([i for i in issues if '❌' in i]) == 0, issues
     
@@ -177,8 +163,9 @@ class CodeValidator:
 
 def main():
     """Función principal."""
-    notebooks_dir = Path("f:/GitHub/data-engineer-course/notebooks")
-    
+    repo_root = Path(__file__).resolve().parents[1]
+    notebooks_dir = repo_root / "notebooks"
+
     if not notebooks_dir.exists():
         print(f"❌ Directorio no encontrado: {notebooks_dir}")
         return 1

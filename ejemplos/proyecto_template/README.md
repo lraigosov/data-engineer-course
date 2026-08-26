@@ -1,53 +1,46 @@
+# Plantilla de proyecto de ingeniería de datos
 
-# Proyecto de Ingeniería de Datos
+Esta carpeta es un ejemplo de estructura; no es un servicio desplegado ni usa
+automáticamente el entorno raíz del curso.
 
-## Estructura del Proyecto
+## Estructura propuesta
 
-```
+```text
 .
+├── config/       # Configuración sin secretos
 ├── data/
-│   ├── raw/          # Datos crudos sin modificar
-│   ├── processed/    # Datos procesados
-│   └── external/     # Datos externos
-├── notebooks/        # Jupyter notebooks para análisis
-├── src/
-│   ├── pipelines/    # Scripts de pipelines ETL
-│   └── utils/        # Utilidades y funciones auxiliares
-├── tests/            # Tests unitarios e integración
-├── config/           # Archivos de configuración
-├── docs/             # Documentación
-├── logs/             # Archivos de log
-├── outputs/          # Resultados y reportes
+│   ├── raw/      # Datos fuente inmutables
+│   └── processed/# Datos derivados reproducibles
+├── docs/         # Decisiones y operación
+├── notebooks/    # Exploración y prototipos
+├── src/          # Paquete y pipelines reutilizables
+├── tests/        # Pruebas unitarias e integración
 ├── .gitignore
-├── requirements.txt
+├── pyproject.toml
 └── README.md
 ```
 
-## Instalación
+Adapta la estructura al tamaño del proyecto. No crees directorios vacíos o
+capas que no tengan una responsabilidad clara.
+
+## Inicio
 
 ```bash
-# Clonar repositorio
-git clone <url>
-cd proyecto
-
-# Crear entorno virtual
-python -m venv venv
-source venv/bin/activate  # Windows: venv\Scriptsctivate
-
-# Instalar dependencias
-pip install -r requirements.txt
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install -e .
+pytest -q
 ```
 
-## Uso
+En PowerShell, activa el entorno con `.\.venv\Scripts\Activate.ps1`. Define en
+el `pyproject.toml` del proyecto su versión mínima de Python, dependencias y
+configuración de pruebas; no copies versiones del curso sin validarlas.
 
-```bash
-# Ejecutar pipeline principal
-python src/pipelines/main_pipeline.py
-```
+## Criterios mínimos
 
-## Contribuir
-
-1. Crear rama: `git checkout -b feature/nueva-funcionalidad`
-2. Hacer cambios y commit: `git commit -m "feat: descripción"`
-3. Push: `git push origin feature/nueva-funcionalidad`
-4. Crear Pull Request
+- configuración por entorno y secretos fuera de Git;
+- pipelines idempotentes con logs y errores accionables;
+- validación de entradas y outputs;
+- pruebas deterministas y una integración continua reproducible;
+- documentación de operación, ownership y recuperación.

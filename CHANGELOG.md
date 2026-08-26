@@ -11,9 +11,47 @@ y este proyecto adhiere a [Semantic Versioning](https://semver.org/lang/es/).
 
 ---
 
+## [Unreleased]
+
+### Añadido
+
+- 🔄 **CI real**: `.github/workflows/ci.yml` (lint, tests en Python 3.11/3.12/3.13, validación estática de notebooks, ejecución real de un subconjunto local/determinista vía `scripts/execute_notebooks.py`), `.github/workflows/dependency-review.yml`, `.github/dependabot.yml` (pip + github-actions).
+- 🐳 `Dockerfile` + `docker-compose.yml` para el entorno JupyterLab documentado en `docs/guia_instalacion.md` (antes referenciado pero inexistente).
+- 📦 `pyproject.toml` con grupos por tecnología, entradas en `requirements/` y locks exactos para Python 3.11/3.12/3.13; `.python-version` fija el baseline recomendado en 3.11.
+- 📄 `LICENSE-CONTENT.md` (CC BY 4.0 para notebooks/docs/datasets) — separa el contenido educativo del código, que queda bajo MIT estándar en `LICENSE`.
+- 📄 `docs/rubricas.md` — rúbricas de evaluación formales por nivel (antes solo existían checklists narrativos de objetivos).
+- 📚 Índice documental y arquitectura verificable con diagramas Mermaid para
+  contenido, dependencias y los cuatro jobs de CI.
+- 🧹 README de niveles, instalación, FAQ, roadmap y referencias alineados con
+  los archivos de configuración y con fuentes oficiales vigentes.
+- 🧪 `scripts/execute_notebooks.py` — ejecución real de notebooks vía nbclient (complementa a `scripts/validate_notebook_code.py`, que solo valida sintaxis).
+
+### Cambiado
+
+- 🐍 Baseline de Python: 3.8+ → **3.11–3.13** en README,
+  `docs/guia_instalacion.md` y `CONTRIBUTING.md`, conforme a
+  `requires-python = ">=3.11,<3.14"`.
+- 📝 Dependencias separadas entre core, desarrollo y grupos opcionales; `google-generativeai` (SDK legacy) → `google-genai` y modelos OpenAI/Gemini configurables por entorno.
+- 🔄 Notebooks de `nivel_mid/` y `nivel_senior/` que usaban Airflow 2.7/2.8 (`schedule_interval`, `airflow db init`, `airflow webserver`) migrados a sintaxis/CLI de Airflow 3.x (`schedule`, `airflow db migrate`, `airflow api-server` + `dag-processor`/`triggerer`).
+- 🤖 Notebooks de `nivel_genai/`: migrados de `google-generativeai` a `google-genai`; eliminadas referencias a Gemini 1.5 (apagado por Google en 2025) y a `gpt-3.5-turbo`/`gpt-4` como default — modelos ahora configurables vía variables de entorno con nota de verificación fechada.
+- 🎓 Certificaciones desactualizadas (`AWS Certified Data Analytics - Specialty`, `DP-203 Azure Data Engineer Associate`, ambas retiradas) actualizadas en `docs/roadmap.md`, `docs/referencias.md` y notebooks de cloud.
+- 🧪 `tests/unit/test_transformations.py` y `tests/integration/test_pipelines.py` refactorizados para ejercitar código real del repo en lugar de solo pandas/stdlib genérico.
+- 📄 `scripts/validate_notebook_code.py`: eliminada ruta absoluta hardcodeada; docstring corregido para no afirmar que valida código "ejecutable" (solo valida sintaxis).
+- 📓 Metadata de notebooks normalizada con IDs de celda deterministas; CI impide reintroducir celdas legacy sin `id`. Eliminada la heurística textual de variables sin uso porque generaba falsos positivos entre celdas.
+- 🧪 Pruebas unitarias para garantizar detección de sintaxis real, ausencia de falsos positivos y generación reproducible de IDs de celda.
+- ⚠️ README.md: añadidas notas de alcance (DE vs. Arquitectura en Nivel Senior) y de rigor (cifras de impacto en Negocio LATAM son escenarios didácticos, no datos auditados).
+
+### Pendiente (fuera de este ciclo, requiere acción manual/on GitHub)
+
+- Protección de la rama `main` — se aplicará después de verificar que CI corre en verde en GitHub.
+- Tags/releases de GitHub — el CHANGELOG documenta versiones pero no hay tags `git` correspondientes.
+
+---
+
 ## [1.0.0] - 2024-10-30
 
 ### Añadido
+
 - ✅ **Estructura completa del proyecto** con 40 notebooks
 - ✅ **Nivel Junior** (10/10 notebooks completos)
   - 01_introduccion_ingenieria_datos.ipynb
@@ -94,6 +132,7 @@ y este proyecto adhiere a [Semantic Versioning](https://semver.org/lang/es/).
   - LICENSE (MIT)
 
 ### Cambiado
+
 - 📝 Actualizada información del autor en todos los documentos
 - 📝 Mejorados notebooks 01-05 con celdas explicativas detalladas
 - 📝 Reorganizada estructura de documentación
@@ -101,6 +140,7 @@ y este proyecto adhiere a [Semantic Versioning](https://semver.org/lang/es/).
 ## [1.1.0] - 2025-10-30
 
 ### Añadido
+
 - 📚 **Celdas explicativas didácticas** agregadas a notebooks Junior:
   - 01_introduccion_ingenieria_datos.ipynb (7 explicaciones)
   - 02_python_manipulacion_datos.ipynb (12 explicaciones)
@@ -111,6 +151,7 @@ y este proyecto adhiere a [Semantic Versioning](https://semver.org/lang/es/).
 ## [1.2.0] - 2025-10-31
 
 ### Añadido
+
 - 🔒 **Protección de autoría**: Requisito obligatorio de atribución a LuisRai en LICENSE
 - 📚 **Guía educativa**: Nuevo archivo `notebooks/⚠️_IMPORTANTE_LEER_PRIMERO.md` (300+ líneas)
   - Cuándo usar notebooks vs código de producción
@@ -129,35 +170,39 @@ y este proyecto adhiere a [Semantic Versioning](https://semver.org/lang/es/).
   - GenAI: openai, langchain, langgraph, chromadb
 
 ### Cambiado
+
 - 📝 README.md actualizado con advertencias prominentes y stack tecnológico completo
 - 📝 LICENSE con cláusula de atribución obligatoria al autor
 
 ### Corregido
+
 - 🐛 Formato de markdown en nivel_mid/05_dataops_cicd.ipynb (espaciado en tablas y código)
 
 ## [1.3.0] - 2025-10-31
 
 ### Añadido
+
 - ☁️ **Cobertura multi-cloud completa**:
   - `notebooks/nivel_mid/03b_cloud_gcp.ipynb` (~1,490 líneas)
-    * Cloud Storage con lifecycle policies
-    * BigQuery (serverless + optimización)
-    * Dataflow con Apache Beam
-    * Cloud Composer (Airflow managed)
-    * Cloud Functions event-driven
-    * **Cloud Run**: Serverless containers para ETL >9 minutos
+    - Cloud Storage con lifecycle policies
+    - BigQuery (serverless + optimización)
+    - Dataflow con Apache Beam
+    - Cloud Composer (Airflow managed)
+    - Cloud Functions event-driven
+    - **Cloud Run**: Serverless containers para ETL >9 minutos
   - `notebooks/nivel_mid/03c_cloud_azure.ipynb` (~1,505 líneas)
-    * ADLS Gen2 con hierarchical namespaces y ACLs
-    * Azure Synapse Analytics (dedicated + serverless)
-    * Azure Data Factory con pipelines visuales
-    * Azure Databricks con Delta Lake y Photon
-    * Azure Functions con triggers múltiples
-    * **Azure Container Instances**: Batch jobs con managed identity
-    * **Azure Web Apps**: PaaS para APIs de datos
+    - ADLS Gen2 con hierarchical namespaces y ACLs
+    - Azure Synapse Analytics (dedicated + serverless)
+    - Azure Data Factory con pipelines visuales
+    - Azure Databricks con Delta Lake y Photon
+    - Azure Functions con triggers múltiples
+    - **Azure Container Instances**: Batch jobs con managed identity
+    - **Azure Web Apps**: PaaS para APIs de datos
   - Tablas comparativas entre AWS/GCP/Azure en ambos notebooks
   - Ejercicios prácticos y certificaciones (GCP Professional Data Engineer, Azure DP-203)
 
 ### Cambiado
+
 - 📊 Cobertura cloud ampliada de 33% a 100% del mercado
 - 📚 +2,995 líneas de contenido educativo cloud práctico
 - ☁️ Agregado serverless compute (Lambda, Cloud Run, Functions) a cada notebook cloud
@@ -165,29 +210,31 @@ y este proyecto adhiere a [Semantic Versioning](https://semver.org/lang/es/).
 ## [1.4.0] - 2025-10-31
 
 ### Corregido
+
 - 🐛 **Fix**: Completadas celdas vacías en `notebooks/nivel_junior/10_proyecto_integrador_2.ipynb`
   - Eliminados 13 celdas vacías después de sección de retry logic
   - Agregada **Sección 6**: Scheduler Simple con Polling
-    * Función `scan_and_process()` con polling loop
-    * Explicación de polling vs watchdog/Airflow/Kafka
+    - Función `scan_and_process()` con polling loop
+    - Explicación de polling vs watchdog/Airflow/Kafka
   - Agregada **Sección 7**: Ejecución y Testing
-    * Generador de archivos de prueba con datos sintéticos
-    * Ejecución del pipeline con scheduler
-    * Consultas SQL para verificación de datos
-    * Estadísticas por producto (revenue, unidades)
+    - Generador de archivos de prueba con datos sintéticos
+    - Ejecución del pipeline con scheduler
+    - Consultas SQL para verificación de datos
+    - Estadísticas por producto (revenue, unidades)
   - Agregada **Sección 8**: Métricas y Auditoría
-    * Revisión de checkpoints con estados
-    * Métricas de procesamiento
-    * Verificación de archivos movidos
+    - Revisión de checkpoints con estados
+    - Métricas de procesamiento
+    - Verificación de archivos movidos
   - Agregada **Sección 9**: Conclusión y Siguientes Pasos
-    * Resumen de componentes construidos
-    * Diagrama de flujo del pipeline
-    * Conceptos aplicados (ETL, data quality, resiliencia)
-    * Mejoras futuras por nivel (Mid: Airflow, Senior: Kafka/Streaming)
-    * Habilidades desarrolladas y recursos adicionales
+    - Resumen de componentes construidos
+    - Diagrama de flujo del pipeline
+    - Conceptos aplicados (ETL, data quality, resiliencia)
+    - Mejoras futuras por nivel (Mid: Airflow, Senior: Kafka/Streaming)
+    - Habilidades desarrolladas y recursos adicionales
   - **+395 líneas** de código funcional y documentación
 
 ### Cambiado
+
 - 📝 **requirements.txt** completamente reorganizado y actualizado:
   - Versiones actualizadas de todas las dependencias
   - Organizado por categorías (Core, Database, Cloud, Orchestration, GenAI, etc.)
@@ -202,6 +249,7 @@ y este proyecto adhiere a [Semantic Versioning](https://semver.org/lang/es/).
 ## [1.5.0] - 2025-11-04
 
 ### Añadido
+
 - 📈 **Módulo Negocio LATAM** (11 notebooks completos):
   - `01_estrategia_datos_latam.ipynb` - Marco conceptual: rol de ingeniería de datos en estrategia corporativa
   - `02_retail_consumo_masivo.ipynb` - Caso OSA, validación calidad, impacto $1.8M
@@ -231,18 +279,21 @@ y este proyecto adhiere a [Semantic Versioning](https://semver.org/lang/es/).
   - Contratos de datos con SLOs, ownership y ROI por sector
 
 ### Cambiado
+
 - 📝 README.md actualizado con módulo Negocio LATAM como sección final del curso
 - 📝 Estructura del proyecto actualizada con `negocios_latam/` y pipelines nuevos
 
 ## [Próximas Versiones]
 
 ### [1.6.0] - Planificado
-- 🐳 Docker compose para entorno completo (Airflow + Kafka + Spark + Postgres)
+
+- 🐳 Docker compose para entorno **completo** de infraestructura (Airflow + Kafka + Spark + Postgres) — el `docker-compose.yml` actual solo cubre JupyterLab.
 - 📊 Dashboards de ejemplo con Streamlit/Gradio
-- 🔄 CI/CD con GitHub Actions completo (lint, test, deploy)
-- 📝 Actualización de documentación técnica en `docs/`
+- 🔒 Protección de rama `main` + tags/releases de GitHub, una vez CI esté verificado en verde
+- 📝 Ampliar `scripts/execute_notebooks.py` a más notebooks a medida que se verifiquen como ejecutables sin infraestructura externa
 
 ### [2.0.0] - Futuro
+
 - 🌐 Plataforma web interactiva para navegación de notebooks
 - 🏆 Sistema de evaluación automática y certificados
 - 💬 Ejercicios interactivos con autoevaluación
@@ -252,6 +303,7 @@ y este proyecto adhiere a [Semantic Versioning](https://semver.org/lang/es/).
 ---
 
 ## Tipos de Cambios
+
 - **✅ Añadido** para funcionalidades nuevas
 - **📝 Cambiado** para cambios en funcionalidad existente
 - **⚠️ Obsoleto** para funcionalidades que pronto se eliminarán

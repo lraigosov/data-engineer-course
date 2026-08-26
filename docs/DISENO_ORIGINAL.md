@@ -1,6 +1,9 @@
 # 📘 Guía de Proyecto: Curso Modular para Convertirse en Ingeniero de Datos
 
-> **Nota**: Este documento representa el diseño original y la propuesta inicial del proyecto. El curso ha sido completamente implementado siguiendo estas directrices.
+> **Documento histórico.** Conserva la propuesta inicial y puede mencionar
+> estructuras o dependencias reemplazadas. Para instalación, arquitectura y
+> estado actual usa el [índice documental](README.md) y la
+> [arquitectura vigente](arquitectura.md).
 
 **Autor**: Luis J. Raigoso V. (LJRV) - [@lraigosov](https://github.com/lraigosov)  
 **Estado**: ✅ Implementado completamente y ampliado (53/53 notebooks)

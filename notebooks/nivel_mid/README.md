@@ -1,123 +1,61 @@
-# 🔧 Notebooks Nivel Mid
+# Nivel Mid: pipelines y automatización
 
-Este directorio contiene los notebooks del nivel Mid (Intermedio) del curso de Ingeniería de Datos.
+Este directorio contiene doce notebooks intermedios sobre orquestación,
+streaming, nube, bases de datos, DataOps y servicios de datos.
 
-## 📚 Contenido
+## Contenido
 
-### Notebooks Disponibles
+| Notebook | Tema principal |
+| --- | --- |
+| `01_apache_airflow_fundamentos.ipynb` | DAGs, tareas y operación básica con Airflow 3 |
+| `02_streaming_kafka.ipynb` | Productores, consumidores y patrones de Kafka |
+| `03_cloud_aws.ipynb` | S3, Glue, Athena y Lambda |
+| `03b_cloud_gcp.ipynb` | Cloud Storage, BigQuery, Dataflow y Cloud Run |
+| `03c_cloud_azure.ipynb` | ADLS, Synapse, Data Factory y Databricks |
+| `04_bases_datos_postgresql_mongodb.ipynb` | PostgreSQL y MongoDB |
+| `05_dataops_cicd.ipynb` | Pruebas, controles de calidad y CI/CD |
+| `06_conectores_avanzados_rest_graphql_sftp.ipynb` | REST, GraphQL y SFTP |
+| `07_optimizacion_sql_particionado.ipynb` | Planes de consulta, índices y particionado |
+| `08_fastapi_servicios_datos.ipynb` | API de datos con FastAPI y Pydantic |
+| `09_proyecto_integrador_1.ipynb` | API, validación, base de datos y Parquet |
+| `10_proyecto_integrador_2.ipynb` | Kafka, enriquecimiento e idempotencia |
 
-1. **01_apache_airflow_fundamentos.ipynb**
-   - Conceptos de DAGs
-   - Operators y Tasks
-   - Orquestación de pipelines
-   - Monitoreo y debugging
+## Prerrequisitos
 
-2. **02_streaming_kafka.ipynb**
-   - Fundamentos de Kafka (topics, partitions, brokers)
-   - Productores y consumidores (Python)
-   - Esquemas y serialización (Avro/JSON)
-   - Patrones de consumo y reintentos
+- Nivel Junior o conocimientos equivalentes de Python y SQL.
+- Python 3.11, 3.12 o 3.13.
+- Docker y cuentas cloud solo para los ejercicios que los indiquen.
 
-3. **03_cloud_aws.ipynb**
-   - S3 como data lake
-   - Glue (PySpark) para transformación
-   - Athena para consultas SQL sobre S3
-   - Disparadores con Lambda/EventBridge
+Instala primero el entorno base según la
+[guía de instalación](../../docs/guia_instalacion.md). Los servicios externos y
+los grupos opcionales no son necesarios para leer todos los notebooks.
 
-3b. **03b_cloud_gcp.ipynb** 🆕
-   - Cloud Storage con lifecycle management
-   - BigQuery (serverless + optimización)
-   - Dataflow con Apache Beam
-   - Cloud Composer (Airflow managed)
-   - Cloud Functions event-driven
+## Apache Airflow 3
 
-3c. **03c_cloud_azure.ipynb** 🆕
-   - ADLS Gen2 (hierarchical namespaces + ACLs)
-   - Azure Synapse Analytics (dedicated + serverless)
-   - Azure Data Factory (ETL/ELT orchestration)
-   - Azure Databricks (Delta Lake + Photon)
-   - Azure Functions (triggers múltiples)
+Airflow se mantiene aislado del entorno base porque tiene un árbol de
+dependencias amplio. Con `pip` 25.1 o posterior:
 
-4. **04_bases_datos_postgresql_mongodb.ipynb**
-   - Conexión con SQLAlchemy (PostgreSQL) y PyMongo
-   - Modelado, índices y agregaciones
-   - Estrategias de carga (batch, upsert, idempotencia)
-
-5. **05_dataops_cicd.ipynb**
-   - Pruebas de datos (Great Expectations, Pandera)
-   - Pre-commit (black, isort, flake8, pytest)
-   - GitHub Actions (lint + tests)
-
-6. **06_conectores_avanzados_rest_graphql_sftp.ipynb**
-   - REST con paginación, backoff y validación
-   - GraphQL (consultas y paginación)
-   - SFTP con Paramiko (opcional)
-
-7. **07_optimizacion_sql_particionado.ipynb**
-   - EXPLAIN/ANALYZE, índices y selectividad
-   - Particionado (PostgreSQL y data lakes)
-   - Pruning y estrategias de almacenamiento columnar
-
-8. **08_fastapi_servicios_datos.ipynb**
-   - FastAPI + Pydantic: CRUD de ventas de ejemplo
-   - Caché y pruebas de humo con requests
-   - Opcional: Redis y rate limiting
-
-9. **09_proyecto_integrador_1.ipynb**
-   - API → validación → DB → Parquet
-   - Orquestación con Airflow (DAG ejemplo)
-   - Alertas y monitoreo básicos
-
-10. **10_proyecto_integrador_2.ipynb**
-   - Kafka → validación → enriquecimiento → Parquet particionado
-   - Idempotencia (checkpoint) y métricas básicas
-   - Consumidor/productor con modo simulación si no hay Kafka
-
-## 🎯 Objetivos del Nivel Mid
-
-- Arquitecturas de datos (Batch/Streaming)
-- Orquestación con Airflow
-- Bases de datos NoSQL (MongoDB, Redis)
-- APIs y conectores avanzados (REST, GraphQL, SFTP)
-- **Cloud computing multi-cloud (AWS, GCP, Azure)**
-- DataOps y CI/CD
-- Optimización de queries y particionado
-- Servicios de datos con FastAPI
-
-## 📋 Prerrequisitos
-
-- Nivel Junior completado
-- Experiencia con Python y SQL
-- Familiaridad con línea de comandos
-- Cuenta en un proveedor cloud (opcional)
-
-## 🚀 Cómo Usar
-
-1. Asegúrate de haber completado el nivel Junior
-2. Instala dependencias adicionales (ver requirements.txt)
-3. Configura credenciales en `config/credentials.yaml`
-4. Ejecuta los notebooks en orden
-
-## ⚙️ Configuración Adicional
-
-### Apache Airflow
 ```bash
-pip install apache-airflow==2.7.0
-airflow db init
-airflow webserver --port 8080
+python -m pip install --group airflow
+airflow db migrate
 ```
 
-### Docker (Opcional)
-Algunos notebooks pueden requerir Docker para ejercicios prácticos.
+Para una instancia local de desarrollo, inicia en terminales separadas los
+componentes que necesites:
 
-## 📝 Notas
+```bash
+airflow api-server --port 8080
+airflow scheduler
+airflow dag-processor
+```
 
-- Notebooks más complejos y extensos que nivel Junior
-- Tiempo estimado: 90-120 minutos por notebook
-- Algunos ejercicios requieren servicios externos (cuentas cloud opcionales)
-- **Cobertura completa multi-cloud**: AWS (práctico), GCP (práctico), Azure (práctico)
-- Los notebooks cloud incluyen tablas comparativas entre proveedores
+`airflow db init` y `airflow webserver` pertenecen al flujo anterior a
+Airflow 3 y no deben usarse en esta guía. Consulta la
+[guía oficial de actualización a Airflow 3](https://airflow.apache.org/docs/apache-airflow/stable/installation/upgrading_to_airflow3.html)
+antes de migrar una instalación existente.
 
----
+## Alcance de los ejemplos
 
-*¿Listo para el siguiente nivel? Continúa con Nivel Senior.*
+Los notebooks cloud y Kafka incluyen ejercicios que pueden funcionar como
+simulación local. Una cuenta, un clúster o credenciales reales solo se requieren
+cuando la propia actividad lo indique. No uses credenciales de producción.

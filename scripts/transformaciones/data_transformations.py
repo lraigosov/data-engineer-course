@@ -194,18 +194,20 @@ def imputar_valores_faltantes(df: pd.DataFrame,
             continue
         
         if metodo == 'mean':
-            df_copy[columna].fillna(df_copy[columna].mean(), inplace=True)
+                df_copy[columna] = df_copy[columna].fillna(df_copy[columna].mean())
         elif metodo == 'median':
             df_copy[columna].fillna(df_copy[columna].median(), inplace=True)
         elif metodo == 'mode':
-            df_copy[columna].fillna(df_copy[columna].mode()[0], inplace=True)
+                df_copy[columna] = df_copy[columna].fillna(
+                    df_copy[columna].mode()[0]
+                )
         elif metodo == 'forward':
             df_copy[columna].fillna(method='ffill', inplace=True)
         elif metodo == 'backward':
             df_copy[columna].fillna(method='bfill', inplace=True)
         else:
             # Valor constante
-            df_copy[columna].fillna(metodo, inplace=True)
+                df_copy[columna] = df_copy[columna].fillna(metodo)
     
     return df_copy
 

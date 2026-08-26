@@ -1,80 +1,37 @@
-# 📘 Notebooks Nivel Junior
+# Nivel Junior: fundamentos
 
-Este directorio contiene los notebooks del nivel Junior del curso de Ingeniería de Datos.
+Este directorio contiene los diez notebooks introductorios del curso. El orden
+numérico propone una ruta de aprendizaje, desde un ETL básico hasta dos
+proyectos integradores.
 
-## 📚 Contenido
+## Contenido
 
-### Notebooks Disponibles
+| Notebook | Tema principal |
+| --- | --- |
+| `01_introduccion_ingenieria_datos.ipynb` | Rol de ingeniería de datos y primer ETL |
+| `02_python_manipulacion_datos.ipynb` | Python, archivos y manejo de errores |
+| `03_pandas_fundamentos.ipynb` | Series, DataFrames, filtros y agregaciones |
+| `04_sql_basico.ipynb` | SQL con SQLite |
+| `05_limpieza_datos.ipynb` | Perfilado, calidad y preparación |
+| `06_visualizacion_datos.ipynb` | Matplotlib, Seaborn y Plotly |
+| `07_git_control_versiones.ipynb` | Flujo Git y colaboración |
+| `08_apis_web_scraping.ipynb` | APIs REST y extracción web básica |
+| `09_proyecto_integrador_1.ipynb` | Pipeline ETL con validaciones |
+| `10_proyecto_integrador_2.ipynb` | Pipeline multi-fuente con planificación |
 
-1. **01_introduccion_ingenieria_datos.ipynb**
-   - Introducción al rol del Data Engineer
-   - Primer pipeline ETL
-   - APIs y extracción de datos
+## Prerrequisitos
 
-2. **02_python_manipulacion_datos.ipynb**
-   - Estructuras de datos en Python
-   - Manejo de archivos (CSV, JSON)
-   - Comprensiones y generadores
-   - Manejo de errores
+- Python 3.11, 3.12 o 3.13.
+- Conocimientos básicos de programación.
+- El entorno Jupyter reproducible descrito en la
+  [guía de instalación](../../docs/guia_instalacion.md).
 
-3. **03_pandas_fundamentos.ipynb**
-   - Series, DataFrames, filtros y agregaciones
-   - Manejo de nulos, duplicados y joins
+## Uso recomendado
 
-4. **04_sql_basico.ipynb**
-   - SQL con SQLite
-   - Consultas, filtros, agregaciones y joins
+1. Activa el entorno virtual del proyecto.
+2. Abre JupyterLab desde la raíz con `jupyter lab`.
+3. Ejecuta los notebooks en orden y revisa cada salida antes de continuar.
+4. Completa los ejercicios con copias propias de los datos.
 
-5. **05_limpieza_datos.ipynb**
-   - Perfilado, calidad y preparación de datos
-   - Estrategias para nulos, outliers y formatos
-
-6. **06_visualizacion_datos.ipynb**
-   - Visualización exploratoria y ejecutiva
-   - Matplotlib, Seaborn y Plotly
-
-7. **07_git_control_versiones.ipynb**
-   - Flujo Git local, ramas y commits
-   - Buenas prácticas para proyectos de datos
-
-8. **08_apis_web_scraping.ipynb**
-   - Consumo de APIs REST
-   - Paginación, retries y scraping básico
-
-9. **09_proyecto_integrador_1.ipynb**
-   - Pipeline ETL completo con validaciones
-
-10. **10_proyecto_integrador_2.ipynb**
-    - Pipeline near real-time con scheduling y alertas
-
-## 🎯 Objetivos del Nivel Junior
-
-- Comprender el ecosistema de datos
-- Dominar Python para manipulación de datos
-- Trabajar con Pandas y NumPy
-- Fundamentos de SQL
-- Control de versiones con Git
-- ETL básico
-
-## 📋 Prerrequisitos
-
-- Python 3.8+
-- Conocimientos básicos de programación
-- Jupyter Lab/Notebook instalado
-
-## 🚀 Cómo Usar
-
-1. Ejecuta los notebooks en orden numérico
-2. Completa todos los ejercicios prácticos
-3. Revisa las soluciones propuestas
-4. Practica con datasets adicionales
-
-## 📝 Notas
-
-- Cada notebook es auto-contenido
-- Tiempo estimado: 60-90 minutos por notebook
-- Consulta la documentación en `/docs` para más información
-
----
-
-*¿Tienes preguntas? Consulta el README principal del curso.*
+Los notebooks son material educativo y de exploración. Los componentes
+reutilizables y sus pruebas están en `scripts/` y `tests/`.

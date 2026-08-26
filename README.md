@@ -1,9 +1,11 @@
 # 📘 Curso Modular de Ingeniería de Datos
 
-![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
+![Python](https://img.shields.io/badge/Python-3.11%2B-blue)
 ![Jupyter](https://img.shields.io/badge/Jupyter-Notebooks-orange)
-![License](https://img.shields.io/badge/License-MIT-green)
-![Status](https://img.shields.io/badge/Status-Complete-brightgreen)
+![License](https://img.shields.io/badge/Code-MIT-green)
+![Content License](https://img.shields.io/badge/Content-CC%20BY%204.0-lightgrey)
+![CI](https://github.com/lraigosov/data-engineer-course/actions/workflows/ci.yml/badge.svg)
+![Status](https://img.shields.io/badge/Content-53%2F53%20written-brightgreen)
 
 ## 📑 Tabla de Contenidos
 
@@ -18,6 +20,7 @@
     - [🤖 Nivel GenAI - IA Generativa para Ingeniería de Datos](#-nivel-genai---ia-generativa-para-ingeniería-de-datos)
     - [📈 Negocio LATAM - Estrategia y Sectores](#-negocio-latam---estrategia-y-sectores)
   - [📁 Estructura del Proyecto](#-estructura-del-proyecto)
+  - [🧱 Arquitectura y calidad](#-arquitectura-y-calidad)
   - [🚀 Inicio Rápido](#-inicio-rápido)
     - [Prerrequisitos](#prerrequisitos)
     - [Instalación](#instalación)
@@ -36,17 +39,7 @@
     - [🧪 Tests Disponibles](#-tests-disponibles)
     - [📚 Documentación](#-documentación)
   - [📊 Progreso por Nivel](#-progreso-por-nivel)
-  - [🔧 Tecnologías y Librerías Incluidas](#-tecnologías-y-librerías-incluidas)
-    - [🐍 Core Python Libraries](#-core-python-libraries)
-    - [🗄️ Bases de Datos y Conectividad](#️-bases-de-datos-y-conectividad)
-    - [🔄 Orquestación y Workflows](#-orquestación-y-workflows)
-    - [☁️ Cloud y Almacenamiento](#️-cloud-y-almacenamiento)
-    - [🚀 Procesamiento Distribuido](#-procesamiento-distribuido)
-    - [📊 Calidad y Validación](#-calidad-y-validación)
-    - [🌐 APIs y Web](#-apis-y-web)
-    - [🤖 IA Generativa y ML](#-ia-generativa-y-ml)
-    - [📈 Visualización](#-visualización)
-    - [🧪 Testing y Calidad](#-testing-y-calidad)
+  - [🔧 Tecnologías y librerías declaradas](#-tecnologías-y-librerías-declaradas)
   - [🤝 Contribuciones](#-contribuciones)
   - [📚 Recursos Adicionales](#-recursos-adicionales)
   - [📄 Licencia](#-licencia)
@@ -62,28 +55,19 @@
 Curso completo y estructurado para formar **Ingenieros de Datos** desde nivel principiante hasta avanzado, organizado en cuatro niveles progresivos: **Junior**, **Mid**, **Senior** y **GenAI**. El curso combina teoría sólida con práctica intensiva mediante **Notebooks interactivos**, casos de uso reales y proyectos aplicados.
 
 **Autor Original:** LuisRai (Luis J. Raigoso V.)  
-**Repositorio:** https://github.com/lraigosov/data-engineer-course
+**Repositorio:** [github.com/lraigosov/data-engineer-course](https://github.com/lraigosov/data-engineer-course)
 
 ## ⚠️ Importante - Sobre el Uso de Notebooks
 
-> **⚠️ IMPORTANTE - SOBRE EL USO DE NOTEBOOKS:**
-> 
-> Este curso utiliza **Jupyter Notebooks con fines exclusivamente educativos** para facilitar el aprendizaje interactivo y la comprensión de cada concepto.
-> 
-> **🚨 EN PRODUCCIÓN, EL USO DE NOTEBOOKS NO ES UNA PRÁCTICA RECOMENDABLE** 
-> 
-> En entornos de producción se deben utilizar:
-> - ✅ Scripts Python modulares (`.py`)
-> - ✅ Paquetes estructurados con proper testing
-> - ✅ CI/CD pipelines
-> - ✅ Orquestadores (Airflow, Prefect, Dagster)
-> - ✅ Contenedores (Docker) y despliegues automatizados
-> 
-> Los notebooks son excelentes para **exploración, prototipado y enseñanza**, pero NO para sistemas en producción que requieren escalabilidad, mantenibilidad y robustez.
+> Los notebooks son adecuados para enseñanza, exploración y prototipos. Antes
+> de operar una solución, extrae la lógica reutilizable a módulos probados y
+> añade configuración, secretos, CI, observabilidad y recuperación. Consulta la
+> [guía de uso responsable](notebooks/⚠️_IMPORTANTE_LEER_PRIMERO.md).
 
 ## 🏗️ Estructura del Curso
 
 ### 📊 Nivel Junior - Fundamentos
+
 - [Introducción a la Ingeniería de Datos](notebooks/nivel_junior/01_introduccion_ingenieria_datos.ipynb)
 - [Programación en Python para datos](notebooks/nivel_junior/02_python_manipulacion_datos.ipynb)
 - [Manipulación de datos (Pandas, NumPy)](notebooks/nivel_junior/03_pandas_fundamentos.ipynb)
@@ -96,6 +80,7 @@ Curso completo y estructurado para formar **Ingenieros de Datos** desde nivel pr
 - [Proyecto Integrador 2](notebooks/nivel_junior/10_proyecto_integrador_2.ipynb)
 
 ### 🔧 Nivel Mid - Pipelines y Automatización
+
 - [Apache Airflow: Fundamentos](notebooks/nivel_mid/01_apache_airflow_fundamentos.ipynb)
 - [Streaming con Kafka](notebooks/nivel_mid/02_streaming_kafka.ipynb)
 - [Cloud AWS: S3, Glue, Athena, Lambda](notebooks/nivel_mid/03_cloud_aws.ipynb)
@@ -110,6 +95,14 @@ Curso completo y estructurado para formar **Ingenieros de Datos** desde nivel pr
 - [Proyecto Integrador 2](notebooks/nivel_mid/10_proyecto_integrador_2.ipynb)
 
 ### 🚀 Nivel Senior - Arquitectura y Gobernanza
+
+> **Nota de alcance:** este nivel trata el diseño y gobernanza de arquitecturas
+> de datos (lakehouse, Lambda/Kappa/Data Mesh, FinOps, seguridad) como
+> competencia de un Data Engineer senior — es decir, "cómo implementar y operar
+> bajo estas arquitecturas". Un curso especializado de **Arquitectura de Datos**
+> profundizaría en cambio en "cómo decidir y justificar" esos trade-offs a nivel
+> organizacional. Ambos enfoques son complementarios, no redundantes.
+
 - [Gobernanza y calidad de datos](notebooks/nivel_senior/01_data_governance_calidad.ipynb)
 - [Data Lakehouse: Delta y Iceberg](notebooks/nivel_senior/02_lakehouse_delta_iceberg.ipynb)
 - [Spark Streaming avanzado](notebooks/nivel_senior/03_spark_streaming.ipynb)
@@ -122,6 +115,7 @@ Curso completo y estructurado para formar **Ingenieros de Datos** desde nivel pr
 - [Proyecto Integrador 2](notebooks/nivel_senior/10_proyecto_integrador_2.ipynb)
 
 ### 🤖 Nivel GenAI - IA Generativa para Ingeniería de Datos
+
 - [Comparación OpenAI vs Google Gemini](notebooks/nivel_genai/00_comparacion_openai_gemini.ipynb)
 - [Fundamentos de LLMs y prompting](notebooks/nivel_genai/01_fundamentos_llms_prompting.ipynb)
 - [Generación SQL: NL2SQL](notebooks/nivel_genai/02_generacion_sql_nl2sql.ipynb)
@@ -135,6 +129,7 @@ Curso completo y estructurado para formar **Ingenieros de Datos** desde nivel pr
 - [Proyecto Integrador 2: Plataforma self-service con GenAI](notebooks/nivel_genai/10_proyecto_integrador_2.ipynb)
 
 ### 📈 Negocio LATAM - Estrategia y Sectores
+
 **Módulo final del curso:** Aplicación práctica de la Ingeniería de Datos como habilitador estratégico del negocio en contexto latinoamericano.
 
 - [Estrategia de datos LATAM: Marco conceptual](notebooks/negocios_latam/01_estrategia_datos_latam.ipynb)
@@ -150,8 +145,8 @@ Curso completo y estructurado para formar **Ingenieros de Datos** desde nivel pr
 
 ## 📁 Estructura del Proyecto
 
-```
-curso_ingenieria_datos/
+```text
+data-engineer-course/
 │
 ├── config/                    # Configuraciones globales
 │   ├── settings.yaml         # Parámetros del proyecto
@@ -159,10 +154,10 @@ curso_ingenieria_datos/
 │
 ├── notebooks/                # Notebooks organizados por nivel
 │   ├── nivel_junior/         # 10 notebooks fundamentales
-│   ├── nivel_mid/           # 10 notebooks intermedios
+│   ├── nivel_mid/           # 12 notebooks intermedios
 │   ├── nivel_senior/        # 10 notebooks avanzados
-│   ├── nivel_genai/         # 10 notebooks de IA Generativa
-│   └── negocios_latam/      # 11 notebooks: estrategia + 10 sectores
+│   ├── nivel_genai/         # 11 notebooks de IA Generativa
+│   └── negocios_latam/      # 10 notebooks sectoriales
 │
 ├── datasets/                 # Datos para ejercicios
 │   ├── raw/                 # Datos sin procesar
@@ -178,49 +173,75 @@ curso_ingenieria_datos/
 │   ├── unit/                # Pruebas unitarias
 │   └── integration/         # Pruebas de integración
 │
-└── docs/                     # Documentación
-    ├── guia_instalacion.md  # Guía de setup
-    ├── roadmap.md           # Roadmap del curso
-    └── referencias.md       # Referencias y recursos
+├── locks/                    # Dependencias exactas por entorno/Python
+├── requirements/             # Entradas para generar locks
+├── .github/                  # CI, Dependabot y dependency review
+└── docs/                     # Índice, arquitectura y guías
 ```
+
+## 🧱 Arquitectura y calidad
+
+La [guía de arquitectura](docs/arquitectura.md) documenta las relaciones entre
+contenido, scripts, dependencias, Docker y los cuatro jobs actuales de CI. El
+[índice documental](docs/README.md) identifica la audiencia y fuente de verdad
+de cada guía.
+
+Estado local verificado el 26 de agosto de 2026:
+
+| Control | Resultado |
+| --- | ---: |
+| Notebooks escritos | 53 |
+| Celdas de código con sintaxis válida | 479 |
+| Celdas totales con ID nbformat | 1.505 |
+| Pruebas automatizadas | 17 |
+| Notebooks ejecutados por la allowlist de CI | 1 |
 
 ## 🚀 Inicio Rápido
 
 ### Prerrequisitos
 
-- Python 3.8 o superior
+- Python 3.11, 3.12 o 3.13
 - Git instalado
-- 4GB RAM mínimo
-- 2GB espacio libre en disco
+- Recursos suficientes para las dependencias y datos del laboratorio elegido
 
 ### Instalación
 
 1. **Clona el repositorio:**
+
 ```bash
-git clone <url-del-repositorio>
-cd curso_ingenieria_datos
+git clone https://github.com/lraigosov/data-engineer-course.git
+cd data-engineer-course
 ```
 
-2. **Crea un entorno virtual:**
+1. **Crea un entorno virtual:**
+
 ```bash
-python -m venv venv
-source venv/bin/activate  # En Windows: venv\Scripts\activate
+python -m venv .venv
+source .venv/bin/activate  # En PowerShell: .\.venv\Scripts\Activate.ps1
 ```
 
-3. **Instala las dependencias:**
+1. **Instala el entorno Jupyter reproducible (Python 3.11):**
+
 ```bash
-pip install -r requirements.txt
+python -m pip install --upgrade pip
+python -m pip install -r locks/docker-py3.11.txt
 ```
 
-4. **Configura las credenciales:**
+Los locks `locks/py3.11.txt`, `locks/py3.12.txt` y `locks/py3.13.txt`
+corresponden al entorno mínimo de desarrollo/CI. Las dependencias opcionales
+por tecnología se declaran como grupos en `pyproject.toml`.
+
+1. **Configura las credenciales:**
+
 ```bash
 cp config/credentials.example config/credentials.yaml
 # Edita credentials.yaml con tus datos
 ```
 
-5. **Inicia Jupyter:**
+1. **Inicia JupyterLab:**
+
 ```bash
-jupyter notebook
+jupyter lab
 ```
 
 ## 🧭 Guía de Uso
@@ -245,6 +266,7 @@ jupyter notebook
 ### 📝 Notebooks Creados
 
 #### Nivel Junior (10/10 - ✅ 100% Completo)
+
 - ✅ `01_introduccion_ingenieria_datos.ipynb` - Introducción y primer ETL
 - ✅ `02_python_manipulacion_datos.ipynb` - Fundamentos de Python
 - ✅ `03_pandas_fundamentos.ipynb` - Manipulación con Pandas
@@ -257,6 +279,7 @@ jupyter notebook
 - ✅ `10_proyecto_integrador_2.ipynb` - Pipeline near real-time con scheduler
 
 #### Nivel Mid (12/12 - ✅ 100% Completo)
+
 - ✅ `01_apache_airflow_fundamentos.ipynb` - Orquestación con Airflow
 - ✅ `02_streaming_kafka.ipynb` - Streaming con Kafka
 - ✅ `03_cloud_aws.ipynb` - AWS: S3, Glue, Athena, Lambda
@@ -271,6 +294,7 @@ jupyter notebook
 - ✅ `10_proyecto_integrador_2.ipynb` - Kafka streaming → lake con idempotencia
 
 #### Nivel Senior (10/10 - ✅ 100% Completo)
+
 - ✅ `01_data_governance_calidad.ipynb` - DAMA-DMBOK y linaje
 - ✅ `02_lakehouse_delta_iceberg.ipynb` - Data Lakehouse con Delta/Iceberg
 - ✅ `03_spark_streaming.ipynb` - Spark Structured Streaming avanzado
@@ -283,19 +307,27 @@ jupyter notebook
 - ✅ `10_proyecto_integrador_2.ipynb` - Data Mesh con feature store
 
 #### Nivel GenAI (11/11 - ✅ 100% Completo)
+
 - ✅ `00_comparacion_openai_gemini.ipynb` - Comparación OpenAI vs Google Gemini
 - ✅ `01_fundamentos_llms_prompting.ipynb` - Fundamentos de LLMs y prompting
 - ✅ `02_generacion_sql_nl2sql.ipynb` - Text-to-SQL con seguridad
 - ✅ `03_generacion_codigo_etl.ipynb` - Generación de pipelines ETL
 - ✅ `04_rag_documentacion_datos.ipynb` - RAG para documentación técnica
 - ✅ `05_embeddings_similitud_datos.ipynb` - Embeddings y búsqueda semántica
-- ✅ `06_agentes_automatizacion.ipynb` - Agentes con LangGraph/AutoGen
+- ✅ `06_agentes_automatizacion.ipynb` - Agentes con LangGraph
 - ✅ `07_calidad_validacion_llm.ipynb` - Validación de datos con LLMs
 - ✅ `08_sintesis_aumento_datos.ipynb` - Generación de datos sintéticos
 - ✅ `09_proyecto_integrador_1.ipynb` - Chatbot de consulta con RAG
 - ✅ `10_proyecto_integrador_2.ipynb` - Plataforma self-service con GenAI
 
 #### Negocio LATAM (10/10 - ✅ 100% Completo)
+
+> ⚠️ **Nota de rigor:** las cifras de ahorro, % de mejora y ROI listadas abajo
+> son escenarios didácticos, no datos de clientes reales ni benchmarks
+> auditados. En una propuesta real, reemplázalas por métricas internas,
+> supuestos documentados y fuentes verificables (ver también `docs/faq.md`
+> y la nota equivalente en cada notebook de `negocios_latam/`).
+
 - ✅ `01_estrategia_datos_latam.ipynb` - Marco conceptual estratégico
 - ✅ `02_retail_consumo_masivo.ipynb` - OSA, calidad datos, $1.8M ahorro
 - ✅ `03_finanzas_banca.ipynb` - Fraude streaming, $3.2M ahorro
@@ -308,12 +340,14 @@ jupyter notebook
 - ✅ `10_sector_publico_gobierno.ipynb` - Interoperabilidad gobierno, -65% tiempo
 
 ### 📦 Datasets Disponibles
+
 - ✅ `productos.csv` - 30 productos con categorías y precios
 - ✅ `clientes.csv` - 30 registros de clientes
 - ✅ `ventas.csv` - 50 transacciones de ventas
 - ✅ `logs_actividad.json` - 25 eventos de usuario
 
 ### 🔧 Scripts Implementados
+
 - ✅ `scripts/etl/simple_etl.py` - Pipeline ETL básico
 - ✅ `scripts/transformaciones/data_transformations.py` - Utilidades de transformación
 - ✅ `scripts/pipelines/data_ingestion_pipeline.py` - Pipeline de ingesta multi-fuente
@@ -322,20 +356,30 @@ jupyter notebook
 - ✅ `scripts/pipelines/manufactura/pipeline_manufactura.py` - Pipeline OEE manufactura con CLI
 
 ### 🧪 Tests Disponibles
-- ✅ `tests/unit/test_transformations.py` - 16 pruebas unitarias
-- ✅ `tests/unit/test_pipeline_retail.py` - Tests pipeline retail
-- ✅ `tests/unit/test_pipeline_manufactura.py` - Tests pipeline manufactura
-- ✅ `tests/integration/test_pipelines.py` - 15+ pruebas de integración
-- ✅ **Suite completa: 18 tests passing**
+
+- ✅ `tests/unit/test_transformations.py` - 9 pruebas unitarias de transformaciones reales
+- ✅ Pipelines retail y manufactura - 2 pruebas unitarias
+- ✅ `tests/integration/test_pipelines.py` - 3 flujos de integración ETL/ingesta
+- ✅ Herramientas de validación/metadata de notebooks - 3 pruebas unitarias
+- ✅ **Suite completa: 17 pruebas automatizadas**
 
 ### 📚 Documentación
-- ✅ Guía de instalación completa
-- ✅ Roadmap del curso
-- ✅ Referencias y recursos
-- ✅ Guía de contribución
-- ✅ Changelog
 
-**Progreso General: ✅ 100% completo** (53/53 notebooks + infraestructura completa)
+- [Índice documental](docs/README.md)
+- [Guía de instalación](docs/guia_instalacion.md)
+- [Arquitectura y diagramas](docs/arquitectura.md)
+- [Roadmap](docs/roadmap.md)
+- [Rúbricas](docs/rubricas.md)
+- [Referencias técnicas](docs/referencias.md)
+- [Guía de contribución](CONTRIBUTING.md)
+- [Changelog](CHANGELOG.md)
+
+**Progreso General: ✅ 53/53 notebooks escritos** (100% del contenido planificado).
+
+> ⚠️ "Completo" se refiere al contenido escrito, no a ejecución verificada en CI.
+> Los notebooks de `nivel_genai/` en particular requieren credenciales de API
+> externas y aún no corren en el pipeline automatizado — ver [CI](.github/workflows/ci.yml)
+> y la sección de ejecución de notebooks más abajo.
 
 ## 📊 Progreso por Nivel
 
@@ -347,73 +391,34 @@ jupyter notebook
 | GenAI         | 4-6 sem   | 11        | 11 ✅       | 2 ✅      | ✅ Completo |
 | Negocio LATAM | 4-6 sem   | 10        | 10 ✅       | 0         | ✅ Completo |
 
-## 🔧 Tecnologías y Librerías Incluidas
+## 🔧 Tecnologías y librerías declaradas
 
-### 🐍 Core Python Libraries
-- **pandas** - Manipulación y análisis de datos tabulares
-- **numpy** - Computación numérica y álgebra lineal
-- **polars** - DataFrame library de alto rendimiento (alternativa a Pandas)
-- **dask** - Procesamiento paralelo y distribuido de datos
+La fuente de verdad es `pyproject.toml`. Las tecnologías que solo aparecen en
+explicaciones o comparaciones no se consideran instaladas por defecto.
 
-### 🗄️ Bases de Datos y Conectividad
-- **sqlalchemy** - ORM y toolkit SQL para Python
-- **psycopg2** - Driver PostgreSQL
-- **pymongo** - Driver MongoDB
-- **duckdb** - Base de datos analítica in-process
-- **pyarrow** - Interface Python para Apache Arrow (datos columnares)
+| Grupo | Dependencias representativas | Alcance |
+| --- | --- | --- |
+| Core | pandas, NumPy, SQLAlchemy, Requests, PyYAML, Click | Scripts y pipelines locales |
+| Notebooks | JupyterLab, Matplotlib, Plotly, Pandera, Great Expectations, scikit-learn | Laboratorios interactivos |
+| Cloud | boto3, Google Cloud Storage/BigQuery, Azure Identity/Storage | Prácticas opcionales por proveedor |
+| Databases | DuckDB, PostgreSQL, MongoDB, Redis | Conectividad opcional |
+| Airflow | Apache Airflow 3.3.x | Orquestación opcional |
+| Spark | PySpark 4.x, Delta Lake 4.x | Procesamiento distribuido opcional |
+| GenAI | OpenAI, Google GenAI, LangChain, LangGraph, ChromaDB, FAISS | Laboratorios con APIs/modelos opcionales |
+| Desarrollo | pytest, Ruff, Black, mypy, nbclient, nbformat | Calidad y contribución |
 
-### 🔄 Orquestación y Workflows
-- **apache-airflow** - Plataforma de orquestación de workflows
-- **prefect** - Framework moderno de orquestación
-- **dagster** - Data orchestrator para ML, analytics, y ETL
+Para instalar juntos los grupos opcionales compatibles (puede requerir
+dependencias de sistema adicionales):
 
-### ☁️ Cloud y Almacenamiento
-- **boto3** - SDK de AWS para Python
-- **google-cloud-storage** - SDK de Google Cloud Storage
-- **azure-storage-blob** - SDK de Azure Blob Storage
-- **s3fs** - Interface filesystem para S3
-
-### 🚀 Procesamiento Distribuido
-- **pyspark** - Interface Python para Apache Spark
-- **delta-spark** - Delta Lake para Spark
-- **kafka-python** - Cliente Kafka para Python
-
-### 📊 Calidad y Validación
-- **great-expectations** - Framework de validación de datos
-- **pandera** - Validación de DataFrames
-- **pydantic** - Validación de datos con type hints
-
-### 🌐 APIs y Web
-- **requests** - HTTP library
-- **fastapi** - Framework web moderno y rápido
-- **uvicorn** - ASGI server
-- **beautifulsoup4** - Web scraping
-- **httpx** - Cliente HTTP async
-
-### 🤖 IA Generativa y ML
-- **openai** - API de OpenAI (GPT-4, embeddings)
-- **langchain** - Framework para aplicaciones LLM
-- **langgraph** - Construcción de agentes con grafos
-- **chromadb** - Vector database
-- **sentence-transformers** - Modelos de embeddings
-
-### 📈 Visualización
-- **matplotlib** - Biblioteca de visualización base
-- **seaborn** - Visualizaciones estadísticas
-- **plotly** - Gráficos interactivos
-- **streamlit** - Framework para dashboards
-
-### 🧪 Testing y Calidad
-- **pytest** - Framework de testing
-- **pytest-cov** - Coverage para pytest
-- **black** - Code formatter
-- **flake8** - Linter
-- **mypy** - Type checker
-
-Para instalar todas las dependencias:
 ```bash
-pip install -r requirements.txt
+python -m pip install --group all
 ```
+
+Airflow queda fuera de `all` y debe instalarse en un entorno dedicado con
+`python -m pip install --group airflow`.
+
+Para desarrollo reproducible usa el lock de tu versión de Python; para el curso
+completo con Jupyter usa Python 3.11 y `locks/docker-py3.11.txt`.
 
 ## 🤝 Contribuciones
 
@@ -436,22 +441,12 @@ Consulta `CONTRIBUTING.md` para más detalles.
 
 ## 📄 Licencia
 
-Este proyecto está bajo la Licencia MIT con requisito de atribución.
+Este proyecto usa dos licencias, según el tipo de contenido:
 
-**⚠️ RECONOCIMIENTO OBLIGATORIO DE CRÉDITOS:**
+- **Código** (`scripts/`, `ingest/`, `tests/`, `config/`, CI): **MIT License** estándar — ver [`LICENSE`](LICENSE).
+- **Contenido educativo** (notebooks, `docs/`, `articles/`, `datasets/`): **[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)** — ver [`LICENSE-CONTENT.md`](LICENSE-CONTENT.md). CC BY 4.0 exige atribución al reusar o adaptar el material, indicando al autor original **"LuisRai" (Luis J. Raigoso V.)** y un enlace al repositorio.
 
-Cualquier replicación, modificación, distribución o trabajo derivado de este material **DEBE** incluir atribución prominente al autor original:
-
-**"LuisRai" (Luis J. Raigoso V.)**
-
-La atribución debe aparecer en:
-- Documentación del proyecto
-- Headers de archivos de código
-- Interfaces de usuario
-- Materiales de presentación
-- Cualquier publicación derivada
-
-Ver archivo `LICENSE` para detalles completos.
+Esta separación reemplaza la cláusula de atribución no estándar que antes formaba parte del archivo `LICENSE` (que lo hacía incompatible con MIT tal como se anunciaba en el badge). El código ahora es MIT sin condiciones adicionales; la obligación de atribución se mantiene, pero bajo una licencia de contenido reconocida (CC BY 4.0) en vez de un texto "MIT" modificado.
 
 ## 👥 Autor Original
 
@@ -460,7 +455,7 @@ Ver archivo `LICENSE` para detalles completos.
 
 - GitHub: [@lraigosov](https://github.com/lraigosov)
 - LinkedIn: [lraigosov](https://www.linkedin.com/in/lraigosov/)
-- Repositorio: https://github.com/lraigosov/data-engineer-course
+- Repositorio: [github.com/lraigosov/data-engineer-course](https://github.com/lraigosov/data-engineer-course)
 
 **Todos los notebooks, scripts y materiales fueron creados por LuisRai (2024-2025)**
 
