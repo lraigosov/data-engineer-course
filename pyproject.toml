@@ -81,7 +81,7 @@ genai = [
   "langchain-community>=0.4,<1",
   "langchain-openai>=1,<2",
   "langgraph>=1,<2",
-  "openai>=2,<3",
+  "openai>=2,<4",
   "sentence-transformers>=3,<7",
   "tiktoken>=0.8,<1",
 ]
