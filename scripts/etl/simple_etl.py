@@ -11,13 +11,12 @@ Autor: Curso de Ingeniería de Datos
 Fecha: 2024
 """
 
-import requests
-import pandas as pd
 import logging
-from datetime import datetime
-from typing import Dict, List, Optional
 import os
+from datetime import UTC, datetime
 
+import pandas as pd
+import requests
 
 # Configurar logging
 logging.basicConfig(
@@ -29,6 +28,10 @@ logging.basicConfig(
     ]
 )
 logger = logging.getLogger(__name__)
+
+
+class ETLStageError(Exception):
+    """Se lanza cuando una etapa del pipeline (extract/transform/load) falla."""
 
 
 class SimpleETLPipeline:
@@ -152,14 +155,14 @@ class SimpleETLPipeline:
         logger.info("   ✨ Enriqueciendo datos...")
         
         # Agregar timestamp de procesamiento
-        df['processed_at'] = datetime.now().isoformat()
-        
+        df['processed_at'] = datetime.now(UTC).isoformat()
+
         # Agregar ID de procesamiento
-        df['process_id'] = datetime.now().strftime('%Y%m%d_%H%M%S')
+        df['process_id'] = datetime.now(UTC).strftime('%Y%m%d_%H%M%S')
         
         return df
     
-    def load(self, filename: str = None) -> bool:
+    def load(self, filename: str | None = None) -> bool:
         """
         Carga los datos transformados en un archivo CSV
         
@@ -175,7 +178,7 @@ class SimpleETLPipeline:
         
         try:
             if filename is None:
-                timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+                timestamp = datetime.now(UTC).strftime('%Y%m%d_%H%M%S')
                 filename = f'etl_output_{timestamp}.csv'
             
             filepath = os.path.join(self.output_dir, filename)
@@ -197,7 +200,7 @@ class SimpleETLPipeline:
             logger.error(f"❌ Error en carga: {e}")
             return False
     
-    def run(self, output_filename: str = None) -> Dict[str, any]:
+    def run(self, output_filename: str | None = None) -> dict[str, any]:
         """
         Ejecuta el pipeline completo ETL
         
@@ -208,7 +211,7 @@ class SimpleETLPipeline:
             dict: Estadísticas de la ejecución
         """
         logger.info("🚀 Iniciando pipeline ETL completo")
-        start_time = datetime.now()
+        start_time = datetime.now(UTC)
         
         stats = {
             'start_time': start_time.isoformat(),
@@ -224,18 +227,18 @@ class SimpleETLPipeline:
         try:
             # Extract
             if not self.extract():
-                raise Exception("Fallo en extracción")
+                raise ETLStageError("Fallo en extracción")
             stats['extract_success'] = True
-            
+
             # Transform
             if not self.transform():
-                raise Exception("Fallo en transformación")
+                raise ETLStageError("Fallo en transformación")
             stats['transform_success'] = True
             stats['records_processed'] = len(self.data_transformed)
-            
+
             # Load
             if not self.load(output_filename):
-                raise Exception("Fallo en carga")
+                raise ETLStageError("Fallo en carga")
             stats['load_success'] = True
             
             stats['status'] = 'success'
@@ -247,7 +250,7 @@ class SimpleETLPipeline:
             stats['error'] = str(e)
         
         finally:
-            end_time = datetime.now()
+            end_time = datetime.now(UTC)
             stats['end_time'] = end_time.isoformat()
             stats['duration_seconds'] = (end_time - start_time).total_seconds()
             

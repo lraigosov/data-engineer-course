@@ -1,0 +1,3 @@
+# Notebooks locales y deterministas verificados por CI.
+# Una ruta relativa al repositorio por línea.
+notebooks/nivel_junior/02_python_manipulacion_datos.ipynb

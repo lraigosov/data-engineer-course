@@ -1,0 +1,4 @@
+# Compatibilidad para desarrollo no bloqueado.
+# CI y contribuciones reproducibles deben usar locks/py3.11.txt,
+# locks/py3.12.txt o locks/py3.13.txt según el intérprete.
+-r requirements/dev.in

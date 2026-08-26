@@ -84,6 +84,7 @@ Este directorio contiene los notebooks del nivel Senior (Avanzado) del curso de 
 ## 🏗️ Proyectos Incluidos
 
 Cada notebook incluye casos de estudio reales que simulan:
+
 - Diseño de plataformas de datos
 - Implementación de governance
 - Optimización de costos cloud
@@ -99,6 +100,7 @@ Cada notebook incluye casos de estudio reales que simulan:
 ## 🎓 Certificación
 
 Al completar este nivel, estarás preparado para:
+
 - Roles de Senior Data Engineer
 - Arquitecto de Datos
 - Data Platform Engineer

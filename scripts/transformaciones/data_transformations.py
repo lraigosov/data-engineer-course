@@ -7,14 +7,12 @@ Colección de funciones reutilizables para limpieza y transformación de datos.
 Autor: Curso de Ingeniería de Datos
 """
 
+from typing import Any
+
 import pandas as pd
-import numpy as np
-from typing import List, Dict, Any, Optional
-import re
-from datetime import datetime
 
 
-def limpiar_columnas_texto(df: pd.DataFrame, columnas: List[str]) -> pd.DataFrame:
+def limpiar_columnas_texto(df: pd.DataFrame, columnas: list[str]) -> pd.DataFrame:
     """
     Limpia columnas de texto: elimina espacios, convierte a minúsculas
     
@@ -111,7 +109,7 @@ def eliminar_outliers(df: pd.DataFrame,
 
 def normalizar_fechas(df: pd.DataFrame, 
                      columna_fecha: str,
-                     formato: Optional[str] = None) -> pd.DataFrame:
+                     formato: str | None = None) -> pd.DataFrame:
     """
     Normaliza columnas de fecha a datetime
     
@@ -174,7 +172,7 @@ def crear_columnas_temporales(df: pd.DataFrame,
 
 
 def imputar_valores_faltantes(df: pd.DataFrame,
-                              estrategia: Dict[str, str]) -> pd.DataFrame:
+                              estrategia: dict[str, str]) -> pd.DataFrame:
     """
     Imputa valores faltantes según estrategia definida
     
@@ -194,24 +192,26 @@ def imputar_valores_faltantes(df: pd.DataFrame,
             continue
         
         if metodo == 'mean':
-            df_copy[columna].fillna(df_copy[columna].mean(), inplace=True)
+                df_copy[columna] = df_copy[columna].fillna(df_copy[columna].mean())
         elif metodo == 'median':
             df_copy[columna].fillna(df_copy[columna].median(), inplace=True)
         elif metodo == 'mode':
-            df_copy[columna].fillna(df_copy[columna].mode()[0], inplace=True)
+                df_copy[columna] = df_copy[columna].fillna(
+                    df_copy[columna].mode()[0]
+                )
         elif metodo == 'forward':
             df_copy[columna].fillna(method='ffill', inplace=True)
         elif metodo == 'backward':
             df_copy[columna].fillna(method='bfill', inplace=True)
         else:
             # Valor constante
-            df_copy[columna].fillna(metodo, inplace=True)
+                df_copy[columna] = df_copy[columna].fillna(metodo)
     
     return df_copy
 
 
 def estandarizar_columnas(df: pd.DataFrame, 
-                         columnas: List[str]) -> pd.DataFrame:
+                         columnas: list[str]) -> pd.DataFrame:
     """
     Estandariza columnas numéricas (media=0, std=1)
     
@@ -236,7 +236,7 @@ def estandarizar_columnas(df: pd.DataFrame,
 def crear_bins_numericos(df: pd.DataFrame,
                         columna: str,
                         bins: int = 5,
-                        etiquetas: Optional[List[str]] = None) -> pd.DataFrame:
+                        etiquetas: list[str] | None = None) -> pd.DataFrame:
     """
     Crea bins (categorías) para una columna numérica
     
@@ -262,7 +262,7 @@ def crear_bins_numericos(df: pd.DataFrame,
 
 
 def codificar_categoricas(df: pd.DataFrame,
-                          columnas: List[str],
+                          columnas: list[str],
                           metodo: str = 'onehot') -> pd.DataFrame:
     """
     Codifica variables categóricas
@@ -292,8 +292,8 @@ def codificar_categoricas(df: pd.DataFrame,
 
 
 def detectar_duplicados_avanzado(df: pd.DataFrame,
-                                subset: Optional[List[str]] = None,
-                                keep_strategy: str = 'first') -> Dict[str, Any]:
+                                subset: list[str] | None = None,
+                                keep_strategy: str = 'first') -> dict[str, Any]:
     """
     Detecta y reporta duplicados con estadísticas
     

@@ -1,324 +1,128 @@
-# 🛠️ Guía de Instalación - Curso de Ingeniería de Datos
+# Guía de instalación
 
-**Autor**: Luis J. Raigoso V. (LJRV) - [@lraigosov](https://github.com/lraigosov)
+Esta guía describe los entornos que el repositorio declara y valida. La fuente
+de verdad para versiones compatibles es `pyproject.toml`; los archivos de
+`locks/` fijan instalaciones reproducibles.
 
----
+## Requisitos
 
-## Requisitos del Sistema
+- Git.
+- Python 3.11, 3.12 o 3.13 de 64 bits.
+- `pip` actualizado; los grupos de dependencias requieren `pip` 25.1 o posterior.
+- Docker Desktop o Docker Engine, solo si se usará el entorno aislado.
 
-### Requisitos Mínimos
-- **SO:** Windows 10+, macOS 10.14+, o Ubuntu 18.04+
-- **Python:** 3.8 o superior
-- **RAM:** 4GB mínimo (8GB recomendado)
-- **Almacenamiento:** 2GB espacio libre
-- **Conexión:** Internet estable para descargas
+No se admite Python 3.10 o anterior. Tampoco se ha declarado compatibilidad con
+Python 3.14.
 
-### Requisitos Recomendados
-- **RAM:** 8GB o más
-- **Almacenamiento:** 5GB espacio libre
-- **Procesador:** Quad-core o superior
-- **GPU:** Opcional para notebooks de ML
+## Instalación local reproducible
 
-## Instalación Paso a Paso
+Clona el repositorio y crea un entorno virtual llamado `.venv`:
 
-### 1. Instalación de Python
+```bash
+git clone https://github.com/lraigosov/data-engineer-course.git
+cd data-engineer-course
+python -m venv .venv
+```
 
-#### Windows
+Actívalo en Linux o macOS:
+
+```bash
+source .venv/bin/activate
+```
+
+En PowerShell:
+
 ```powershell
-# Opción 1: Descargar de python.org
-# Visita https://python.org/downloads/ y descarga Python 3.8+
-
-# Opción 2: Usando Chocolatey
-choco install python
-
-# Opción 3: Usando Microsoft Store
-# Busca "Python 3.9" en Microsoft Store
+.\.venv\Scripts\Activate.ps1
 ```
 
-#### macOS
+Actualiza `pip` y selecciona el lock que coincide con el intérprete:
+
 ```bash
-# Opción 1: Usando Homebrew (recomendado)
-brew install python@3.9
-
-# Opción 2: Descargar de python.org
-# Visita https://python.org/downloads/
-```
-
-#### Linux (Ubuntu/Debian)
-```bash
-sudo apt update
-sudo apt install python3.9 python3.9-pip python3.9-venv
-```
-
-### 2. Verificación de Python
-```bash
-python --version  # Debe mostrar 3.8 o superior
-pip --version      # Debe estar instalado
-```
-
-### 3. Clonación del Repositorio
-```bash
-# Clona el repositorio
-git clone <url-del-repositorio>
-cd curso_ingenieria_datos
-
-# O descarga el ZIP desde GitHub
-```
-
-### 4. Creación del Entorno Virtual
-
-#### Windows (CMD/PowerShell)
-```cmd
-python -m venv venv
-venv\Scripts\activate
-```
-
-#### Windows (Git Bash)
-```bash
-python -m venv venv
-source venv/Scripts/activate
-```
-
-#### macOS/Linux
-```bash
-python3 -m venv venv
-source venv/bin/activate
-```
-
-### 5. Instalación de Dependencias
-```bash
-# Actualizar pip
-pip install --upgrade pip
-
-# Instalar dependencias del curso
-pip install -r requirements.txt
-
-# Verificar instalación
-pip list
-```
-
-### 6. Configuración de Variables de Entorno
-
-#### Crear archivo de credenciales
-```bash
-# Copia el archivo de ejemplo
-cp config/credentials.example config/credentials.yaml
-
-# Edita con tus credenciales (opcional para empezar)
-```
-
-#### Variables de entorno (opcional)
-```bash
-# Windows
-set PYTHONPATH=%cd%
-set CURSO_ENV=development
-
-# macOS/Linux
-export PYTHONPATH=$(pwd)
-export CURSO_ENV=development
-```
-
-### 7. Instalación de Jupyter
-
-#### Jupyter Notebook (básico)
-```bash
-pip install jupyter
-jupyter notebook
-```
-
-#### JupyterLab (recomendado)
-```bash
-pip install jupyterlab
-jupyter lab
-```
-
-#### Extensiones útiles
-```bash
-# Extensiones para JupyterLab
-pip install jupyterlab-git
-pip install jupyterlab_code_formatter
-pip install jupyterlab-lsp
-jupyter labextension install @jupyterlab/toc
-```
-
-### 8. Configuración de Base de Datos (Opcional)
-
-#### PostgreSQL Local
-```bash
-# Windows (usando Chocolatey)
-choco install postgresql
-
-# macOS (usando Homebrew)
-brew install postgresql
-brew services start postgresql
-
-# Ubuntu/Debian
-sudo apt install postgresql postgresql-contrib
-sudo systemctl start postgresql
-```
-
-#### Configuración inicial
-```sql
--- Conectar como superusuario
-sudo -u postgres psql
-
--- Crear base de datos y usuario
-CREATE DATABASE curso_data_engineering;
-CREATE USER estudiante WITH PASSWORD 'tu_password';
-GRANT ALL PRIVILEGES ON DATABASE curso_data_engineering TO estudiante;
-```
-
-## Verificación de la Instalación
-
-### 1. Prueba de Python y Jupyter
-```bash
-# Activar entorno virtual
-source venv/bin/activate  # Linux/Mac
-# o
-venv\Scripts\activate     # Windows
-
-# Test rápido
-python -c "import pandas, numpy, matplotlib; print('¡Todo funciona!')"
-
-# Iniciar Jupyter
-jupyter lab
-```
-
-### 2. Ejecutar Notebook de Prueba
-```bash
-# Navegar a la carpeta de notebooks
-cd notebooks/nivel_junior
-
-# Abrir el primer notebook
-jupyter notebook 01_introduccion_ingenieria_datos.ipynb
-```
-
-### 3. Validar Conexiones (Opcional)
-```python
-# En un notebook, ejecutar:
-import psycopg2
-import requests
-
-# Test conexión a DB (si configuraste PostgreSQL)
-try:
-    conn = psycopg2.connect(
-        host="localhost",
-        database="curso_data_engineering",
-        user="estudiante",
-        password="tu_password"
-    )
-    print("✅ Base de datos conectada")
-    conn.close()
-except:
-    print("❌ Error de conexión a DB (opcional)")
-
-# Test conexión a internet
-try:
-    response = requests.get("https://api.github.com")
-    print("✅ Conexión a internet OK")
-except:
-    print("❌ Error de conexión a internet")
-```
-
-## Solución de Problemas Comunes
-
-### Error: "python no se reconoce como comando"
-```bash
-# Windows: Agregar Python al PATH
-# 1. Buscar "Variables de entorno" en el menú inicio
-# 2. Agregar la ruta de Python a PATH
-# Ejemplo: C:\Python39\Scripts\;C:\Python39\
-```
-
-### Error: "pip install falla"
-```bash
-# Actualizar pip
 python -m pip install --upgrade pip
-
-# Usar cache limpio
-pip install --no-cache-dir -r requirements.txt
-
-# Si falla, instalar uno por uno
-pip install pandas numpy matplotlib jupyter
+python -m pip install -r locks/py3.11.txt
 ```
 
-### Error: "Jupyter no inicia"
+Sustituye el archivo por `locks/py3.12.txt` o `locks/py3.13.txt` cuando
+corresponda. Esos locks contienen el entorno mínimo de desarrollo y CI.
+
+Para JupyterLab y las dependencias educativas completas se mantiene un lock
+validado con Python 3.11:
+
 ```bash
-# Regenerar configuración
-jupyter --config-dir
-jupyter notebook --generate-config
-
-# Limpiar cache
-jupyter lab clean
-jupyter lab build
+python -m pip install -r locks/docker-py3.11.txt
+jupyter lab
 ```
 
-### Error: "ModuleNotFoundError"
+## Perfiles opcionales
+
+Los grupos se declaran en `pyproject.toml` y no se instalan por defecto.
+
+| Grupo | Propósito |
+| --- | --- |
+| `dev` | Pruebas, lint y herramientas de notebooks |
+| `notebooks` | JupyterLab, visualización, calidad y APIs locales |
+| `cloud-aws` | SDK de AWS |
+| `cloud-gcp` | BigQuery y Cloud Storage |
+| `cloud-azure` | Identidad, Blob Storage y Data Lake Storage |
+| `databases` | DuckDB, PostgreSQL, MongoDB y Redis |
+| `airflow` | Apache Airflow 3.3 |
+| `spark` | PySpark y Delta Lake 4 |
+| `genai` | SDK y herramientas GenAI usadas por el curso |
+| `all` | Todos los anteriores salvo Airflow |
+
+Ejemplo:
+
 ```bash
-# Verificar entorno virtual activo
-which python  # Debe apuntar a tu venv
-
-# Reinstalar en el entorno correcto
-pip install -r requirements.txt
+python -m pip install --group genai
 ```
 
-### Problemas de Memoria
+No mezcles el grupo Airflow con `all`: se mantiene separado para reducir
+conflictos y permitir un entorno dedicado.
+
+## Docker
+
+Construye y valida la imagen sin instalar Python en el host:
+
 ```bash
-# Aumentar memoria para Jupyter
-export JUPYTER_MEMORY_LIMIT=2G
-
-# Configurar swap en Linux
-sudo fallocate -l 2G /swapfile
-sudo chmod 600 /swapfile
-sudo mkswap /swapfile
-sudo swapon /swapfile
+docker build -t data-engineer-course .
+docker run --rm data-engineer-course
 ```
 
-## Configuración Avanzada (Opcional)
+Para abrir JupyterLab con el repositorio montado:
 
-### Docker (Para entorno consistente)
 ```bash
-# Construir imagen
-docker build -t curso-data-engineering .
-
-# Ejecutar contenedor
-docker run -p 8888:8888 -v $(pwd):/workspace curso-data-engineering
+docker compose up jupyter
 ```
 
-### Configuración de IDE
+Revisa `docker-compose.yml` antes de exponer puertos en una red compartida. Las
+credenciales no forman parte de la imagen y no deben copiarse al repositorio.
 
-#### VS Code
+## Verificación
+
+Dentro del entorno activo, o con el mismo entorno Docker usado por CI:
+
 ```bash
-# Instalar extensiones recomendadas
-code --install-extension ms-python.python
-code --install-extension ms-toolsai.jupyter
-code --install-extension ms-vscode.vscode-json
+python scripts/validate_notebook_code.py
+python scripts/normalize_notebook_metadata.py --check
+pytest -q
+python scripts/execute_notebooks.py --config config/notebooks-ci.txt
 ```
 
-#### PyCharm
-- Configurar intérprete: Archivo > Configuraciones > Python Interpreter
-- Seleccionar el venv creado
-- Habilitar soporte para Jupyter
+El estado documentado al 26 de agosto de 2026 es: 53 notebooks estructuralmente
+válidos, 17 pruebas automatizadas y un notebook local en la allowlist de
+ejecución. La validación estructural no sustituye la ejecución de notebooks que
+dependen de nube, bases externas o APIs pagas.
 
-### Scripts de Automatización
-```bash
-# Crear script de setup (setup.sh)
-#!/bin/bash
-python -m venv venv
-source venv/bin/activate
-pip install --upgrade pip
-pip install -r requirements.txt
-cp config/credentials.example config/credentials.yaml
-echo "¡Setup completado!"
-```
+## Solución de problemas
 
-## Soporte Técnico
+- Confirma `python --version`; debe estar entre 3.11 y 3.13.
+- Confirma que `python -m pip --version` apunta a `.venv`.
+- Si un lock no coincide con tu versión, no fuerces la instalación: usa el lock
+  correcto o el contenedor.
+- Si una celda requiere un servicio externo, consulta el README del nivel y usa
+  credenciales de desarrollo con privilegios mínimos.
+- Si Jupyter usa otro intérprete, selecciona el kernel de `.venv`.
 
-### Recursos de Ayuda
-- **Documentación oficial:** docs/
-- **Issues de GitHub:** Reportar problemas técnicos
-- **FAQ:** docs/faq.md
-
----
-
-¡Listo para comenzar tu viaje en Ingeniería de Datos! 🚀
+Consulta también la [arquitectura del repositorio](arquitectura.md) y las
+[preguntas frecuentes](faq.md).

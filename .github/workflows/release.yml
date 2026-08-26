@@ -1,0 +1,110 @@
+name: Release
+
+# Se dispara cuando el workflow "CI" termina en verde sobre main (es decir,
+# despues de que un PR se mergea y sus checks pasan). Cada merge exitoso a
+# main produce un tag/release nuevo -- sin PR de release intermedio.
+on:
+  workflow_run:
+    workflows: ["CI"]
+    branches: [main]
+    types: [completed]
+
+permissions:
+  contents: write
+
+# Serializa las ejecuciones (sin cancelar) para que dos releases disparados
+# muy seguidos no calculen el mismo "siguiente tag" en paralelo.
+concurrency:
+  group: release-main
+  cancel-in-progress: false
+
+jobs:
+  release:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+          fetch-depth: 0
+          fetch-tags: true
+
+      - name: Calcular y publicar el siguiente tag
+        id: tag
+        run: |
+          set -euo pipefail
+          git fetch --tags --force
+
+          last_tag="$(git tag -l 'v*' --sort=-v:refname | head -n1)"
+
+          if [ -n "$last_tag" ] && [ "$(git rev-parse "$last_tag")" = "$(git rev-parse HEAD)" ]; then
+            echo "HEAD ya esta releaseado como $last_tag (sin commits nuevos), no se crea nada."
+            echo "created=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          if [ -z "$last_tag" ]; then
+            next_tag="v1.0.0"
+            echo "Sin tags previos, arrancando en $next_tag"
+          else
+            range="${last_tag}..HEAD"
+            subjects="$(git log "$range" --pretty=%s)"
+            bodies="$(git log "$range" --pretty=%B)"
+
+            # Conventional Commits: '!' tras el tipo/scope o 'BREAKING CHANGE'
+            # en el cuerpo -> major. 'feat:' -> minor. Cualquier otro tipo
+            # (fix, chore, docs, refactor) -> patch, para que todo merge a
+            # main produzca un release, tal como se definio.
+            bump="patch"
+            if echo "$subjects" | grep -Eq '^[a-z]+(\([^)]*\))?!:' || echo "$bodies" | grep -q 'BREAKING CHANGE'; then
+              bump="major"
+            elif echo "$subjects" | grep -Eq '^feat(\([^)]*\))?:'; then
+              bump="minor"
+            fi
+
+            version="${last_tag#v}"
+            IFS='.' read -r major minor patch <<< "$version"
+
+            case "$bump" in
+              major) major=$((major + 1)); minor=0; patch=0 ;;
+              minor) minor=$((minor + 1)); patch=0 ;;
+              patch) patch=$((patch + 1)) ;;
+            esac
+
+            next_tag="v${major}.${minor}.${patch}"
+            echo "last_tag=$last_tag bump=$bump next_tag=$next_tag"
+          fi
+
+          if [ "$next_tag" = "${last_tag:-}" ]; then
+            echo "El tag $next_tag ya existe, no se crea uno nuevo."
+            echo "created=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          git tag "$next_tag"
+          git push origin "$next_tag"
+          echo "tag=$next_tag" >> "$GITHUB_OUTPUT"
+          echo "created=true" >> "$GITHUB_OUTPUT"
+
+      - name: Crear GitHub Release
+        if: steps.tag.outputs.created == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ steps.tag.outputs.tag }}
+        run: |
+          set -uo pipefail
+          if gh release create "$TAG" --title "$TAG" --generate-notes --target main; then
+            exit 0
+          fi
+          # La API de GitHub a veces responde 5xx aunque el release SI se haya
+          # creado del lado del servidor (timeout en la respuesta, no en la
+          # operacion). Antes de marcar el job como fallido, confirmamos si
+          # el release ya quedo publicado.
+          echo "gh release create fallo, verificando si el release ya existe de todas formas..."
+          sleep 5
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            echo "El release $TAG si se creo (fallo transitorio en la respuesta de la API)."
+            exit 0
+          fi
+          echo "El release $TAG realmente no se creo."
+          exit 1

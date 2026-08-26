@@ -1,7 +1,9 @@
 import sys
 from pathlib import Path
+
 sys.path.append(str(Path(__file__).resolve().parents[2]))
 import pandas as pd
+
 from scripts.pipelines.manufactura.pipeline_manufactura import compute_oee
 
 

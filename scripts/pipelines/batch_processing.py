@@ -9,16 +9,16 @@ Pipeline para procesamiento por lotes de grandes volúmenes de datos:
 - Monitoreo de progreso y rendimiento
 """
 
-import pandas as pd
-import numpy as np
 import logging
-from datetime import datetime
-from pathlib import Path
-from typing import List, Dict, Any, Callable
 import multiprocessing as mp
-from functools import partial
 import time
+from collections.abc import Callable
+from datetime import UTC, datetime
+from functools import partial
+from pathlib import Path
+from typing import Any
 
+import pandas as pd
 
 logging.basicConfig(
     level=logging.INFO,
@@ -30,7 +30,7 @@ logger = logging.getLogger(__name__)
 class BatchProcessor:
     """Procesador de datos por lotes con soporte para procesamiento paralelo"""
     
-    def __init__(self, chunk_size: int = 10000, n_workers: int = None):
+    def __init__(self, chunk_size: int = 10000, n_workers: int | None = None):
         """
         Inicializar procesador
         
@@ -56,7 +56,7 @@ class BatchProcessor:
         try:
             return transform_func(chunk)
         except Exception as e:
-            logger.error(f"Error procesando chunk: {str(e)}")
+            logger.error(f"Error procesando chunk: {e!s}")
             return pd.DataFrame()
     
     def process_file_sequential(
@@ -64,7 +64,7 @@ class BatchProcessor:
         input_path: str,
         output_path: str,
         transform_func: Callable
-    ) -> Dict[str, Any]:
+    ) -> dict[str, Any]:
         """
         Procesar archivo secuencialmente por chunks
         
@@ -104,7 +104,7 @@ class BatchProcessor:
                 logger.info(f"Chunk {stats['chunks_processed']} procesado: {len(transformed_chunk)} filas")
                 
             except Exception as e:
-                logger.error(f"Error en chunk {stats['chunks_processed']}: {str(e)}")
+                logger.error(f"Error en chunk {stats['chunks_processed']}: {e!s}")
                 stats['errors'] += 1
         
         stats['duration'] = time.time() - start_time
@@ -117,7 +117,7 @@ class BatchProcessor:
         input_path: str,
         output_path: str,
         transform_func: Callable
-    ) -> Dict[str, Any]:
+    ) -> dict[str, Any]:
         """
         Procesar archivo en paralelo
         
@@ -161,9 +161,9 @@ class BatchProcessor:
         self,
         input_path: str,
         output_path: str,
-        group_by: List[str],
-        agg_dict: Dict[str, Any]
-    ) -> Dict[str, Any]:
+        group_by: list[str],
+        agg_dict: dict[str, Any]
+    ) -> dict[str, Any]:
         """
         Realizar agregaciones por lotes
         
@@ -218,7 +218,7 @@ def clean_sales_data(df: pd.DataFrame) -> pd.DataFrame:
     df['total'] = df['cantidad'] * df['precio_unitario']
     
     # Agregar timestamp de procesamiento
-    df['processed_at'] = datetime.now()
+    df['processed_at'] = datetime.now(UTC)
     
     return df
 
@@ -268,7 +268,7 @@ def main():
             clean_sales_data
         )
         
-        logger.info(f"Resultados:")
+        logger.info("Resultados:")
         logger.info(f"  - Chunks procesados: {stats_seq['chunks_processed']}")
         logger.info(f"  - Total de filas: {stats_seq['total_rows']}")
         logger.info(f"  - Duración: {stats_seq['duration']:.2f}s")
@@ -289,7 +289,7 @@ def main():
             }
         )
         
-        logger.info(f"Resultados:")
+        logger.info("Resultados:")
         logger.info(f"  - Grupos: {stats_agg['groups']}")
         logger.info(f"  - Duración: {stats_agg['duration']:.2f}s")
     

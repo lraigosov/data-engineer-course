@@ -1,15 +1,18 @@
 #!/usr/bin/env python3
 """
-Script para validar que los bloques de código en los notebooks sean ejecutables.
-Detecta errores de sintaxis, imports faltantes, y otros problemas comunes.
+Script para validar que los bloques de código en los notebooks sean
+sintácticamente válidos mediante ``ast.parse``.
+
+Esto NO ejecuta las celdas ni verifica imports/dependencias reales — para
+ejecución real de notebooks, ver scripts/execute_notebooks.py.
 """
 
-import json
 import ast
+import json
 import sys
-from pathlib import Path
-from typing import List, Dict, Tuple
 from collections import defaultdict
+from pathlib import Path
+
 
 class CodeValidator:
     """Validador de código Python en notebooks."""
@@ -25,7 +28,7 @@ class CodeValidator:
             'warnings_found': 0,
         }
     
-    def validate_cell_code(self, code: str, cell_index: int) -> Tuple[bool, List[str]]:
+    def validate_cell_code(self, code: str, cell_index: int) -> tuple[bool, list[str]]:
         """Valida que un bloque de código sea sintácticamente correcto."""
         issues = []
         
@@ -34,38 +37,21 @@ class CodeValidator:
             return True, []
         
         try:
-            # Intentar compilar el código
+            # ast.parse también detecta imports __future__ mal ubicados. El uso
+            # de variables no se evalúa aquí: en un notebook el estado puede
+            # consumirse en celdas posteriores y una heurística por texto
+            # produce falsos positivos con comparaciones, SQL y diccionarios.
             ast.parse(code)
         except SyntaxError as e:
             issues.append(f"❌ SINTAXIS ERROR: Línea {e.lineno}: {e.msg}")
             return False, issues
         except Exception as e:
-            issues.append(f"❌ ERROR: {type(e).__name__}: {str(e)}")
+            issues.append(f"❌ ERROR: {type(e).__name__}: {e!s}")
             return False, issues
-        
-        # Validaciones adicionales
-        lines = code.split('\n')
-        
-        # Verificar imports sin módulos instalados (solo sintaxis)
-        for i, line in enumerate(lines, 1):
-            line = line.strip()
-            
-            # Advertencia: imports futuros no en la primera línea
-            if 'from __future__' in line and i > 2:
-                issues.append(f"⚠️  ADVERTENCIA: __future__ import en línea {i} (debería estar al inicio)")
-            
-            # Advertencia: variables no utilizadas (heurística simple)
-            if '= ' in line and not line.startswith('#'):
-                var_name = line.split('=')[0].strip()
-                # Verificar si la variable aparece después
-                rest_of_code = '\n'.join(lines[i:])
-                if var_name and not any(var_name in l for l in lines[i:]):
-                    if not var_name.startswith('_'):
-                        issues.append(f"⚠️  ADVERTENCIA: Variable '{var_name}' en línea {i} podría no ser utilizada")
         
         return len([i for i in issues if '❌' in i]) == 0, issues
     
-    def validate_notebook(self, notebook_path: Path) -> Dict:
+    def validate_notebook(self, notebook_path: Path) -> dict:
         """Valida todos los bloques de código en un notebook."""
         self.stats['total_notebooks'] += 1
         
@@ -116,7 +102,7 @@ class CodeValidator:
         
         return notebook_errors
     
-    def validate_level(self, level_dir: Path) -> List[Dict]:
+    def validate_level(self, level_dir: Path) -> list[dict]:
         """Valida todos los notebooks en un nivel."""
         results = []
         
@@ -129,7 +115,7 @@ class CodeValidator:
         
         return results
     
-    def print_report(self, results: Dict[str, List[Dict]]):
+    def print_report(self, results: dict[str, list[dict]]):
         """Imprime un reporte detallado de validación."""
         print("\n" + "="*80)
         print("📋 REPORTE DE VALIDACIÓN DE CÓDIGO EN NOTEBOOKS")
@@ -159,7 +145,7 @@ class CodeValidator:
                         level_warnings += len(result['warnings'])
             
             if level_errors == 0 and level_warnings == 0:
-                print(f"  ✅ Todos los notebooks del nivel están correctos")
+                print("  ✅ Todos los notebooks del nivel están correctos")
             else:
                 print(f"\n  📊 Errores en nivel: {level_errors}, Advertencias: {level_warnings}")
         
@@ -177,8 +163,9 @@ class CodeValidator:
 
 def main():
     """Función principal."""
-    notebooks_dir = Path("f:/GitHub/data-engineer-course/notebooks")
-    
+    repo_root = Path(__file__).resolve().parents[1]
+    notebooks_dir = repo_root / "notebooks"
+
     if not notebooks_dir.exists():
         print(f"❌ Directorio no encontrado: {notebooks_dir}")
         return 1

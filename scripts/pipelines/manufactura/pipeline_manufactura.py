@@ -4,9 +4,11 @@ Pipeline Manufactura (toy): calcula OEE por turno y exporta datasets/processed/m
 - CLI con click para leer CSV o generar datos de ejemplo si no se provee.
 """
 from __future__ import annotations
+
 from pathlib import Path
-import pandas as pd
+
 import click
+import pandas as pd
 
 
 def compute_oee(df: pd.DataFrame) -> pd.DataFrame:

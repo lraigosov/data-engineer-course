@@ -1,7 +1,9 @@
 import sys
 from pathlib import Path
+
 sys.path.append(str(Path(__file__).resolve().parents[2]))
 import pandas as pd
+
 from scripts.pipelines.retail.pipeline_retail import compute_kpis
 
 
