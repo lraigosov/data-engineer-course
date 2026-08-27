@@ -1,8 +1,8 @@
 -r core.in
 
-ipykernel>=6.29,<7
+ipykernel>=6.29,<8
 nbclient>=0.10,<1
 nbformat>=5.10,<6
-pytest>=8.3,<9
-pytest-cov>=6,<7
+pytest>=8.3,<10
+pytest-cov>=6,<8
 ruff>=0.9,<1

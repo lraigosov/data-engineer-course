@@ -14,22 +14,22 @@ dependencies = [
 
 [dependency-groups]
 dev = [
-  "black>=25.1,<26",
+  "black>=25.1,<27",
   "flake8>=7.1,<8",
-  "ipykernel>=6.29,<7",
-  "mypy>=1.14,<2",
+  "ipykernel>=6.29,<8",
+  "mypy>=1.14,<3",
   "nbclient>=0.10,<1",
   "nbformat>=5.10,<6",
   "pre-commit>=4,<5",
-  "pytest>=8.3,<9",
-  "pytest-cov>=6,<7",
+  "pytest>=8.3,<10",
+  "pytest-cov>=6,<8",
   "pytest-nbval>=0.11,<1",
   "ruff>=0.9,<1",
 ]
 notebooks = [
   "aiohttp>=3.11,<4",
   "beautifulsoup4>=4.12,<5",
-  "cachetools>=5.5,<7",
+  "cachetools>=5.5,<8",
   "fastapi>=0.115,<1",
   "fastparquet>=2024.11,<2027",
   "great-expectations>=1.0,<2",
@@ -43,7 +43,7 @@ notebooks = [
   "openpyxl>=3.1,<4",
   "pandera[pandas]>=0.22,<1",
   "plotly>=5.24,<7",
-  "pyarrow>=18,<24",
+  "pyarrow>=18,<26",
   "pydantic>=2.10,<3",
   "python-dateutil>=2.9,<3",
   "python-dotenv>=1,<2",
@@ -76,13 +76,13 @@ spark = ["delta-spark>=4,<5", "pyspark>=4,<5"]
 genai = [
   "chromadb>=1,<2",
   "faiss-cpu>=1.9,<2",
-  "google-genai>=1,<2",
+  "google-genai>=1,<3",
   "langchain>=1,<2",
   "langchain-community>=0.4,<1",
   "langchain-openai>=1,<2",
   "langgraph>=1,<2",
-  "openai>=2,<3",
-  "sentence-transformers>=3,<6",
+  "openai>=2,<4",
+  "sentence-transformers>=3,<7",
   "tiktoken>=0.8,<1",
 ]
 all = [
