@@ -51,7 +51,7 @@ notebooks = [
   "scikit-learn>=1.6,<2",
   "scipy>=1.14,<2",
   "seaborn>=0.13,<1",
-  "structlog>=24.4,<26",
+  "structlog>=24.4,<27",
   "tqdm>=4.67,<5",
   "uvicorn>=0.34,<1",
 ]
