@@ -259,7 +259,7 @@ rpds-py==2026.6.3
     # via
     #   jsonschema
     #   referencing
-ruff==0.16.4
+ruff==0.16.5
     # via -r requirements/dev.in
 send2trash==2.1.0
     # via jupyter-server
