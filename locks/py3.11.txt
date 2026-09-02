@@ -34,7 +34,7 @@ iniconfig==2.3.0
     # via pytest
 ipykernel==6.31.0
     # via -r requirements/dev.in
-ipython==9.16.1
+ipython==9.17.0
     # via ipykernel
 ipython-pygments-lexers==1.1.1
     # via ipython
