@@ -69,7 +69,7 @@ databases = [
   "duckdb>=1.1,<2",
   "psycopg2-binary>=2.9,<3",
   "pymongo>=4.10,<5",
-  "redis>=5.2,<7",
+  "redis>=5.2,<9",
 ]
 airflow = ["apache-airflow>=3.3,<3.4"]
 spark = ["delta-spark>=4,<5", "pyspark>=4,<5"]
