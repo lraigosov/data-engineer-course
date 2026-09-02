@@ -129,7 +129,7 @@ rpds-py==2026.6.3
     # via
     #   jsonschema
     #   referencing
-ruff==0.16.4
+ruff==0.16.5
     # via -r requirements/dev.in
 six==1.17.0
     # via python-dateutil
