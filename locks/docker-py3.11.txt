@@ -269,7 +269,7 @@ six==1.17.0
     #   rfc3339-validator
 soupsieve==2.9.2
     # via beautifulsoup4
-sqlalchemy==2.0.52
+sqlalchemy==2.0.54
     # via -r requirements/core.in
 stack-data==0.6.3
     # via ipython

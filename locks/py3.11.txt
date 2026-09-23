@@ -133,7 +133,7 @@ ruff==0.16.4
     # via -r requirements/dev.in
 six==1.17.0
     # via python-dateutil
-sqlalchemy==2.0.52
+sqlalchemy==2.0.54
     # via -r requirements/core.in
 stack-data==0.6.3
     # via ipython
