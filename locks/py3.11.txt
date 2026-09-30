@@ -26,8 +26,6 @@ executing==2.2.1
     # via stack-data
 fastjsonschema==2.22.2
     # via nbformat
-greenlet==3.5.5
-    # via sqlalchemy
 idna==3.19
     # via requests
 iniconfig==2.3.0
@@ -133,7 +131,7 @@ ruff==0.16.4
     # via -r requirements/dev.in
 six==1.17.0
     # via python-dateutil
-sqlalchemy==2.0.52
+sqlalchemy==2.1.1
     # via -r requirements/core.in
 stack-data==0.6.3
     # via ipython
