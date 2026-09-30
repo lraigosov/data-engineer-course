@@ -111,7 +111,7 @@ python-dateutil==2.9.0.post0
     # via
     #   jupyter-client
     #   pandas
-pytz==2026.3.post1
+pytz==2026.4
     # via pandas
 pyyaml==6.0.3
     # via -r requirements/core.in
