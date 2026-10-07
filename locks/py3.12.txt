@@ -32,7 +32,7 @@ idna==3.19
     # via requests
 iniconfig==2.3.0
     # via pytest
-ipykernel==6.31.0
+ipykernel==7.4.0
     # via -r requirements/dev.in
 ipython==9.16.1
     # via ipykernel
@@ -64,9 +64,9 @@ nbformat==5.11.1
     # via
     #   -r requirements/dev.in
     #   nbclient
-nest-asyncio==1.6.0
+nest-asyncio2==1.7.3
     # via ipykernel
-numpy==2.5.2
+numpy==2.4.6
     # via
     #   -r requirements/core.in
     #   pandas
@@ -89,9 +89,7 @@ pluggy==1.6.0
 prompt-toolkit==3.0.53
     # via ipython
 psutil==7.2.2
-    # via
-    #   ipykernel
-    #   ipython
+    # via ipython
 ptyprocess==0.7.0
     # via pexpect
 pure-eval==0.2.3
@@ -152,6 +150,7 @@ traitlets==5.16.1
     #   nbformat
 typing-extensions==4.16.0
     # via
+    #   ipython
     #   jupyter-client
     #   referencing
     #   sqlalchemy
