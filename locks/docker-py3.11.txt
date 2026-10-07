@@ -69,7 +69,7 @@ idna==3.19
     #   requests
 iniconfig==2.3.0
     # via pytest
-ipykernel==6.31.0
+ipykernel==7.4.0
     # via
     #   -r requirements/dev.in
     #   jupyterlab
@@ -157,7 +157,7 @@ nbformat==5.11.1
     #   jupyter-server
     #   nbclient
     #   nbconvert
-nest-asyncio==1.6.0
+nest-asyncio2==1.7.3
     # via ipykernel
 notebook-shim==0.2.4
     # via jupyterlab
@@ -195,9 +195,7 @@ prometheus-client==0.26.0
 prompt-toolkit==3.0.53
     # via ipython
 psutil==7.2.2
-    # via
-    #   ipykernel
-    #   ipython
+    # via ipython
 ptyprocess==0.7.0
     # via
     #   pexpect
